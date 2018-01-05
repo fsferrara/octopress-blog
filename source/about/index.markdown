@@ -6,7 +6,7 @@ sharing: false
 footer: true
 ---
 **Hello,**
-my name is Francesco Saverio Ferrara and I'm a Software Engineer.  
+my name is Francesco Saverio Ferrara and I'm a Software Engineer and a passionate software developer.  
 Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.
 
 **Want to know more?**
