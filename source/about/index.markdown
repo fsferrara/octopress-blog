@@ -10,6 +10,7 @@ my name is Francesco Saverio Ferrara and I'm a Software Engineer and a passionat
 Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.
 
 **Want to know more?**
+
 * [LinkedIn](http://www.linkedin.com/in/fsferrara)
 * [Twitter](http://twitter.com/fsferrara)
 * [Google Plus](http://plus.google.com/+SaverioFerrara)
