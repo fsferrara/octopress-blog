@@ -1,9 +1,8 @@
 ---
 layout: page
 title: "about"
-date: 2018-01-05 23:15
 comments: false
-sharing: true
+sharing: false
 footer: true
 ---
 **Hello,**
