@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Thoughts | Saverio Ferrara]]></title>
+  <link href="http://fsferrara.github.io/blog/categories/thoughts/atom.xml" rel="self"/>
+  <link href="http://fsferrara.github.io/"/>
+  <updated>2018-01-06T00:34:31+01:00</updated>
+  <id>http://fsferrara.github.io/</id>
+  <author>
+    <name><![CDATA[Saverio Ferrara]]></name>
+    <email><![CDATA[me@fsferrara.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Blogging With Octopress and Jekyll]]></title>
+    <link href="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/"/>
+    <updated>2018-01-05T23:01:08+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll</id>
+    <content type="html"><![CDATA[<p>Nowadays, most blogs are powered by <em>Wordpress</em>. I am a Wordpress users too and I have to admit it is really a great for blogs.<br/>
+As others CMS, Wordpress requires a database and PHP in order to process the <strong>dynamic</strong> pages server-side.
+<em>Jekyll</em> is a static site generator. With it I can generate all my blog pages in on my computer and then publish the entire website on a static hosting server.</p>
+
+<!--more-->
+
+
+<h2>Prepare the Jekyll environment</h2>
+
+<p>The first drawback is that you need to set-up a local dev environment in order to be able to generate a static website on your machine. For Jekyll/Octopress you need several tool: git, ruby with bundler, and a javascript runtime.</p>
+
+<h3>git</h3>
+
+<p>I bet you already know what git is.</p>
+
+<h3>ruby</h3>
+
+<p>Ruby is an open source programming language. In order to install it locally, the are convenient ways such as <a href="http://rbenv.org/">rbenv</a> or <a href="https://rvm.io/">rvm</a>.
+Make sure to install at least ruby 1.9.3 in order to be compatible with <em>Octopress</em> 3.0 and check with:</p>
+
+<pre><code>&gt; ruby --version
+ruby 2.4.3p205 (2017-12-14 revision 61247) [x86_64-darwin16]
+</code></pre>
+
+<h3>A javascript runtime</h3>
+
+<p>My favourite javascript runtime is <a href="https://nodejs.org/">nodejs</a>. A convenient way to install it is <a href="https://github.com/creationix/nvm">nvm</a>. After the installation you can check it with:</p>
+
+<pre><code>&gt; node --version
+v6.11.2
+</code></pre>
+
+<h3>Bundler</h3>
+
+<p>Ruby libraries are, almost always, distributed in form of ruby-gems (in short <em>gems</em>).<br/>
+<strong>Bundler</strong> provides a consistent environment for ruby projects by tracking and installing the exact gems and versions that are needed. All the <em>gems</em> dependencies are declared in the <strong>Gemfile</strong> and jekyll websites usually have a Gemfile for the dependencies.</p>
+
+<p>Bundler is a gem itself and to install it (globally in your ruby environment) just type:</p>
+
+<pre><code>gem install bundler
+</code></pre>
+
+<p>Note: if you are using an old version of <em>rbenv</em>, then you&rsquo;ll need to run <code>rbenv rehash</code> in order to be able to start using <em>bundler</em>.</p>
+
+<h2>Start a new website</h2>
+
+<p>For my first experience with <em>Jekyll</em> I am going with <em>Octopress</em> (a blogging framework based on Jekyll). It is basically Jekyll with a new graphic theme and additional plugins.
+To start clone the Octopress source code <code>git clone git://github.com/imathis/octopress.git octopress</code> and then:</p>
+
+<pre><code>&gt; cd octopress/
+[git:master]&gt; bundle install
+</code></pre>
+
+<p>With <code>bundle install</code> we are downloading all the gems needed to generate the website locally.<br/>
+A very special gem is <em>rake</em>, a <em>Make-like</em> task-runner implemented in ruby. It is used in Octopress to simplify some development task that are usually performed manually when using a plain Jekyll installation.
+For example, I used <code>bundle exec rake setup_github_pages</code> to publish my local website to github-pages. This task created a <em>source</em> branch for the local <em>Octopress</em> installation and setup a <em>master</em> branch in the <em>_deploy</em> subfolder.</p>
+
+<p> pushed the local octopress installation to the <em>source</em> branch of my github repository.</p>
+
+<h3>Setup an Octopress theme</h3>
+
+<p>In order to use the default theme, just type:</p>
+
+<pre><code>[git:source *]&gt; bundle exec rake install
+## Copying classic theme into ./source and ./sass
+mkdir -p source
+cp -r .themes/classic/source/. source
+mkdir -p sass
+cp -r .themes/classic/sass/. sass
+mkdir -p source/_posts
+mkdir -p public
+</code></pre>
+
+<p>The <em>classic</em> theme has been copied in the <em>source</em> and <em>sass</em> directories.
+Also the <em>public</em> folder has been created: it will host my generated pages.</p>
+
+<h3>Generate the static website</h3>
+
+<p>Using <em>rake</em>, just issue:</p>
+
+<pre><code>[git:source *]&gt; bundle exec rake generate
+## Generating Site with Jekyll
+directory source/stylesheets
+    write source/stylesheets/screen.css
+Configuration file: /opt/home/github/fsferrara/octopress/_config.yml
+            Source: source
+       Destination: public
+      Generating...
+                    done.
+ Auto-regeneration: disabled. Use --watch to enable.
+</code></pre>
+
+<h3>Generate the static website</h3>
+
+<p>Always using <em>rake</em>, just issue <code>bundle exec rake deploy</code>.</p>
+
+<h3>Commit the website source</h3>
+
+<p>This is the Jekyll feature I like most: I can version the source code of the website :-)
+For the first commit:</p>
+
+<pre><code>[git:source *]&gt; git add .
+[git:source +]&gt; git commit -m "my first octopress commit"
+[git:source]&gt; git push origin source
+</code></pre>
+
+<p>Since I am using github as hosting solution, I have a <em>source</em> branch containing the source code of the blog, and a <em>master</em> branch (linked to the <em>_deploy</em> subfolder) containing the generated website.</p>
+
+<h3>Restoring the local website on a new computer</h3>
+
+<p>Or at least, restoring the local website on the same computer with a new os installation.<br/>
+The steps are:</p>
+
+<pre><code>&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git
+&gt; cd fsferrara.github.io
+[git:master]&gt; git checkout source
+[git:source]&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git _deploy
+[git:source]&gt; bundle install
+[git:source]&gt; bundle exec rake generate
+[git:source]&gt; bundle exec rake deploy
+</code></pre>
+
+<p>The procedure is quite the same, except the fact I had to clone the <em>master</em> branch in the <em>_deploy</em> subfolder because I am using github-pages.</p>
+
+<h2>My first post with Octopress</h2>
+
+<p>My first post is exactly this one you are now reading. As per Jekyll convention it is named in a format like <code>YYYY-MM-DD-post-title.markdown</code> and it is placed in the <em>source/_posts</em> directory.
+Anyway, the <em>new_post</em> rake task simplify the operation of adding a new post. I could have run this:</p>
+
+<pre><code>[git:source]&gt; bundler exec rake new_post["Blogging with Octopress and Jekyll"]
+mkdir -p source/_posts
+Creating new post: source/_posts/2018-01-05-blogging-with-octopress-and-jekyll.markdown
+</code></pre>
+
+<p>to have the new post file in the <em>source/_posts</em> folder. Additionally, the post file is created with the standard <strong>Front Matter</strong>:</p>
+
+<pre><code>[git:source]&gt; cat source/_posts/2018-01-05-blogging-with-octopress-and-jekyll.markdown
+---
+layout: post
+title: "Blogging with Octopress and Jekyll"
+date: 2018-01-05 23:01:08 +0100
+comments: true
+categories:
+---
+</code></pre>
+
+<p><em>Front matter</em> is where Jekyll starts to get really cool. Any file that contains a <a href="https://jekyllrb.com/docs/frontmatter/">YAML front matter</a> block will be processed by Jekyll as a special file. This block adds meta-data to the file sush as permalink, categories, tags, and so on.</p>
+
+<h2>The about page</h2>
+
+<p>Similar to the post creation, the rake task <em>new_page</em> helps to create new pages.<br/>
+For the usual <em>about</em> page: <code>bundle exec rake new_page["about"]</code>. Here are <a href="http://octopress.org/docs/blogging/">more information about Octopress pages</a>.</p>
+
+<p>The <em>about</em> page usually has a link in the main menu. To add such a link, modify the file <code>source/_includes/custom/navigation.html</code> to add a new entry.</p>
+
+<h2>Preview the changes locally before publishing</h2>
+
+<p>Jekyll is able to generate and serve the static website locally. Octopress offers the rake task <code>bundle exec rake preview</code> that starts a web server locally listening at *<a href="http://localhost:4000/*.">http://localhost:4000/*.</a>
+This task will also watch for local changes and apply them immediately to the local preview.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My Eight Rules to Effectively Work in a Global Team]]></title>
+    <link href="http://fsferrara.github.io/my-eight-rules-to-effectively-work-in-a-global-team/"/>
+    <updated>2016-06-16T08:24:12+00:00</updated>
+    <id>http://fsferrara.github.io/my-eight-rules-to-effectively-work-in-a-global-team</id>
+    <content type="html"><![CDATA[<p>I still remember when I joined Hotels.com technology team and how much excited I was to start such a new challenge. Since the very early days I realised that working in a global company is quite different from working in the same building. That is obvious, I know, but it wasn’t easy to get used to the new way of working.</p>
+
+<p>I missed getting in touch with new teammates, and sometimes felt isolated from others and had the feeling of being a remote worker. Actually working in a global team has a lot in common with the remote work, and in this article I will list all of the good practices that allowed me to collaborate effectively with colleagues scattered across the world.</p>
+
+<!--more-->
+
+
+<ol>
+<li><strong>Know Every Collaboration Tool</strong></li>
+</ol>
+
+
+<p>Get familiar with the standard company collaboration tools for <strong>chat</strong>, <strong>wiki</strong>, <strong>ticketing</strong> and <strong>video-conferencing</strong>.</p>
+
+<p>They are now my best friends in the day-to-day work. As a good practice I also have backup tools for chat and video-conferencing: in the case one of them doesn&#8217;t work for some reason, don&#8217;t waste time, just move to the next one.</p>
+
+<ol start="2">
+  <li>
+    <strong> Communicate Asynchronously</strong>
+  </li>
+</ol>
+
+
+<p>A global environment is not an office. Often the most effective way to communicate is asynchronously, that means stop writing tons of email and start using issue mentions and chat tools. Tickets can be read from the entire team and for this reason it is important to properly use those tools even if people are working from the same location.</p>
+
+<ol start="3">
+  <li>
+    <strong> Be Available</strong>
+  </li>
+</ol>
+
+
+<p>Be 100% available in the chat during working hours.</p>
+
+<p>This is the main communication channel and if I am not available then people just think I am probably out of office.</p>
+
+<ol start="4">
+  <li>
+    <strong> Communicate Your Status</strong>
+  </li>
+</ol>
+
+
+<p>Make it clear for everyone what you are working on. Also during meetings with your boss or other colleagues ask for feedback on your work, just to know if you&#8217;re on the right track.</p>
+
+<p>For example, I do this by assigning to me the ticket in progress and by updating it in a regular way.</p>
+
+<ol start="5">
+  <li>
+    <strong> Plan The Future</strong>
+  </li>
+</ol>
+
+
+<p>Do not talk too much about the past, but use the meetings to plan the future. Sharing future plans will increase the chances to work together and allow to save time.</p>
+
+<ol start="6">
+  <li>
+    <strong> Do Be Seen</strong>
+  </li>
+</ol>
+
+
+<p>Don’t be shy and show your face during online meetings. There is no need to avoid face-to-face meetings, even if we need them only for a minute.</p>
+
+<p>Unfortunately I never tried any sort of always-on video portals like Perch (<a href="https://perch.co/">https://perch.co/</a>), but I would like to have one of those portals in the relax area in order to enjoy a coffee break with remote colleagues.</p>
+
+<ol start="7">
+  <li>
+    <strong> Bond in Real Life</strong>
+  </li>
+</ol>
+
+
+<p>Take advantage of business trips to also spend time with others and make sure to do have fun together. Any opportunity to &#8220;team build” will improve collaboration with colleagues.</p>
+
+<ol start="8">
+  <li>
+    <strong> Say Thank You</strong>
+  </li>
+</ol>
+
+
+<p>If someone helps me in some way, then I like to use mentions in order to highlight it and give credit. It always feels good to receive a thanks and it will make future collaborations easier.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Birth of Computer Science]]></title>
+    <link href="http://fsferrara.github.io/the-birth-of-computer-science/"/>
+    <updated>2013-10-20T01:33:41+00:00</updated>
+    <id>http://fsferrara.github.io/the-birth-of-computer-science</id>
+    <content type="html"><![CDATA[<p>La nascita dell&#8217;informatica.</p>
+
+<p>Il primo kernel Linux è stato pubblicato nel 1991, l’annuncio del primo sistema operativo della famiglia Windows risale al 1983, la nascita dell&#8217;informatica come disciplina scientifica risale al 1953, il primo calcolatore programmabile digitale al 1941 (Z3 di Zuse); in realtà tutto scaturisce da una storia molto più lunga che parte dagli studi di Leibniz quando non esistevano i calcolatori digitali, e coinvolge grandi studiosi come Frege, Gödel, e Turing.</p>
+
+<!--more-->
+
+
+<h2>Gottfried Wilhelm von Leibniz</h2>
+
+<p>Leibniz (Lipsia, 21 giugno 1646 – Hannover, 14 novembre 1716), è stato un filosofo, matematico, e logico tedesco. Ai suoi tempi la logica era quella Aristotelica, quindi del tipo soggetto-predicato.</p>
+
+<p>Leibniz fu il primo ad intuire l’<em style="mso-bidi-font-style: normal;">elaborazione simbolica</em> con il suo progetto della <strong>Characteristica Universalis</strong>. L’idea alla base della Cu (Characteristica Universalis) era quella di creare un linguaggio universale per migliorare le comunicazioni politiche, religiose, e commerciali; quindi la Cu doveva essere un linguaggio in grado di guidare ogni sorta di ragionamento.</p>
+
+<p>Il progetto della Cu prevedeva:</p>
+
+<ol>
+<li><p><!-- [if !supportLists]-->Una</p>
+
+<p><strong>Lista</strong> dei concetti primitivi e simboli corrispondenti</p></li>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><!--[endif]-->Un’</p>
+
+<p><strong>Arte Combinatoria</strong> utile a combinare i concetti primitivi:</p>
+
+<ol>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><!--[endif]--></p>
+
+<p><span style="text-decoration: underline;">Ars Iudicandi</span>: procedura di decisione della verità</p></li>
+<li><p><!--[endif]--></p>
+
+<p><span style="text-decoration: underline;">Ars Invenendi</span>: procedura di decisione generativa</p></li>
+</ol>
+</li>
+</ol>
+
+
+<p>Notiamo che l’Ars Iudicandi e l’Ars Invenendi <em>prevedevano l’introduzione nel sistema della Cu di due procedure effettive</em>, ovvero ci doveva essere un procedimento preciso (algoritmo) sia per decidere la verità di una sentenza del linguaggio (Ars Iudicandi), sia per ottenere altre verità dalle verità che già conosciamo (Ars Invenendi).</p>
+
+<p>I concetti di <strong>Procedura Effettiva</strong> e <strong>Calcolo Simbolico</strong> sono dunque nati da quest’idea di Leibniz.</p>
+
+<p>Purtroppo il programma di sviluppare questo linguaggio è solo un progetto di Leibniz che non è mai stato sviluppato. Abbiamo solo dei documenti e schizzi a riguardo, che saranno poi usati da Frege.</p>
+
+<p>Qui notiamo che l’Ars Iudicandi prevede una sorta di predicato dim(x,y), vero quando x è (il numero di) una dimostrazione della formula (di numero) y. Quindi è quasi un esempio compiuto di <strong>Sistema Formale</strong>.</p>
+
+<h2>Immanuel Kant</h2>
+
+<p>Kant (Königsberg, 22 aprile 1724 – Königsberg, 12 febbraio 1804) è stato un filosofo tedesco. Egli scrive un’opera alla fine del ‘700 nella quale diceva: “<em>La matematica è una cosa certa, e noi dobbiamo studiare solo come arrivare a questa certezza. Inoltre ci si può chiedere: perché la matematica è certa? Qual è il suo fondamento?</em>”.</p>
+
+<p>Frege proverà a rispondere a questa domanda.</p>
+
+<h2>Friedrich Ludwig Gottlob Frege</h2>
+
+<p>Frege (Wismar, 8 novembre 1848 – Bad Kleinen, 26 luglio 1925) è stato un matematico, logico e filosofo tedesco, padre della logica matematica moderna.</p>
+
+<p>Frege voleva rispondere alla domanda posta da Kant (<em>“Perché la matematica è certa?”</em>), usando l’intuizione che aveva avuto Leibniz nella sua Characteristica Universalis.</p>
+
+<p>Qui è introdotta la <strong>Tesi Logicista</strong> (o <strong>Programma Logicista</strong>):</p>
+
+<p align="center">
+  “La Matematica è riconducibile alla Logica”
+</p>
+
+
+<p>Si afferma che la matematica è logica! Per portare avanti il Programma Logicista, Frege introduce la logica del primo e del secondo ordine come la conosciamo attualmente. Lui la chiamava <em>Ideografia</em>.</p>
+
+<p>Nel 1879 Frege propose l’<em style="mso-bidi-font-style: normal;">Ideografia</em> un “linguaggio in formule del pensiero puro, a imitazione di quello aritmetico” in cui dice: il modo più sicuro di condurre una dimostrazione è quello puramente logico, il quale astrae dalla natura particolare delle cose e si basa soltanto sulle leggi sulle quali si fonda ogni conoscenza.</p>
+
+<p>A supporto della Tesi Logicista, fu introdotto il primo esempio compiuto di <strong>Sistema Formale</strong>, ovvero un sistema che vincola il processo dimostrativo in modo tale che è sempre possibile riconoscere mediante un procedimento algoritmico se una qualsiasi configurazione di simboli è una dimostrazione oppure no.</p>
+
+<p>Questo <em>sistema formale</em> prevedeva:</p>
+
+<ol>
+<li><p><!-- [if !supportLists]-->Insieme Finito di</p>
+
+<p><strong>Assiomi Logici</strong>.</p></li>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><!--[endif]-->Insieme Finito di</p>
+
+<p><strong>Regole di Inferenza</strong> che, senza introdurre conoscenza implicita, ci permettano di dedurre gli assiomi della Matematica dall’insieme di <em>Assiomi Logici</em>.</p></li>
+</ol>
+
+
+<p>Inoltre ci sono due importanti <strong>Condizioni di Effettività</strong> che specificano un <em>Sistema Formale</em>:</p>
+
+<ul>
+<li><p><!-- [if !supportLists]-->L’insieme degli Assiomi Logici è</p>
+
+<p><strong>Effettivamente Decidibile</strong></p></li>
+<li>L’insieme delle Dimostrazioni Logiche è <strong>Effettivamente Decidibile</strong></li>
+</ul>
+
+
+<p>In quest’ultima richiesta si intravede qualcosa del teorema di Gödel; si chiede che il predicato dim(x,y) sia effettivamente decidibile!</p>
+
+<p>Come in Leibniz, anche questa volta ci deve essere un procedimento formale (Algoritmo) che ci assicuri le condizioni di effettività. Ma questa volta le condizioni di effettività sono espressamente richieste.</p>
+
+<p>Inoltre Leibniz e Frege hanno obiettivi diversi, il primo vuole un linguaggio universale, mentre il secondo vuole verificare la certezza della matematica (un problema più piccolo rispetto alla definizione di una lingua universale); entrambi usano la logica come strumento per raggiungere il proprio fine epistemologico.</p>
+
+<h2>Bertrand Arthur William Russell</h2>
+
+<p>Frege prosegue con il suo programma logicista puntando a dimostrare gli assiomi della matematica (gli assiomi di Peano) partendo solo dagli <em>assiomi logici</em>. Nel sistema formale definito da Frege si possono individuare:</p>
+
+<ul>
+<li>Il principio di <strong>Coestensione</strong>: “data una proprietà P, esiste l’insieme y di tutti gli x che godono della proprietà P”</li>
+<li><p><!-- [if !supportLists]-->Il principio del</p>
+
+<p><strong>Terzo Escluso</strong>: almeno uno tra <em>x</em> e <em>not</em> <em>x</em> deve essere vero.</p></li>
+</ul>
+
+
+<p>Russell (Trellech, 18 maggio 1872 – Penrhyndeudraeth, 2 febbraio 1970), è stato un filosofo, logico e matematico gallese. Si interessò al lavoro di Frege, e formulò il famoso Paradosso di Russell, causa della caduta del Programma Logicista.</p>
+
+<p><span style="text-decoration: underline;">Paradosso di Russell</span>: Supponiamo la proprietà: <em>not__(x appartiene ad x)</em></p>
+
+<p>Un elemento che gode di questa proprietà non appartiene a se stesso. Per il principio della coestensione c’è l’insieme di tutti gli elementi che godono di questa proprietà. Quindi diciamo y l’insieme di tutti gli elementi che non appartengono a se stessi. Adesso ci chiediamo: y appartiene a se stesso?</p>
+
+<ul>
+<li><p><!-- [if !supportLists]-->Se y appartiene a se stesso allora gode della proprietà di non appartenere a se stesso.</p></li>
+<li><p><!-- [if !supportLists]-->Se y non appartiene a se stesso allora per come è definito deve appartenere a se stesso</p></li>
+</ul>
+
+
+<p>In entrambi i casi, grazie al principio del terzo escluso, giungiamo ad una contraddizione (questa è un’<strong>antinomia</strong>).</p>
+
+<p>Russell nel 1901 formulò il paradosso e si rese conto delle conseguenze che avrebbe avuto per il programma logicista. Non esitò a mettersi in contatto con Frege con una lettera nell&#8217;estate del 1902 in cui illustra il paradosso.</p>
+
+<p>Frege prese atto delle conseguenze distruttive per il sistema che aveva costruito in quegli anni e decise di scrivere un&#8217;appendice ai suoi Principî in cui confessava il fallimento della sua opera.</p>
+
+<p>Siamo davanti ad una scelta:</p>
+
+<p class="MsoListParagraph">
+  <!-- [if !supportLists]-->&#8211;
+
+  <em> rinunciare al principio del terzo escluso</em>: e quindi rinunciare alla logica classica
+</p>
+
+
+<p>oppure</p>
+
+<p class="MsoListParagraph">
+  <!-- [if !supportLists]-->&#8211;
+
+  <em> rinunciare al principio di coestensione</em>: ma in questo caso non si riescono più a derivare gli assiomi della matematica
+</p>
+
+
+<p>Qui il Programma Logicista, e sorge il <span style="text-decoration: underline;">problema della certezza della matematica</span>.</p>
+
+<p>A seguire ci saranno due programmi che puntano a risolvere il problema della certezza della matematica: Il <strong>Programma Intuizionista</strong>, ed il <strong>Programma di Hilbert</strong>.</p>
+
+<h2>Luitzen Egbertus Jan Brouwer</h2>
+
+<p>Brouwer (Overschie, 27 febbraio 1881 – Blaricum, 2 dicembre 1966) è stato un matematico olandese. Fondò la <strong>Scuola Intuizionista (o costruttivista)</strong>, nella quale dubitò</p>
+
+<p>del <em>principio del terzo escluso</em>.</p>
+
+<p>I requisiti del Programma Intuizionista erano:</p>
+
+<ol>
+<li><p><!--[endif]-->Eliminazione del Principio del Terzo Escluso su totalità infinite.</p></li>
+<li><p>Interpretazione delle dimostrazioni in modo Costruttivista: cioè una dimostrazione di “esiste x tale che P(x)” deve effettivamente esibire un elemento y per il quale è vero P(y).</p></li>
+</ol>
+
+
+<p>Quindi gli intuizionisti puntano a limitare la matematica, eliminando l’uso di proposizioni ideali, come l’infinito in atto (o infinito attuale), che hanno permesso alla matematica di raggiungere ottimi risultati.</p>
+
+<h2>David Hilbert</h2>
+
+<p>Hilbert (Königsberg, 23 gennaio 1862 – Gottinga, 14 febbraio 1943) è stato un matematico tedesco. Rispose agli intuizionisti con il cosiddetto <strong>Programma di Hilbert</strong>.</p>
+
+<p>Al contrario di Frege che voleva dimostrare gli assiomi matematici patendo dagli assiomi logici, Hilbert voleva formalizzare la matematica con degli assiomi e poi verificare la coerenza delle teorie matematiche formalizzate.</p>
+
+<p>Quindi:</p>
+
+<ol>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><!--[endif]-->Formalizzare tutte le teorie matematiche</p>
+
+<p><em>“T”</em> con sistemi formali T</p></li>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><!--[endif]-->Dimostrare la coerenza di tali sistemi T con</p>
+
+<p><span style="text-decoration: underline;">metodi matematici finitisti</span>.</p></li>
+</ol>
+
+
+<p>Si comincio con la più semplice delle teorie, ossia con l’Aritmetica Elementare. I <em>metodi matematici finitisti</em> non sono mai stati definiti da Hilbert con precisione. Di sicuro sono metodi matematici in cui vengono chiesti i requisiti intuizionisti: quindi no al terzo escluso su totalità infinite e interpretazione costruttivista delle dimostrazioni. Molti concordano che i metodi finitisti sono inclusi nell’aritmetica Primitiva Ricorsiva dove valgono gli assiomi di Peano che descrivono l’aritmetica elementare.</p>
+
+<p>Nasce la meta-matematica, ossia la parte della matematica che consente di studiare la matematica da punti di vista generali. Stiamo cioè usando la matematica stessa per risolvere il <span style="text-decoration: underline;">problema della certezza della matematica</span>.</p>
+
+<p>Nella metamatematica possiamo studiare varie proprietà dei sistemi formali, ad esempio:</p>
+
+<ul>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><strong>Coerenza</strong>: se T dimostra A allora non può dimostrare not A</p></li>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><strong>Correttezza</strong>: se T dimostra A allora A è vero nella teoria <em style="mso-bidi-font-style: normal;">“T”</em></p></li>
+<li><strong>Completezza</strong>: se A è vero nella teoria <em>“T”</em> allora T dimostra A</li>
+</ul>
+
+
+<p>Notiamo che la correttezza di un sistema formale T implica la sua coerenza.</p>
+
+<p>Ricapitolando Hilbert con il suo <strong>Programma della Coerenza</strong> (che è solo una parte del <strong>Programma di Hilbert</strong>) vuole dimostrare la coerenza della matematica utilizzando la matematica stessa.</p>
+
+<h2>Principia Mathematica (PM)</h2>
+
+<p>I Principia Mathematica, scritti da Russell e Whitehead tra il 1910 e il 1913, rappresentano un’importante tentativo di formalizzare la matematica con la logica. Traggono origine dal lavoro di Frege.</p>
+
+<p>Chiameremo PM il sistema formale formalizzato in questo lavoro.</p>
+
+<h2>Kurt Gödel</h2>
+
+<p>Gödel (Brno, 28 aprile 1906 – Princeton, 14 gennaio 1978) è stato un matematico, logico e filosofo statunitense di origine austro-ungarica, noto soprattutto per i suoi lavori sull&#8217;incompletezza delle teorie matematiche. Gödel è ritenuto uno dei più grandi logici di tutti i tempi insieme a Frege e Aristotele.</p>
+
+<p>Gödel si interessa al Programma di Hilbert, e formula il suo <strong>primo teorema di incompletezza</strong>:</p>
+
+<p style="margin-left: 35.4pt;">
+  <em>Se PM è coerente, allora esiste una formula G nel linguaggio L(PM) tale che G è vera e non è dimostrabile in PM ne G ne not G</em>
+</p>
+
+
+<p>Ne segue come corollario il <strong>secondo teorema di incompletezza</strong>:</p>
+
+<p style="margin-left: 35.4pt;">
+  <em>Se PM è coerente, e dato che la coerenza di PM è esprimibile all’interno di PM stesso (consis(PM) appartiene a L(PM)) allora in PM non è dimostrabile consis(PM)</em>
+</p>
+
+
+<p>Il <strong>secondo teorema di incompletezza</strong> è quello che fa cadere il <strong>Programma di Hilbert</strong> poiché afferma che non possiamo dimostrare la coerenza di PM all’interno di PM stesso,</p>
+
+<p>cioè non possiamo dimostrare la coerenza della matematica all’interno della matematica stessa.</p>
+
+<p>Però i teoremi di incompletezza si riferiscono al <strong>Sistema Formale</strong> PM. Per far cadere definitivamente il Programma di Hilbert bisognava generalizzare i teoremi di incompletezza a qualsiasi <strong>Sistema Formale</strong> che contiene l’aritmetica elementare.</p>
+
+<h2>Generalizzazione dei Teoremi di Incompletezza</h2>
+
+<p>Vogliamo generalizzare i teoremi di incompletezza in questo modo:</p>
+
+<p><em>Per ogni sistema formale S tale che:</em></p>
+
+<ol>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><em>S contiene P (Aritmetica di Peano)</em></p></li>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><em>S soddisfa la <strong>condizioni di effettività</strong> di Frege</em></p>
+
+<ul>
+<li><p><!-- [if !supportLists]--></p>
+
+<p> <em>a) L’insieme degli assiomi è effettivamente decidibile</em></p></li>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><em>b) L’insieme delle dimostrazioni è effettivamente decidibile</em></p></li>
+</ul>
+</li>
+<li><p><!-- [if !supportLists]--></p>
+
+<p><em>S è coerente</em></p></li>
+</ol>
+
+
+<p><em>Allora per S valgono i teoremi di incompletezza</em></p>
+
+<p>Le ipotesi 1 e 3 sono ben precise. L’ipotesi 2.a e 2.b invece no! Infatti esse chiedono di avere due funzioni <strong>effettivamente calcolabili</strong> f(x) e g(Y) le quali ci decidano rispettivamente le formule ben formate di S e le dimostrazioni di S.</p>
+
+<p>Questo è il punto di snodo tra i fondamenti della matematica e la nascita dell’informatica. Infatti una funzione è effettivamente calcolabile se esiste un algoritmo per essa.</p>
+
+<p>Ma quale’è il concetto di algoritmo? Quali sono le funzioni calcolabili mediante un procedimento di calcolo (algoritmo)?</p>
+
+<p>Tutt’ora non esiste un concetto di algoritmo preciso. La classe di tutti gli algoritmi è delineata con la tesi di Church-Turing, la quale essendo una tesi non può essere dimostrata.</p>
+
+<h2>Alan Mathison Turing</h2>
+
+<p>Turing (Londra, 23 giugno 1912 – Wilmslow, 7 giugno 1954) è stato un matematico, logico e crittanalista britannico, considerato uno dei padri dell&#8217;informatica.</p>
+
+<p>Lavorò alla generalizzazione del teorema di Gödel, tentando di rispondere alla domanda: <em>“che cos’è una funzione parzialmente calcolabile mediante un procedimento di calcolo (algoritmo)?”</em>.</p>
+
+<p>Church a quei tempi lavorava alla stessa domanda definendo la classe delle funzioni matematiche PRF, per poi arrivare ad un procedimento di calcolo (λ-calcolo).</p>
+
+<p>Turing invece cominciò questo lavoro cominciando a definire il procedimento di calcolo (definito dalla <strong>Macchina di Turing</strong>), per poi arrivare alla classe di tutte le funzioni calcolabili da una <strong>Macchina di Turing</strong>.</p>
+
+<p>Per definire la sua Macchia di Turing (d’ora in poi MdT), Turing osservo il comportamento di un essere umano che calcola. Quindi individua una serie di restrizioni:</p>
+
+<ol>
+<li><p><!-- [if !supportLists]-->L’umano effettua dei calcoli aiutandosi con un foglio. Nel caso di una macchina possiamo pensare ad un nastro potenzialmente infinito fatto di caselle contigue. In ogni casella possiamo</p>
+
+<p>scrivere un simbolo appartenente ad un alfabeto.</p></li>
+<li><p><!-- [if !supportLists]-->Limiti all’uso del nastro</p>
+
+<ul>
+<li><p><!-- [if !supportLists]-->a.</p>
+
+<p><!--[endif]-->Limite Percettivo: c’è un limite superiore B al numero di caselle contigue osservabili in un istante (questo implica che ci si può spostare sul nastro per vedere le prossime B caselle).</p></li>
+<li><p><!-- [if !supportLists]-->b.</p>
+
+<p><!--[endif]-->Limite di Memoria: l’alfabeto dei simboli scrivibili sul nastro è finito poiché l’essere umano non riesce a distinguere e ricordareinfiniti simboli.</p></li>
+</ul>
+</li>
+<li><p><!-- [if !supportLists]-->Il comportamento dipende dallo stato mentale (stato di memoria) dell’essere umano. Questo stato mentale dipende dalle azioni fatte precedentemente. Senza indagare molto sul cervello umano, imponiamo che questi stati siano in numero finito (deciso a priori).</p></li>
+<li><p><!-- [if !supportLists]-->Limitiamo il comportamento dell’essere umano che calcola, senza perdita di generalità, al compimento di un’azione per volta:</p>
+
+<ul>
+<li><p><!-- [if !supportLists]-->a.</p>
+
+<p><!--[endif]-->Si può cambiare il contenuto solo delle caselle osservate</p></li>
+<li><p><!-- [if !supportLists]-->b.</p>
+
+<p><!--[endif]-->Ci si può spostare di un numero L di caselle per volta</p></li>
+<li><p><!-- [if !supportLists]-->c.</p>
+
+<p><!--[endif]-->Si può cambiare lo stato mentale</p></li>
+</ul>
+</li>
+<li><p><!-- [if !supportLists]-->Il calcolo è fatto in maniera Deterministica, dato lo stesso input otteniamo sempre lo stesso output</p></li>
+</ol>
+
+
+<p>Ma come imponiamo la condizione di determinismo?</p>
+
+<p>Consideriamo tutte le possibili azioni che può fare l’essere umano durante il calcolo. Diciamo C l’insieme di tutte le possibili coppie <stato mentale, configurazione dei simboli osservati>. Per ogni elemento di C si può scegliere di fare un’azione a scelta contenuta nell’insieme possibili di azioni A (scrittura di un simbolo, spostamento a destra, spostamento a sinistra, cambiamento di stato mentale). Definiamo l’insieme di tutte le possibili istruzioni I=CxA. L’insieme delle istruzioni come definito contiene delle istruzioni che definiscono un algoritmo <strong>non deterministico</strong>, poiché a parità di stato mentale e configurazioni di simboli osservati, possiamo trovare istruzioni che effettuano azioni diverse. Poniamo qui una condizione di <strong>determinismo</strong>, chiedendo di avere come insieme di istruzioni solo un sottoinsieme di I nel quale non compaiano istruzioni che possono essere applicate nello stesso stato del calcolo.</p>
+
+<p>Questa è l’analisi dell’essere umano che calcola.</p>
+
+<p>Adesso definiamo una macchina che simulerà il comportamento di calcolo dell’essere umano. Questa macchina avrà delle configurazioni interne q, che corrispondono agli stati mentali dell’umano. Lavora su un nastro osservando ad ogni nastro un numero B di caselle contigue, e può spostarsi di un numero L di caselle a destra o a sinistra. Può usare i simboli dell’alfabeto per scrivere sulla porzione di nastro osservata, e può cambiare la sua configurazione interna. Questa macchina riproduce il comportamento di calcolo di un essere umano.</p>
+
+<p>Ponendo i vincoli B=1 e L=1 abbiamo proprio la definizione di <strong>Macchina di Turing</strong> (MdT). Chiamiamo classe delle funzioni Turing calcolabili (o T-calcolabili), la classe delle funzioni calcolabili con una MdT.</p>
+
+<p>Turing arriva a formulare la seguente tesi:</p>
+
+<p align="center">
+  “Ogni funzione calcolabile da un essere umano mediante algoritmo è una funzione T-calcolabile”
+</p>
+
+
+<p>Notiamo che questa tesi è però ristretta alle funzioni calcolate da un essere umano, e non da un qualsiasi agente di calcolo (come un calcolatore). Proviamo ad estendere questa tesi in questo modo:</p>
+
+<p align="center">
+  “Ogni funzione calcolabile da un calcolatore mediante algoritmo è una funzione T-calcolabile”
+</p>
+
+
+<p>Per arrivare alla tesi di Church-Turing, osserviamo che i limiti B ed L sono soggetti ai limiti della fisica: la teoria delle relatività ci vieta di oltrepassare la velocità della luce. Inoltre in una singola cella di nastro possiamo registrarci un simbolo preso da un alfabeto finito, perché assumiamo che la materia (del nastro) abbia un vincolo di atomicità, ma su questo non è ancora stata formulata alcuna teoria scientifica.</p>
+
+<p>Considerando i limiti della fisica possiamo riscrivere la tesi ed ottenere finalmente la <strong>Tesi di Church-Turing</strong>:</p>
+
+<p align="center">
+  “Ogni funzione calcolabile da un algoritmo è una funzione T-calcolabile”
+</p>
+
+
+<p>Con questa tesi sono stati generalizzati i teoremi di incompletezza di Gödel, chiedendo che le funzioni f(x) e g(Y) siano T-calcolabili. Cade definitivamente il <strong>Programma di Hilbert</strong>,</p>
+
+<p>e il suo tentativo di verificare la certezza della matematica.</p>
+
+<h2>Sviluppi futuri</h2>
+
+<p>Quindi dal problema della matematica è nata la MdT, e Turing stesso definì la <strong>Macchina di Turing Universale</strong>, la quale è programmabile proprio come un moderno calcolatore digitale.</p>
+
+<p>Da questo nasce il ramo dell’Intelligenza Artificiale (IA), e più in generale dell’Informatica.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello Everyone!]]></title>
+    <link href="http://fsferrara.github.io/hello-all/"/>
+    <updated>1983-09-20T22:20:42+00:00</updated>
+    <id>http://fsferrara.github.io/hello-all</id>
+    <content type="html"><![CDATA[<p>I&#8217;m a software engineer and a passionate software developer living in Rome. Addicted to the Linux operating system, I love working with all the open source technologies.</p>
+
+<p>In my spare time, I like do mountain biking and some jogging.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blogging With Octopress and Jekyll - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Blogging With Octopress and Jekyll - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
 
   
-  <meta name="description" content="Hello!
-">
+  <meta name="description" content="Nowadays, most blogs are powered by Wordpress. I am a Wordpress users too and I have to admit it is really a great for blogs.
+As others CMS, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +22,7 @@
   <link rel="canonical" href="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -32,14 +32,26 @@
 <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
+  <h1><a href="/">Saverio Ferrara</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>...another Software Engineer blog!</h2>
   
 </hgroup>
 
@@ -59,6 +71,7 @@
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/story">Story</a></li>
   <li><a href="/about">About</a></li>
 </ul>
 
@@ -86,7 +99,211 @@
   </header>
 
 
-<div class="entry-content"><p>Hello!</p>
+<div class="entry-content"><p>Nowadays, most blogs are powered by <em>Wordpress</em>. I am a Wordpress users too and I have to admit it is really a great for blogs.<br/>
+As others CMS, Wordpress requires a database and PHP in order to process the <strong>dynamic</strong> pages server-side.
+<em>Jekyll</em> is a static site generator. With it I can generate all my blog pages in on my computer and then publish the entire website on a static hosting server.</p>
+
+<!--more-->
+
+
+<h2>Prepare the Jekyll environment</h2>
+
+<p>The first drawback is that you need to set-up a local dev environment in order to be able to generate a static website on your machine. For Jekyll/Octopress you need several tool: git, ruby with bundler, and a javascript runtime.</p>
+
+<h3>git</h3>
+
+<p>I bet you already know what git is.</p>
+
+<h3>ruby</h3>
+
+<p>Ruby is an open source programming language. In order to install it locally, the are convenient ways such as <a href="http://rbenv.org/">rbenv</a> or <a href="https://rvm.io/">rvm</a>.
+Make sure to install at least ruby 1.9.3 in order to be compatible with <em>Octopress</em> 3.0 and check with:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; ruby --version
+</span><span class='line'>ruby 2.4.3p205 (2017-12-14 revision 61247) [x86_64-darwin16]</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>A javascript runtime</h3>
+
+<p>My favourite javascript runtime is <a href="https://nodejs.org/">nodejs</a>. A convenient way to install it is <a href="https://github.com/creationix/nvm">nvm</a>. After the installation you can check it with:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; node --version
+</span><span class='line'>v6.11.2</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Bundler</h3>
+
+<p>Ruby libraries are, almost always, distributed in form of ruby-gems (in short <em>gems</em>).<br/>
+<strong>Bundler</strong> provides a consistent environment for ruby projects by tracking and installing the exact gems and versions that are needed. All the <em>gems</em> dependencies are declared in the <strong>Gemfile</strong> and jekyll websites usually have a Gemfile for the dependencies.</p>
+
+<p>Bundler is a gem itself and to install it (globally in your ruby environment) just type:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note: if you are using an old version of <em>rbenv</em>, then you&rsquo;ll need to run <code>rbenv rehash</code> in order to be able to start using <em>bundler</em>.</p>
+
+<h2>Start a new website</h2>
+
+<p>For my first experience with <em>Jekyll</em> I am going with <em>Octopress</em> (a blogging framework based on Jekyll). It is basically Jekyll with a new graphic theme and additional plugins.
+To start clone the Octopress source code <code>git clone git://github.com/imathis/octopress.git octopress</code> and then:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; cd octopress/
+</span><span class='line'>[git:master]&gt; bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>With <code>bundle install</code> we are downloading all the gems needed to generate the website locally.<br/>
+A very special gem is <em>rake</em>, a <em>Make-like</em> task-runner implemented in ruby. It is used in Octopress to simplify some development task that are usually performed manually when using a plain Jekyll installation.
+For example, I used <code>bundle exec rake setup_github_pages</code> to publish my local website to github-pages. This task created a <em>source</em> branch for the local <em>Octopress</em> installation and setup a <em>master</em> branch in the <em>_deploy</em> subfolder.</p>
+
+<p> pushed the local octopress installation to the <em>source</em> branch of my github repository.</p>
+
+<h3>Setup an Octopress theme</h3>
+
+<p>In order to use the default theme, just type:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[git:source *]&gt; bundle exec rake install
+</span><span class='line'>## Copying classic theme into ./source and ./sass
+</span><span class='line'>mkdir -p source
+</span><span class='line'>cp -r .themes/classic/source/. source
+</span><span class='line'>mkdir -p sass
+</span><span class='line'>cp -r .themes/classic/sass/. sass
+</span><span class='line'>mkdir -p source/_posts
+</span><span class='line'>mkdir -p public</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <em>classic</em> theme has been copied in the <em>source</em> and <em>sass</em> directories.
+Also the <em>public</em> folder has been created: it will host my generated pages.</p>
+
+<h3>Generate the static website</h3>
+
+<p>Using <em>rake</em>, just issue:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[git:source *]&gt; bundle exec rake generate
+</span><span class='line'>## Generating Site with Jekyll
+</span><span class='line'>directory source/stylesheets
+</span><span class='line'>    write source/stylesheets/screen.css
+</span><span class='line'>Configuration file: /opt/home/github/fsferrara/octopress/_config.yml
+</span><span class='line'>            Source: source
+</span><span class='line'>       Destination: public
+</span><span class='line'>      Generating...
+</span><span class='line'>                    done.
+</span><span class='line'> Auto-regeneration: disabled. Use --watch to enable.</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Generate the static website</h3>
+
+<p>Always using <em>rake</em>, just issue <code>bundle exec rake deploy</code>.</p>
+
+<h3>Commit the website source</h3>
+
+<p>This is the Jekyll feature I like most: I can version the source code of the website :-)
+For the first commit:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[git:source *]&gt; git add .
+</span><span class='line'>[git:source +]&gt; git commit -m "my first octopress commit"
+</span><span class='line'>[git:source]&gt; git push origin source</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Since I am using github as hosting solution, I have a <em>source</em> branch containing the source code of the blog, and a <em>master</em> branch (linked to the <em>_deploy</em> subfolder) containing the generated website.</p>
+
+<h3>Restoring the local website on a new computer</h3>
+
+<p>Or at least, restoring the local website on the same computer with a new os installation.<br/>
+The steps are:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git
+</span><span class='line'>&gt; cd fsferrara.github.io
+</span><span class='line'>[git:master]&gt; git checkout source
+</span><span class='line'>[git:source]&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git _deploy
+</span><span class='line'>[git:source]&gt; bundle install
+</span><span class='line'>[git:source]&gt; bundle exec rake generate
+</span><span class='line'>[git:source]&gt; bundle exec rake deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The procedure is quite the same, except the fact I had to clone the <em>master</em> branch in the <em>_deploy</em> subfolder because I am using github-pages.</p>
+
+<h2>My first post with Octopress</h2>
+
+<p>My first post is exactly this one you are now reading. As per Jekyll convention it is named in a format like <code>YYYY-MM-DD-post-title.markdown</code> and it is placed in the <em>source/_posts</em> directory.
+Anyway, the <em>new_post</em> rake task simplify the operation of adding a new post. I could have run this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[git:source]&gt; bundler exec rake new_post["Blogging with Octopress and Jekyll"]
+</span><span class='line'>mkdir -p source/_posts
+</span><span class='line'>Creating new post: source/_posts/2018-01-05-blogging-with-octopress-and-jekyll.markdown</span></code></pre></td></tr></table></div></figure>
+
+
+<p>to have the new post file in the <em>source/_posts</em> folder. Additionally, the post file is created with the standard <strong>Front Matter</strong>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[git:source]&gt; cat source/_posts/2018-01-05-blogging-with-octopress-and-jekyll.markdown
+</span><span class='line'>---
+</span><span class='line'>layout: post
+</span><span class='line'>title: "Blogging with Octopress and Jekyll"
+</span><span class='line'>date: 2018-01-05 23:01:08 +0100
+</span><span class='line'>comments: true
+</span><span class='line'>categories:
+</span><span class='line'>---</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Front matter</em> is where Jekyll starts to get really cool. Any file that contains a <a href="https://jekyllrb.com/docs/frontmatter/">YAML front matter</a> block will be processed by Jekyll as a special file. This block adds meta-data to the file sush as permalink, categories, tags, and so on.</p>
+
+<h2>The about page</h2>
+
+<p>Similar to the post creation, the rake task <em>new_page</em> helps to create new pages.<br/>
+For the usual <em>about</em> page: <code>bundle exec rake new_page["about"]</code>. Here are <a href="http://octopress.org/docs/blogging/">more information about Octopress pages</a>.</p>
+
+<p>The <em>about</em> page usually has a link in the main menu. To add such a link, modify the file <code>source/_includes/custom/navigation.html</code> to add a new entry.</p>
+
+<h2>Preview the changes locally before publishing</h2>
+
+<p>Jekyll is able to generate and serve the static website locally. Octopress offers the rake task <code>bundle exec rake preview</code> that starts a web server locally listening at *<a href="http://localhost:4000/*.">http://localhost:4000/*.</a>
+This task will also watch for local changes and apply them immediately to the local preview.</p>
 </div>
 
 
@@ -95,7 +312,7 @@
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+<span class="byline author vcard">Posted by <span class="fn">Saverio Ferrara</span></span>
 
       
 
@@ -105,12 +322,18 @@
 <time class='entry-date' datetime='2018-01-05T23:01:08+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2018</span></span> <span class='time'>11:01 pm</span></time>
       
 
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>, <a class='category' href='/blog/categories/thoughts/'>thoughts</a>
+  
+</span>
+
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/" data-via="" data-counturl="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/" >Tweet</a>
   
   
   
@@ -119,10 +342,18 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/getting-started-with-graphql/" title="Previous Post: Getting Started With GraphQL">&laquo; Getting Started With GraphQL</a>
+      
       
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -136,10 +367,64 @@
         <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
       </li>
     
+      <li class="post">
+        <a href="/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
 
 
 
@@ -150,12 +435,28 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2018 - Your Name -
+  Copyright &copy; 2018 - Saverio Ferrara -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/';
+        var disqus_url = 'http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

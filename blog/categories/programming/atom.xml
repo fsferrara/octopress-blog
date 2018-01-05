@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Programming | Saverio Ferrara]]></title>
+  <link href="http://fsferrara.github.io/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://fsferrara.github.io/"/>
+  <updated>2018-01-06T00:34:31+01:00</updated>
+  <id>http://fsferrara.github.io/</id>
+  <author>
+    <name><![CDATA[Saverio Ferrara]]></name>
+    <email><![CDATA[me@fsferrara.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Blogging With Octopress and Jekyll]]></title>
+    <link href="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/"/>
+    <updated>2018-01-05T23:01:08+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll</id>
+    <content type="html"><![CDATA[<p>Nowadays, most blogs are powered by <em>Wordpress</em>. I am a Wordpress users too and I have to admit it is really a great for blogs.<br/>
+As others CMS, Wordpress requires a database and PHP in order to process the <strong>dynamic</strong> pages server-side.
+<em>Jekyll</em> is a static site generator. With it I can generate all my blog pages in on my computer and then publish the entire website on a static hosting server.</p>
+
+<!--more-->
+
+
+<h2>Prepare the Jekyll environment</h2>
+
+<p>The first drawback is that you need to set-up a local dev environment in order to be able to generate a static website on your machine. For Jekyll/Octopress you need several tool: git, ruby with bundler, and a javascript runtime.</p>
+
+<h3>git</h3>
+
+<p>I bet you already know what git is.</p>
+
+<h3>ruby</h3>
+
+<p>Ruby is an open source programming language. In order to install it locally, the are convenient ways such as <a href="http://rbenv.org/">rbenv</a> or <a href="https://rvm.io/">rvm</a>.
+Make sure to install at least ruby 1.9.3 in order to be compatible with <em>Octopress</em> 3.0 and check with:</p>
+
+<pre><code>&gt; ruby --version
+ruby 2.4.3p205 (2017-12-14 revision 61247) [x86_64-darwin16]
+</code></pre>
+
+<h3>A javascript runtime</h3>
+
+<p>My favourite javascript runtime is <a href="https://nodejs.org/">nodejs</a>. A convenient way to install it is <a href="https://github.com/creationix/nvm">nvm</a>. After the installation you can check it with:</p>
+
+<pre><code>&gt; node --version
+v6.11.2
+</code></pre>
+
+<h3>Bundler</h3>
+
+<p>Ruby libraries are, almost always, distributed in form of ruby-gems (in short <em>gems</em>).<br/>
+<strong>Bundler</strong> provides a consistent environment for ruby projects by tracking and installing the exact gems and versions that are needed. All the <em>gems</em> dependencies are declared in the <strong>Gemfile</strong> and jekyll websites usually have a Gemfile for the dependencies.</p>
+
+<p>Bundler is a gem itself and to install it (globally in your ruby environment) just type:</p>
+
+<pre><code>gem install bundler
+</code></pre>
+
+<p>Note: if you are using an old version of <em>rbenv</em>, then you&rsquo;ll need to run <code>rbenv rehash</code> in order to be able to start using <em>bundler</em>.</p>
+
+<h2>Start a new website</h2>
+
+<p>For my first experience with <em>Jekyll</em> I am going with <em>Octopress</em> (a blogging framework based on Jekyll). It is basically Jekyll with a new graphic theme and additional plugins.
+To start clone the Octopress source code <code>git clone git://github.com/imathis/octopress.git octopress</code> and then:</p>
+
+<pre><code>&gt; cd octopress/
+[git:master]&gt; bundle install
+</code></pre>
+
+<p>With <code>bundle install</code> we are downloading all the gems needed to generate the website locally.<br/>
+A very special gem is <em>rake</em>, a <em>Make-like</em> task-runner implemented in ruby. It is used in Octopress to simplify some development task that are usually performed manually when using a plain Jekyll installation.
+For example, I used <code>bundle exec rake setup_github_pages</code> to publish my local website to github-pages. This task created a <em>source</em> branch for the local <em>Octopress</em> installation and setup a <em>master</em> branch in the <em>_deploy</em> subfolder.</p>
+
+<p> pushed the local octopress installation to the <em>source</em> branch of my github repository.</p>
+
+<h3>Setup an Octopress theme</h3>
+
+<p>In order to use the default theme, just type:</p>
+
+<pre><code>[git:source *]&gt; bundle exec rake install
+## Copying classic theme into ./source and ./sass
+mkdir -p source
+cp -r .themes/classic/source/. source
+mkdir -p sass
+cp -r .themes/classic/sass/. sass
+mkdir -p source/_posts
+mkdir -p public
+</code></pre>
+
+<p>The <em>classic</em> theme has been copied in the <em>source</em> and <em>sass</em> directories.
+Also the <em>public</em> folder has been created: it will host my generated pages.</p>
+
+<h3>Generate the static website</h3>
+
+<p>Using <em>rake</em>, just issue:</p>
+
+<pre><code>[git:source *]&gt; bundle exec rake generate
+## Generating Site with Jekyll
+directory source/stylesheets
+    write source/stylesheets/screen.css
+Configuration file: /opt/home/github/fsferrara/octopress/_config.yml
+            Source: source
+       Destination: public
+      Generating...
+                    done.
+ Auto-regeneration: disabled. Use --watch to enable.
+</code></pre>
+
+<h3>Generate the static website</h3>
+
+<p>Always using <em>rake</em>, just issue <code>bundle exec rake deploy</code>.</p>
+
+<h3>Commit the website source</h3>
+
+<p>This is the Jekyll feature I like most: I can version the source code of the website :-)
+For the first commit:</p>
+
+<pre><code>[git:source *]&gt; git add .
+[git:source +]&gt; git commit -m "my first octopress commit"
+[git:source]&gt; git push origin source
+</code></pre>
+
+<p>Since I am using github as hosting solution, I have a <em>source</em> branch containing the source code of the blog, and a <em>master</em> branch (linked to the <em>_deploy</em> subfolder) containing the generated website.</p>
+
+<h3>Restoring the local website on a new computer</h3>
+
+<p>Or at least, restoring the local website on the same computer with a new os installation.<br/>
+The steps are:</p>
+
+<pre><code>&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git
+&gt; cd fsferrara.github.io
+[git:master]&gt; git checkout source
+[git:source]&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git _deploy
+[git:source]&gt; bundle install
+[git:source]&gt; bundle exec rake generate
+[git:source]&gt; bundle exec rake deploy
+</code></pre>
+
+<p>The procedure is quite the same, except the fact I had to clone the <em>master</em> branch in the <em>_deploy</em> subfolder because I am using github-pages.</p>
+
+<h2>My first post with Octopress</h2>
+
+<p>My first post is exactly this one you are now reading. As per Jekyll convention it is named in a format like <code>YYYY-MM-DD-post-title.markdown</code> and it is placed in the <em>source/_posts</em> directory.
+Anyway, the <em>new_post</em> rake task simplify the operation of adding a new post. I could have run this:</p>
+
+<pre><code>[git:source]&gt; bundler exec rake new_post["Blogging with Octopress and Jekyll"]
+mkdir -p source/_posts
+Creating new post: source/_posts/2018-01-05-blogging-with-octopress-and-jekyll.markdown
+</code></pre>
+
+<p>to have the new post file in the <em>source/_posts</em> folder. Additionally, the post file is created with the standard <strong>Front Matter</strong>:</p>
+
+<pre><code>[git:source]&gt; cat source/_posts/2018-01-05-blogging-with-octopress-and-jekyll.markdown
+---
+layout: post
+title: "Blogging with Octopress and Jekyll"
+date: 2018-01-05 23:01:08 +0100
+comments: true
+categories:
+---
+</code></pre>
+
+<p><em>Front matter</em> is where Jekyll starts to get really cool. Any file that contains a <a href="https://jekyllrb.com/docs/frontmatter/">YAML front matter</a> block will be processed by Jekyll as a special file. This block adds meta-data to the file sush as permalink, categories, tags, and so on.</p>
+
+<h2>The about page</h2>
+
+<p>Similar to the post creation, the rake task <em>new_page</em> helps to create new pages.<br/>
+For the usual <em>about</em> page: <code>bundle exec rake new_page["about"]</code>. Here are <a href="http://octopress.org/docs/blogging/">more information about Octopress pages</a>.</p>
+
+<p>The <em>about</em> page usually has a link in the main menu. To add such a link, modify the file <code>source/_includes/custom/navigation.html</code> to add a new entry.</p>
+
+<h2>Preview the changes locally before publishing</h2>
+
+<p>Jekyll is able to generate and serve the static website locally. Octopress offers the rake task <code>bundle exec rake preview</code> that starts a web server locally listening at *<a href="http://localhost:4000/*.">http://localhost:4000/*.</a>
+This task will also watch for local changes and apply them immediately to the local preview.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Getting Started With GraphQL]]></title>
+    <link href="http://fsferrara.github.io/getting-started-with-graphql/"/>
+    <updated>2017-12-10T22:53:50+00:00</updated>
+    <id>http://fsferrara.github.io/getting-started-with-graphql</id>
+    <content type="html"><![CDATA[<div>
+  What is GraphQL? The <a href="http://facebook.github.io/graphql/October2016/">draft RFC specification</a> (October 2016), defines it as &#8220;a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for client‐server applications&#8221;. More simply, GraphQL is a language specification for API. It defines in which way the client should query the server, and in which way the server should execute those queries.
+</div>
+
+
+
+
+<div>
+  <!--more-->
+</div>
+
+
+
+
+<div>
+</div>
+
+
+
+
+<div>
+  From the definition above, it is clear that GraphQL can be adopted as an alternative to REST. Let&#8217;s now analyze its features with an example in order to understand GraphQL base concepts.<br /> Think about your favourite website for booking hotel rooms, that is obviously <a href="https://www.hotels.com/">hotels.com</a>, and let&#8217;s try to design a GraphQL service that provides the reservation list for a specific user.
+</div>
+
+
+<h2>Data model</h2>
+
+<div>
+  The first thing to do is defining the graph of the data provided by the service.
+</div>
+
+
+
+
+<div>
+  The <strong>data model</strong> we are going to define follows this structure:
+</div>
+
+
+
+
+<div>
+  <pre class="striped:false nums:false lang:default highlight:0 decode:true">+--------------------------------------+         +----------------------------+         +---------------------+
+| QueryType                            |         | ReservationType            |         | HotelType           |
++--------------------------------------+         +----------------------------+         +---------------------+
+|                                      |         |                            |         |                     |
+| reservationList: [ReservationType!]! +-------&gt; | hotelId: ID!               |         | hotelName: String!  |
+|                                      |         | checkIn: String!           |         | fullAddress: String |
++--------------------------------------+         | checkOut: String!          |         | starRating: Int!    |
+                                                 | hotelDetails: HotelType!   +-------&gt; |                     |
+                                                 | status: ReservationStatus! |         +---------------------+
+                                                 |                            |
+                                                 +----------------------------+</pre>
+
+  <p>
+    GraphQL models your data as a graph but it still needs entry points to that graph. Those entry points are the queries defined in the QueryType, that is the root of all the queries.<br /> In this example, it is defined only one query named &#8220;reservationList&#8221; that returns a list of &#8220;ReservationType&#8221;. In turn, ReservationType describes a hotel reservation and HotelType describe a hotel.
+  </p>
+
+  <h2>
+    GraphQL Schema definition
+  </h2>
+
+  <p>
+    Using the &#8220;<em>GraphQL schema language</em>&#8220;, explained in the <a href="http://graphql.org/learn/schema/">official GraphQL website</a>, our <strong>data model</strong> can be described in this way:
+  </p>
+</div>
+
+
+
+
+<div>
+  <pre class="lang:default highlight:0 decode:true">schema {
+    query: QueryType
+}
+ 
+type QueryType {
+  reservationsList(userId: ID!): [ReservationType!]!
+}
+ 
+type ReservationType {
+  hotelId: ID!
+  checkIn: String!
+  checkOut: String!
+  hotelDetails: HotelType!
+  status: ReservationStatus!
+}
+ 
+type HotelType {
+  hotelName: String!
+  fullAddress: String
+  starRating: Int!
+}
+ 
+enum ReservationStatus {
+  UPCOMING
+  COMPLETED
+  CANCELLED
+}</pre>
+
+  <p>
+    In very short, in this graphql<strong> schema definition</strong> we have:
+  </p>
+</div>
+
+
+
+
+<div>
+  <ul>
+    <li>
+      the keyword &#8220;schema&#8221;, that is the root of the schema;
+    </li>
+    <li>
+      ID, String, and Int are built-in <a href="http://graphql.org/learn/schema/#scalar-types">Scalar Types</a>;
+    </li>
+    <li>
+      ReservationStatus is an <a href="http://graphql.org/learn/schema/#enumeration-types">Enumeration Type</a>;
+    </li>
+    <li>
+      the others are <a href="http://graphql.org/learn/schema/#object-types-and-fields">Object Types</a>.
+    </li>
+  </ul>
+</div>
+
+
+
+
+<div>
+  This GraphQL schema can be parsed in order to be used for a real service. For instance, Apollo &#8220;<a href="https://github.com/apollographql/graphql-tools">graphql tools</a>&#8221; is a javascript utility for parsing such a schema.
+</div>
+
+
+<h2>Query example</h2>
+
+<div>
+  This is an example of a query, valid for our schema:
+</div>
+
+
+
+
+<div>
+  <pre class="lang:default highlight:0 decode:true">{
+  reservationsList(userId: 12345) {
+    hotelId
+    checkIn
+    checkOut
+    hotelDetails {
+      hotelName
+      fullAddress
+      starRating
+    }
+    status
+  }
+}</pre>
+
+  <p>
+    This query is sent from the client to the server in order to request the list of hotel ids in which the user number 12345 has made a reservation. Once the server receives this query, it is validated against the defined schema and then it is executed.
+  </p>
+
+  <h2>
+    Response example
+  </h2>
+
+  <p>
+    The generated response is JSON with the exact shape of the request:
+  </p>
+</div>
+
+
+
+
+<div>
+  <pre class="lang:default decode:true">{
+  "data": {
+    "reservationsList": [
+      {
+        "hotelId": "103",
+        "checkIn": "2018-11-29",
+        "checkOut": "2018-11-30",
+        "hotelDetails": {
+          "hotelName": "Hotel Campanile Metz Nord - Talange",
+          "fullAddress": "Zone Actipole, Talange, Moselle, 57525, France",
+          "starRating": 5
+        },
+        "status": "UPCOMING"
+      }
+    ]
+  }
+}</pre>
+</div>
+
+
+
+
+<div>
+  Please note that the client asks only for the data it needs, and with only one query. This is an advantage of using GraphQL because, in general, it <span style="text-decoration: underline;">reduces the number of roundtrips</span> and <span style="text-decoration: underline;">minimizes the amount of data transferred on the network</span>.
+</div>
+
+
+<h2>Query execution</h2>
+
+<div>
+  But what happened on the server when a query is executed?
+</div>
+
+
+
+
+<div>
+  Every field has a function associated with it, and every time the server needs to produce that field then that function is executed. Those functions are named <strong>resolvers</strong>.
+</div>
+
+
+
+
+<div>
+  In this specific example, it is defined a custom resolver for &#8220;reservationList&#8221; that provides a list of reservations and a custom resolver for &#8220;hotelDetails&#8221; that provides the necessary details for each hotel. For all the others fields, a built-in resolver is used to produce a scalar value.
+</div>
+
+
+
+
+<div>
+  If you are interested in analyzing the entire source code for this example, with the complete resolvers definition, you can find a really nice <a href="https://github.com/fsferrara/from-rest-to-graphql-meetup">javascript implementation on github</a> :-).
+</div>
+
+
+
+
+<div>
+</div>
+
+
+
+
+<div>
+  The execution aspect of a GraphQL server is described <a href="http://graphql.org/learn/execution/">here</a>. Once again, GraphQL is not an implementation: it only defines aspect for servers to execute queries. Even if GraphQL is not a ready-to-use library, there are already <a href="http://graphql.org/code/">several GraphQL implementations</a> such as graphql.js, graphql-ruby, graphql-java, and so on.
+</div>
+
+
+<h2>Introspection</h2>
+
+<div>
+  A really cool feature of a GraphQL service is the <a href="http://graphql.org/learn/introspection/">ability to introspect</a> itself. Every GraphQL server has a special schema field at the query root named &#8220;__schema&#8221;:
+</div>
+
+
+
+
+<div>
+  <pre class="lang:default decode:true">{
+  __schema {
+    ...
+  }
+}</pre>
+
+  <p>
+    Using that field, the service can expose the definition of every object and every field it can provide. This leads to really nice features like:
+  </p>
+</div>
+
+
+<ul>
+<li><span style="text-decoration: underline;">Auto documentation</span>: the client knows the exact GraphQL schema.</li>
+<li><span style="text-decoration: underline;">Code generation</span>: the client can use a client generated from the schema.</li>
+<li><span style="text-decoration: underline;">Static validation</span>: the GraphQL client can validate the query before sending it to the server</li>
+</ul>
+
+
+<div>
+  As a consequence, there are available very useful tools like <a href="https://github.com/graphql/graphiql">GraphiQL</a>, that is a kind of schema explorer for GraphQL. It is really useful to try and discover server features.
+</div>
+
+
+<h2>HTTP Caching</h2>
+
+<div>
+  We get a lot of advantages using GraphQL, but there are also drawbacks. The one I faced is HTTP caching.
+</div>
+
+
+
+
+<div>
+  A GraphQL endpoint can receive queries in different formats and it is really hard to define a caching policy server-side. Often the solution is to use a client-side cache. There are already libraries to implement normalized cache client-side, such as <a href="https://www.apollographql.com/">Apollo</a> and <a href="http://facebook.github.io/relay/">Relay</a>.
+</div>
+
+
+
+
+<div>
+  Even if caching on the client is a good solution in most cases, I believe this situation can be improved in the future.
+</div>
+
+
+
+
+<div>
+  For instance, a &#8220;smart&#8221; cache system can analyze a GraphQL request and understand which part of the query can take advantage of the cache.
+</div>
+
+
+<h2>Conclusion</h2>
+
+<div>
+  Personally, I am quite happy in using GrapQL server-side and I tend to prefer it over REST. I think the most valuable advantage is the fact that clients already know how to query a GraphQL service and this makes integration straightforward.
+</div>
+
+
+
+
+<div>
+  Anyway, this article covers only a few GraphQL features. There are more such as mutations, subscriptions, deferred queries, live queries, and batch operations. Please refer to the official <a href="http://graphql.org/">GraphQL website</a> for further information.
+</div>
+
+
+
+
+<div>
+  A really useful resource is <a href="https://www.howtographql.com/">https://www.howtographql.com/</a> which contains free tutorials to learn all about GraphQL covering several GraphQL implementations.
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Aspect Oriented Programming With Spring and AspectJ]]></title>
+    <link href="http://fsferrara.github.io/aspect-oriented-programming-with-spring-and-aspectj/"/>
+    <updated>2015-12-18T23:57:23+00:00</updated>
+    <id>http://fsferrara.github.io/aspect-oriented-programming-with-spring-and-aspectj</id>
+    <content type="html"><![CDATA[<p><strong>Aspect-Oriented Programming</strong> (<em>AOP</em>) powerfully complements <strong>Object-Oriented Programming</strong> (<em>OOP</em>) by providing another way of thinking about program structure.</p>
+
+<p>Drawing a comparison between AOP and OOP we can say that the key unit of modularity in OOP is the class, whereas in AOP the unit of modularity is the aspect. With aspects, you can group application behaviour that was once spread throughout your applications into reusable modules. You can then declare exactly where and how this behaviour is applied. This reduces code duplication and lets your classes focus on their main functionality.</p>
+
+<p><!--more-->The concept of a general-purpose aspect is introduced where an aspect transparently forces crosscutting behaviour on object classes and other software entities.</p>
+
+<p>From Wikipedia, the free encyclopedia, we can read:</p>
+
+<blockquote><p>“In computing, Aspect-Oriented programming (AOP) is a patented (by Google) programming paradigm that aims to increase modularity by allowing the separation of cross-cutting concerns. It does so by adding additional behaviour to existing code (an advice) without modifying the code itself, instead separately specifying which code is modified via a pointcut specification”</p>
+
+<p>“This allows behaviours that are not central to the business logic (such as logging) to be added to a program without cluttering the code core to the functionality. AOP forms a basis for aspect-oriented software development”</p></blockquote>
+
+<p>One of the key components of Spring Framework is the AOP framework it provides.</p>
+
+<p>This article just focuses on AOP with Spring by showing you the source code of a working example.</p>
+
+<p>Let&#8217;s start with the pom.xml containing all the dependencies we need: the spring framework with AOP (spring-aop) and AspectJ.</p>
+
+<p><pre class="lang:xhtml decode:true" title="pom.xml">&lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?&gt;
+&lt;project xmlns=&ldquo;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a>&rdquo;
+         xmlns:xsi=&ldquo;<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>&rdquo;
+         xsi:schemaLocation=&ldquo;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a> <a href="http://maven.apache.org/xsd/maven-4.0.0.xsd">http://maven.apache.org/xsd/maven-4.0.0.xsd</a>&rdquo;&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</p>
+
+<p>  &lt;groupId&gt;com.fsferrara&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-aop-example&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</p>
+
+<p>  &lt;properties&gt;
+    &lt;springframework.version&gt;4.0.6.RELEASE&lt;/springframework.version&gt;
+  &lt;/properties&gt;</p>
+
+<p>  &lt;dependencies&gt;
+    &lt;!&ndash; Spring framework &ndash;&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+      &lt;version&gt;${springframework.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+      &lt;version&gt;${springframework.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;
+      &lt;version&gt;${springframework.version}&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!&ndash; AspectJ &ndash;&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.aspectj&lt;/groupId&gt;
+      &lt;artifactId&gt;aspectjweaver&lt;/artifactId&gt;
+      &lt;version&gt;1.8.7&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!&ndash; Utilities &ndash;&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+      &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+      &lt;version&gt;1.7.6&lt;/version&gt;
+      &lt;type&gt;jar&lt;/type&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;</pre></p>
+
+<h2>Aspect Definition</h2>
+
+<p>As stated on Wikipedia, Aspect Oriented Programming entails breaking down program logic into distinct parts called so-called concerns. The functions that span multiple points of an application are called crosscutting concerns and these crosscutting concerns are conceptually separate from the application&#8217;s business logic. There are various common good examples of aspects like logging, auditing, declarative transactions, security, and caching etc.</p>
+
+<p>Separating these crosscutting concerns from the business logic is where AOP goes to work.</p>
+
+<p>An Aspect is an implementation of a crosscutting concern and it is described in terms of:</p>
+
+<ol>
+<li><strong>Advice</strong>: is the Aspect purpose definition. It defines the &#8220;<em>what</em>&#8221; and the &#8220;<em>when</em>&#8221; of an aspect.</li>
+<li><strong>Pointcuts</strong>: they define the&#8221;<em>where</em>&#8220;.</li>
+</ol>
+
+
+<p>An Aspect is attached to one or more <strong>Join Points</strong>.</p>
+
+<p>A <em>Join Point</em> is a point in the execution of the application where an aspect can be plugged in. This point could be a method being called, an exception being thrown, or even a field being modified. These are the points where your aspect’s code can be inserted into the normal flow of your application to add new behavior.</p>
+
+<h3>Advice</h3>
+
+<p>Spring aspects can work with five kinds of advice:</p>
+
+<ul>
+<li><em>Before</em>: The advice functionality takes place before the advised method is invoked.</li>
+<li><em>After</em>: The advice functionality takes place after the advised method completes, regardless of the outcome.</li>
+<li><em>After-returning</em>: The advice functionality takes place after the advised method successfully completes.</li>
+<li><em>After-throwing</em>: The advice functionality takes place after the advised method throws an exception.</li>
+<li><em>Around</em>: The advice wraps the advised method, providing some functionality before and after the advised method is invoked.</li>
+</ul>
+
+
+<p>In our example, we are going to define the advice in this way:</p>
+
+<p><pre class="lang:java decode:true" title="Advice definition">package com.fsferrara.spring_aop_example;</p>
+
+<p>import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;</p>
+
+<p>/<em>*
+ * Example of an Aspect Advice definition.
+ *
+ * @author fsferrara
+ </em>/
+@Component
+@Aspect
+public class AspectExample {</p>
+
+<pre><code>/**
+ * Define WHAT the aspect do and WHEN to do it.
+ * - WHAT: the method source code
+ * - WHEN: "around" the method
+ *
+ * @param pjp the join point selected by the pointcut.
+ * @return any object that the proxied method might return.
+ * @throws Throwable anything that the proxied object might throw.
+ */
+@Around(value = "@annotation(PointcutExample)")
+public Object whatThisAspectDo(ProceedingJoinPoint pjp) throws Throwable {
+    Object returnObject;
+    System.out.println("The aspect behaviour is implemented here!");
+    try {
+        returnObject = pjp.proceed();
+    } catch (Throwable throwable) {
+        throw throwable;
+    }
+    return returnObject;
+}
+</code></pre>
+
+<p>}</pre></p>
+
+<p>Please note that this aspect is enabled around an annotation called <em>PointcutExample</em>. It is a custom annotation we are going to define.</p>
+
+<h3>Pointcuts</h3>
+
+<p>If <em>advice</em> defines the “what” and “when” of aspects, then <em>pointcut</em> define the “where”. A <em>pointcut</em> definition matches one or more join points at which advice should be woven.</p>
+
+<p>We will annotate a join point with a custom annotation in order to make it a pointcut. This is the definition of the custom annotation</p>
+
+<p><pre class="lang:java decode:true " title="Pointcut Annotation">package com.fsferrara.spring_aop_example;</p>
+
+<p>import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;</p>
+
+<p>/<em>*
+ * This annotation define a pointcut on a method.
+ *
+ * @author fsferrara
+ </em>/
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface PointcutExample {</p>
+
+<p>}</pre></p>
+
+<p>Let&#8217;s consider a simple java &#8220;hello world&#8221; class</p>
+
+<p><pre class="lang:java decode:true">package com.fsferrara.spring_aop_example;</p>
+
+<p>import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;</p>
+
+<p>/<em>*
+ * Simple Hello World Bean.
+ *
+ * @author fsferrara
+ </em>/
+@Component
+public class HelloWorld {
+    private final Logger logger = LoggerFactory.getLogger(HelloWorld.class);</p>
+
+<pre><code>/**
+ * Prints a sentence.
+ */
+@PointcutExample
+public void printHello() {
+    logger.info("I don't know anything about the aspect!");
+}
+</code></pre>
+
+<p>}</pre></p>
+
+<p>Please note that with the annotation <em>@PointcutExample</em> we are defining a pointcut on this class!</p>
+
+<h3>Aspect</h3>
+
+<p>To actual apply and run the aspect source code, then the existing source code should be modified in some way.</p>
+
+<p>We can distinguish between:</p>
+
+<ul>
+<li><strong>Introductions</strong>: an introduction allows you to add new methods or attributes to existing classes. They can be introduced to existing classes without having to change them, giving them new behavior and state.</li>
+<li><strong>Weaving</strong>: is the process of applying aspects to a target object by creating a proxy object. The aspects are woven into the target object at the specified join points. The weaving can take place at several points in the target object’s lifetime:
+
+<ul>
+<li><em>Compile time</em>: Aspects are woven in when the target class is compiled. This requires a special compiler.</li>
+<li><em>Class-load time</em>: Aspects are woven in when the target class is loaded into the JVM. This requires a special ClassLoader that enhances the target class’s bytecode before the class is introduced into the application.</li>
+<li><em>Runtime</em>: Aspects are woven in sometime during the execution of the application. Typically, an AOP container dynamically generates a proxy object that delegates to the target object while weaving in the aspects. This is how Spring AOP aspects are woven.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Since Spring AOP is built around dynamic proxies, then AOP support is limited to method interception. So Spring AOP module provides interceptors to intercept an application, for example, when a method is executed, you can add extra functionality before or after the method execution.</p>
+
+<h2>AspectJ</h2>
+
+<p>AspectJ is an aspect-oriented programming (AOP) extension created at PARC for the Java programming language. There is a lot of synergy between the Spring and AspectJ projects, and the AOP support in Spring borrows a lot from the AspectJ project.</p>
+
+<p>Definitely AspectJ can complement Spring’s AOP framework. For example wiring advice and pointcuts in Spring is much easier with the addition of @AspectJ annotation support.</p>
+
+<p>As you noticed in our example we are using the Spring AOP with the AspectJ annotation.</p>
+
+<p>To completely do that we should define the application context enabling AOP:</p>
+
+<p><pre class="lang:xhtml decode:true " title="Spring Application Context Definition">&lt;?xml version=&ldquo;1.0&rdquo; encoding=&ldquo;UTF-8&rdquo;?&gt;
+&lt;beans xmlns:xsi=&ldquo;<a href="http://www.w3.org/2001/XMLSchema-instance">http://www.w3.org/2001/XMLSchema-instance</a>&rdquo;
+       xmlns:context=&ldquo;<a href="http://www.springframework.org/schema/context">http://www.springframework.org/schema/context</a>&rdquo;
+       xmlns:aop=&ldquo;<a href="http://www.springframework.org/schema/aop">http://www.springframework.org/schema/aop</a>&rdquo;
+       xmlns=&ldquo;<a href="http://www.springframework.org/schema/beans">http://www.springframework.org/schema/beans</a>&rdquo;
+       xsi:schemaLocation=&ldquo;<a href="http://www.springframework.org/schema/beans">http://www.springframework.org/schema/beans</a>
+    <a href="http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">http://www.springframework.org/schema/beans/spring-beans-3.1.xsd</a>
+    <a href="http://www.springframework.org/schema/context">http://www.springframework.org/schema/context</a>
+    <a href="http://www.springframework.org/schema/context/spring-context-2.5.xsd">http://www.springframework.org/schema/context/spring-context-2.5.xsd</a>
+    <a href="http://www.springframework.org/schema/aop">http://www.springframework.org/schema/aop</a>
+    <a href="http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">http://www.springframework.org/schema/aop/spring-aop-3.1.xsd</a>&rdquo;&gt;</p>
+
+<p>  &lt;context:component-scan base-package=&ldquo;com.fsferrara.spring_aop_example&rdquo;/&gt;
+  &lt;aop:aspectj-autoproxy/&gt;</p>
+
+<p>  &lt;bean id=&ldquo;main&rdquo; class=&ldquo;com.fsferrara.spring_aop_example.Main&rdquo;&gt;
+  &lt;/bean&gt;</p>
+
+<p>&lt;/beans&gt;
+</pre></p>
+
+<p>The last thing is to load the application context and start the application.</p>
+
+<p>This can be done with a simple Main class.</p>
+
+<p><pre class="lang:java decode:true " title="Main Class">package com.fsferrara.spring_aop_example;</p>
+
+<p>import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;</p>
+
+<p>/<em>*
+ * Simple Main.
+ * @author fsferrara
+ </em>/
+public class Main {</p>
+
+<pre><code>private final HelloWorld helloWorld;
+
+/**
+ * Simple auto-wired constructor.
+ *
+ * @param helloWorld the application bean proxied by spring AOP.
+ */
+@Autowired
+public Main(HelloWorld helloWorld) {
+    this.helloWorld = helloWorld;
+}
+
+/**
+ * Calls the proxied method.
+ */
+public void start() {
+    this.helloWorld.printHello();
+}
+
+/**
+ * Starts Spring application context.
+ *
+ * @param args if any
+ */
+public static void main(String[] args) {
+    ApplicationContext context = new ClassPathXmlApplicationContext("spring/applicationContext.xml");
+    Main main = (Main) context.getBean("main");
+    main.start();
+}
+</code></pre>
+
+<p>}</pre></p>
+
+<p>Although Spring AOP is sufficient for many applications of aspects, it’s a weak AOP solution when contrasted with AspectJ. AspectJ offers many types of pointcuts that aren’t possible with Spring AOP.</p>
+
+<p><span style="line-height: 1.5;">For instance there are times when Spring AOP isn’t enough, and you must turn to AspectJ for more powerful aspects. Constructor pointcuts, for example, are convenient when you need to apply advice on the creation of an object.</span></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Running Containers With Docker]]></title>
+    <link href="http://fsferrara.github.io/running-containers-with-docker/"/>
+    <updated>2015-04-03T17:03:29+00:00</updated>
+    <id>http://fsferrara.github.io/running-containers-with-docker</id>
+    <content type="html"><![CDATA[<p><strong>Docker</strong> is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of <strong>Docker Engine</strong>, a portable, <em>lightweight runtime and packaging tool</em>, and <strong>Docker Hub</strong>, a <em>cloud service for sharing applications and automating workflows</em>, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
+
+<p>This post describes how to run Docker machines with the help of Boot2Docker.</p>
+
+<!--more-->
+
+
+<h2>Boot2Docker {#boot2docker}</h2>
+
+<p>Boot2Docker is a lightweight Linux distribution made specifically to run Docker containers. It is currently designed and tuned <strong>for development</strong>. Using it for <em>any kind of production workloads at this time is highly discouraged</em>.</p>
+
+<p>After boot2docker installation, we can download the boot2docker-vm by typing this command:</p>
+
+<pre><code>saverio@mstar:boot2docker &gt; boot2docker init
+</code></pre>
+
+<p>this will download and install into <strong>VirtualBox</strong> a VM.</p>
+
+<pre><code>saverio@mstar:boot2docker &gt; VBoxManage list vms
+"boot2docker-vm" {0c34b443-1f74-44c6-88cb-f8cb5fd885c9}
+</code></pre>
+
+<p>The boot2docker-vm VM is switched off. To urn it on type the command:</p>
+
+<pre><code>saverio@mstar:boot2docker &gt; boot2docker up
+Waiting for VM and Docker daemon to start...
+.........................ooooooooooooooooooooooooo
+Started.
+Writing /Users/saverio/.boot2docker/certs/boot2docker-vm/ca.pem
+Writing /Users/saverio/.boot2docker/certs/boot2docker-vm/cert.pem
+Writing /Users/saverio/.boot2docker/certs/boot2docker-vm/key.pem
+
+To connect the Docker client to the Docker daemon, please set:
+    export DOCKER_HOST=tcp://192.168.59.103:2376
+    export DOCKER_CERT_PATH=/Users/fferrara/.boot2docker/certs/boot2docker-vm
+    export DOCKER_TLS_VERIFY=1
+</code></pre>
+
+<p>Boot2Docker is now up and running.</p>
+
+<p>The Next step is to set up a Docker machine. <a href="https://hub.docker.com/">Docker Hub</a> hosts a collection of docker machines.</p>
+
+<p>Boot2Docker sets up two <strong>network adaptors</strong>, one using NAT to allow the VM to download images and files from the internet, and a host only network that Docker container’s ports will be exposed on.</p>
+
+<p>To expose a port you should use a command like this one</p>
+
+<pre><code>docker run --name nginx-test -d -p 80:80 nginx
+</code></pre>
+
+<p>To start practicing with <strong>Docker</strong> let’s ssh-ing into the running boot2docker vm.</p>
+
+<pre><code>saverio@mstar:boot2docker &gt; boot2docker ssh
+                        ##        .
+                  ## ## ##       ==
+               ## ## ## ##      ===
+           /""""""""""""""""\___/ ===
+      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~
+           \______ o          __/
+             \    \        __/
+              \____\______/
+ _                 _   ____     _            _
+| |__   ___   ___ | |_|___ \ __| | ___   ___| | _____ _ __
+| '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
+| |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   &lt;  __/ |
+|_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
+Boot2Docker version 1.5.0, build master : a66bce5 - Tue Feb 10 23:31:27 UTC 2015
+Docker version 1.5.0, build a8a31ef
+docker@boot2docker:~$
+</code></pre>
+
+<h2>Docker {#docker}</h2>
+
+<p>The Docker Engine consists of two parts: a daemon, a server process that manages all the containers, and a client, which acts as a remote control for the daemon.</p>
+
+<p>If you’re loggeg into the boot2docker machine, you can check if the docker daemon is running.</p>
+
+<pre><code>docker@boot2docker:~$ docker version
+Client version: 1.5.0
+Client API version: 1.17
+Go version (client): go1.4.1
+Git commit (client): a8a31ef
+OS/Arch (client): linux/amd64
+Server version: 1.5.0
+Server API version: 1.17
+Go version (server): go1.4.1
+Git commit (server): a8a31ef
+</code></pre>
+
+<p>This will verify that the daemon is running and that you can connect to it. If you can see the version number you know you are all set.</p>
+
+<p>I found very useful the [interactive tutorial(<a href="https://www.docker.com/tryit/">https://www.docker.com/tryit/</a>) because the best way to understand Docker is to try it!</p>
+
+<h3>Searching for images {#searchingforimages}</h3>
+
+<p>The easiest way to get started is to use a container image from someone else. Container images are available on the Docker Hub Registry, a cloud-based collection of applications. You can find them online at Docker Hub as well <em>through the Docker Engine client command line</em>.</p>
+
+<p>To search for a container, you can use the command <em>docker search</em>. For example:</p>
+
+<pre><code>docker@boot2docker:~$ docker search tutorial
+NAME                                       DESCRIPTION   STARS     OFFICIAL   AUTOMATED
+learn/tutorial                                           8
+</code></pre>
+
+<p>Searched for a “tutorial” container.</p>
+
+<h3>Downloading container images {#downloadingcontainerimages}</h3>
+
+<p>Container images can be downloaded easily using <em>docker pull</em>. For images in the Docker Hub Registry, the name you specify is constructed as /.</p>
+
+<p>To download learn/tutorial container:</p>
+
+<pre><code>docker@boot2docker:~$ docker pull learn/tutorial
+Pulling repository learn/tutorial
+8dbd9e392a96: Download complete
+Status: Downloaded newer image for learn/tutorial:latest
+</code></pre>
+
+<p>With a container Docker can download several layers because a docker images can consists of several layers.</p>
+
+<h3>Run a container {#runacontainer}</h3>
+
+<p>You can think of containers as a process in a box. The box contains everything the process might need, so it has the filesystem, system libraries, shell and such, but by default none of these are running. You <em>start</em> a container by running a process in it.</p>
+
+<p>The command docker run takes a minimum of two arguments:</p>
+
+<ol>
+<li>an image name, and</li>
+<li>the command you want to execute within that image.</li>
+</ol>
+
+
+<p>So, for the learn/tutorial container, it is:</p>
+
+<pre><code>docker@boot2docker:~$ docker run learn/tutorial echo "hello world"
+hello world
+</code></pre>
+
+<p>With this you have just started a container and executed a program inside of it, when the program stopped, so did the container.</p>
+
+<h3>Installing things {#installingthings}</h3>
+
+<p>Next we are going to install a simple utility, ping, in the container. The image is based upon ubuntu, so you can run the command <em>apt-get install -y ping</em> in the container.</p>
+
+<p>Note that even though the container stops right after a command completes, the changes are not forgotten.</p>
+
+<pre><code>docker@boot2docker:~$ docker run learn/tutorial apt-get install -y ping
+Reading package lists...
+Building dependency tree...
+The following NEW packages will be installed:
+  iputils-ping
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 56.1 kB of archives.
+After this operation, 143 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ precise/main iputils-ping amd64 3:20101006-1ubuntu1 [56.1 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 56.1 kB in 0s (276 kB/s)
+Selecting previously unselected package iputils-ping.
+(Reading database ... 7545 files and directories currently installed.)
+Unpacking iputils-ping (from .../iputils-ping_3%3a20101006-1ubuntu1_amd64.deb) ...
+Setting up iputils-ping (3:20101006-1ubuntu1) ...
+</code></pre>
+
+<p>That worked! You have installed a program on top of a base image. Your changes to the filesystem have been kept, but are not yet saved.</p>
+
+<h3>Save your changes {#saveyourchanges}</h3>
+
+<p>After you make changes (by running a command inside a container), you probably want to save those changes. This will enable you to start from this point later. With Docker, the process of saving the state is called <strong>committing</strong>. Commit basically saves the difference between the old image and the new state.</p>
+
+<p>To do that there are several steps. First use <em>docker ps -l</em> to find the ID of the container you created by installing ping.</p>
+
+<pre><code>docker@boot2docker:~$ docker ps -l
+CONTAINER ID        IMAGE                   COMMAND                CREATED             STATUS                     PORTS               NAMES
+3cba51f3bedc        learn/tutorial:latest   "apt-get install -y    3 minutes ago       Exited (0) 3 minutes ago                       modest_cori
+</code></pre>
+
+<p>The id is 3cba51f3bedc.</p>
+
+<p>The second step is to actually commit the changes:</p>
+
+<pre><code>docker@boot2docker:~$ docker commit 3cba51f3bedc learn/ping
+86d9da396ee3c8d9d00326838999050d75bf831a016e4a6f0611edd5f62a624b
+</code></pre>
+
+<p>That worked! Please take note that Docker has returned a new ID. This ID is the image ID.</p>
+
+<h3>Run your new image {#runyournewimage}</h3>
+
+<p>You have built a complete, self-contained image with the ‘ping’ utility installed named <strong>learn/ping</strong>. Your image can now run on any host that runs Docker.</p>
+
+<p>Let’s try it now with a ping to the host google.com:</p>
+
+<pre><code>docker@boot2docker:~$ docker run learn/ping ping google.com
+PING google.com (216.58.210.46) 56(84) bytes of data.
+64 bytes from lhr14s23-in-f14.1e100.net (216.58.210.46): icmp_req=1 ttl=61 time=37.3 ms
+64 bytes from lhr14s23-in-f14.1e100.net (216.58.210.46): icmp_req=2 ttl=61 time=36.5 ms
+64 bytes from lhr14s23-in-f14.1e100.net (216.58.210.46): icmp_req=3 ttl=61 time=44.2 ms
+^C
+--- google.com ping statistics ---
+9 packets transmitted, 9 received, 0% packet loss, time 8019ms
+rtt min/avg/max/mdev = 35.384/37.963/44.248/2.814 ms
+</code></pre>
+
+<p>That worked! Note that normally you can use one of Ctrl-C, Ctrl-P, or Ctrl-Q to disconnect (I don’t know why on my Mac none of those three worked). The container will keep running until it will disconnect automatically.</p>
+
+<p>Your image is now a running container. Using <strong>docker ps</strong> we can see a list of all running containers and using <strong>docker inspect</strong>. We can see useful information about this container.</p>
+
+<h3>Push your image to the Docker Hub Registry {#pushyourimagetothedockerhubregistry}</h3>
+
+<p>Now that you have verified that your image works, you can share it with others. Remember that you pulled (downloaded) the learn/tutorial image from the Registry? By pushing (uploading) images that you build, you can easily retrieve them to use on other hosts as well as share them with other users.</p>
+
+<p>To do that the command <strong>docker push</strong> is used:</p>
+
+<pre><code>docker@boot2docker:~$ docker push learn/ping
+The push refers to a repository [learn/ping] (len: 1)
+Sending image list
+
+Please login prior to push:
+Username:
+</code></pre>
+
+<p>Ops… it requires to be registered to Docker Hub so that’s all for now.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building Web Applications With Scala]]></title>
+    <link href="http://fsferrara.github.io/building-web-applications-scala/"/>
+    <updated>2013-11-22T11:02:39+00:00</updated>
+    <id>http://fsferrara.github.io/building-web-applications-scala</id>
+    <content type="html"><![CDATA[<p>Scala is general purpose programming language very popular for building web application. But why? At the moment I really don&#8217;t know why :) , I&#8217;m just reading about it and sharing my thoughts with you.</p>
+
+<p>Let&#8217;s start from Scala. It&#8217;s a programming language both object-oriented and functional: we can refer to this kind of programming language as &#8220;object-functional&#8221;. We say that is a programming language because there is a compiler for it, but also an interpreter is available.</p>
+
+<p>It is intended to be compiled to Java bytecode, so the resulting executable runs on the JVM, and Java libraries can be used directly in Scala code and vice-versa. Maybe this is the real strength of this language&#8230; it allows to write brand-new web application while reusing legacy java libraries. That&#8217;s awesome for a company with a bunch of old java code.</p>
+
+<!--more-->
+
+
+<h2>Scala-powered Web Framework</h2>
+
+<p>Of course there is the possibility to simply use scala with any java-enabled web framework, but let&#8217;s choose a specialized one from the several web frameworks that use scala as main language. At the moment the main frameworks are:</p>
+
+<ul>
+<li><a href="http://liftweb.net">Lift</a> seems the most mature. As the official website states, Lift is highly secure and has the best JSON handling library in Scala: this make lift a good choice to build a web service. Moreover lift is not a traditional MVC framework, but it has a View First approach: lift loads the view first and builds your page from the view. &#8220;Why?&#8221; Because complex HTML pages rarely contain a dominant piece of logic&#8230; a single controller&#8230; but contain many different components that can interact or not.</li>
+<li><a href="http://www.playframework.com">Play</a> seems to have a better documentation and videos, and looks more familiar (traditional MVC pattern). At a glance it has a better support for modern web and mobile application. It has a good support to templates, and allows writing code in Scala, Java, Javascript, Coffeescript, and others languages.</li>
+<li><a>Scalatra</a> is a simple, accessible and free web micro-framework. It combines the power of the JVM with the beauty and brevity of Scala. It seems very easy to set up, and it is designed exactly to create web services. As micro-framework Scalatra doesn&#8217;t offer much functionality.</li>
+</ul>
+
+
+<p>In my opinion Play is the best framework here for building medium-size applications: for large application I really like the &#8220;<a href="http://stackoverflow.com/questions/13290118/differences-between-mvc-and-view-first-approach-in-web-development">View First</a>&#8221; approach, so I choose lift for a first experiment.</p>
+
+<h2>SBT</h2>
+
+<p>At first I thought it meant &#8220;Scala Build Tool&#8221; but actually SBT stands for &#8220;Simple Build Tool&#8221; and, even if it is more popular for Scala projects, it can be also used for Java projects.</p>
+
+<p>SBT is the de facto build tool for the Scala community, used by both the Lift web framework and Play Framework.</p>
+
+<p>Similar to Java&#8217;s Maven, it has a native support for compiling Scala code and integrating with many Scala test frameworks (continuous compilation, testing, and deployment). Moreover it manages dependencies using Ivy (and library for apache Ant that is compatible with apache Maven repositories). Integrated with the Scala interpreter, it supports debugging and rapid programming iteration.</p>
+
+<p>The build file is entirely written in Scala. It is placed in the root directory of the project and the default name is &#8216;build.sbt&#8217;. This is an example:</p>
+
+<pre lang="scala">organization := "com.fsferrara"
+name := "myfirstlift"
+version := "0.1-SNAPSHOT"
+scalaVersion := "2.10.0"
+
+// xsbt-web-plugin configuration
+seq(webSettings :_*)
+
+libraryDependencies ++= {
+  val liftVersion = "2.5.1"
+  Seq(
+    "net.liftweb" %% "lift-webkit" % liftVersion % "compile",
+    "org.eclipse.jetty" % "jetty-webapp" % "8.1.7.v20120910"  %
+      "container,test",
+    "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" %
+      "container,compile" artifacts Artifact("javax.servlet", "jar", "jar")
+  )
+}</pre>
+
+
+<p>The object &#8216;webSettings&#8217; contains the standard web configuration used to launch the web container, that is, in this example, Jetty. &#8216;Seq&#8217;, with a capital S, is the interface of a Java List: it contains the list of all the dependencies to download.</p>
+
+<p>I took the above file from a lift webapp template I&#8217;m building. A Scala application has another SBT configuration file &#8216;project/plugins.sbt&#8217; that contains the list of plugins used by the application:</p>
+
+<pre lang="scala">addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "0.4.2")</pre>
+
+
+<p>The <a href="https://github.com/JamesEarlDouglas/xsbt-web-plugin">xsbt-web-plugin</a> plugin is used to build Scala web application.</p>
+
+<h2>My first Hello World lift application</h2>
+
+<p>To complete the classic &#8220;hello world&#8221; application, we need three more files. The first one is the well-known &#8216;src/main/webapp/WEB-INF/web.xml&#8217;:</p>
+
+<pre lang="html" escaped="true">&lt;!DOCTYPE web-app SYSTEM "http://java.sun.com/dtd/web-app_2_3.dtd"&gt;
+&lt;web-app&gt;
+  &lt;filter&gt;
+    &lt;filter-name&gt;LiftFilter&lt;/filter-name&gt;
+    &lt;display-name&gt;Lift Filter&lt;/display-name&gt;
+    &lt;description&gt;The Filter that intercepts Lift calls&lt;/description&gt;
+    &lt;filter-class&gt;net.liftweb.http.LiftFilter&lt;/filter-class&gt;
+  &lt;/filter&gt;
+  &lt;filter-mapping&gt;
+    &lt;filter-name&gt;LiftFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+  &lt;/filter-mapping&gt;
+&lt;/web-app&gt;</pre>
+
+
+<p>With this file a LiftFilter servlet is instantiated and all the HTTP requests are forwarded to it. This is the entry point of the Lift framework. The next file, the &#8220;View&#8221;, is &#8216;src/main/webapp/index.html&#8217;:</p>
+
+<pre lang="html" escaped="true">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Lift From Scratch&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+
+<p>The last one is our first &#8216;.scala&#8217; file, Finally! So we create &#8216;src/main/scala/bootstrap/Boot.scala&#8217;:</p>
+
+<pre lang="scala">package bootstrap.liftweb
+
+import net.liftweb.http.{Html5Properties, LiftRules, Req}
+import net.liftweb.sitemap.{Menu, SiteMap}
+
+class Boot {
+  def boot {
+    LiftRules.addToPackages("code")
+
+    // Build SiteMap
+    def sitemap(): SiteMap = SiteMap(
+      Menu.i("Home") / "index"
+    )
+
+    // Use HTML5 for rendering
+    LiftRules.htmlProperties.default.set((r: Req) =&gt;
+      new Html5Properties(r.userAgent))
+  }
+}</pre>
+
+
+<p>This file defines a &#8216;Boot&#8217; class containing only one method named &#8216;boot&#8217;. This class is instantiated early and run: it allows the application to modify lift&#8217;s environment. The first instruction of the &#8216;boot&#8217; method defines the package used to search for &#8220;Snippets&#8221; (a Snippet is the component that transforms the incoming HTML to the dynamically generated HTML).</p>
+
+<p>Next is the definition of the SiteMap: every page on the site needs a SiteMap entry.</p>
+
+<p>What? A class with a method? Where is the functional side of Scala?</p>
+
+<p>Scala is an object-functional programming language. In my initial opinion it seems that only the object-oriented side of Scala is used, while only few part of code are written completely functional. Maybe the most used &#8220;functional feature&#8221; is the immutability: I read it in <a href="http://blog.manub.net/2013/11/like-immutable-objects/">this interesting post</a>.</p>
+
+<h2>Starting our application</h2>
+
+<p>In order to start our application, open the shell and change directory to the root of our project and type in &#8216;sbt&#8217;. Obviously you should first in install the SBT tool.</p>
+
+<p>Now the console of SBT starts, it seems quite slow, and to download all the dependencies type the command &#8220;update&#8221;. Next to start tomcat, use the command &#8220;container:start&#8221;. By default a Jetty server will start, and we can see our first project at the address _<a href="http://localhost:8080_.">http://localhost:8080_.</a></p>
+
+<h3>Developing with a text editor</h3>
+
+<p>SBT has plugins available used to develop Scala application with IntelliJ Idea, Eclipse, and Netbeans. I like to develop my application with a fast text editor with few unused features. My favourite text editor now is Sublime Text, you surely know it!</p>
+
+<p>Also I like compile and refresh my application while developing: To do that we can use SBT with this instruction:</p>
+
+<pre lang="bash">~; container:start; container:reload /</pre>
+
+
+<p>An SBT command prefixed with ~ makes that command run when files change. The first semicolon introduces a sequence of commands, where if the first command succeeds, the second will run. The second semicolon means the reload command will run if the start command ran OK. The start command will recompile any Scala source files that have changed. Honestly I don&#8217;t know what the last character (/) means.</p>
+
+<h2>Our first Snippet</h2>
+
+<p>Like I said before Lift adopts a view-first approach, so the first thing that is loaded is the View (in this case the HTML) and then the snippets are applied to it.</p>
+
+<p>Our first snippet is &#8216;src/main/scala/code/snippet/HelloSnippet.scala&#8217;.</p>
+
+<pre lang="scala">package code.snippet
+
+import net.liftweb.util.Helpers._
+import net.liftweb.util.PassThru
+
+import scala.util.Random
+import xml.Text
+
+class HelloSnippet {
+  private def fiftyFifty = Random.nextBoolean
+
+  def render =
+    if (fiftyFifty) "*" #&gt; Text("Hello Saverio")
+    else PassThru
+}</pre>
+
+
+<p>For those of you who do not know, my name is Saverio. This snippet, with a probability of fifty percent, can change the text value of the HTML object linked to it. So the next step is to modify the view in this way:</p>
+
+<pre lang="html" escaped="true">...
+&lt;div data-lift="HelloSnippet"&gt;
+  Hello World
+&lt;/div&gt;
+...</pre>
+
+
+<p>Try it! The page can render now &#8220;Hello World&#8221; or &#8220;Hello Saverio&#8221;. All works because in the Boot class we defined the folder &#8216;code&#8217; as the place where to search for snippets (remember: <code>LiftRules.addToPackages("code")</code>)</p>
+
+<h2>A REST endpoint written with Lift</h2>
+
+<p>Lift makes providing REST web services very simple. REST (<a href="http://en.wikipedia.org/wiki/Representational_state_transfer">Representational State Transfer</a>) is an architectural style that abstracts the architectural elements within a distributed hypermedia system. REST ignores the details of component implementation and protocol syntax in order to focus on the roles of components: it has emerged as a predominant web API design model. For those of you who already know SOAP-based web services, the main <a href="http://stackoverflow.com/questions/2131965/main-differences-between-soap-and-restful-web-services-in-java">difference</a> between the two is that REST is almost always going to be faster, whilst SOAP is provides a mechanism for services to describe themselves to clients, and to advertise their existence. REST is much more lightweight and can be implemented using almost any tool, leading to lower bandwidth and shorter learning curve. However, the clients have to know what to send and what to expect. In general, When you&#8217;re publishing an API to the outside world that is either complex or likely to change, SOAP will be more useful. Other than that, REST is usually the better option.</p>
+
+<p>In an extremely small nutshell REST is the convention between two systems to communicate by exchanging JSON messages.</p>
+
+<p>Let&#8217;s write a really simple PingRest service: create the file &#8216;src/main/scala/code/lib/PingRest.scala&#8217;.</p>
+
+<pre lang="scala">package code.lib
+
+import net.liftweb._
+import net.liftweb.http._
+import net.liftweb.http.rest._
+import net.liftweb.json.JsonAST._
+import net.liftweb.json.JsonDSL._
+
+object PingRest extends RestHelper {
+
+  serve {
+    case JsonGet("api" :: "ping" :: "pong" :: Nil, req) =&gt; sayHello
+  }
+
+  val sayHello: JValue = {
+    (
+      ("ping" -&gt; "pong")
+    )
+  }
+}</pre>
+
+
+<p>The PingRest class extend RestHelper, a helper used to speed-up the build of web services. Anyway is possible to create a web service without using RestHelper.</p>
+
+<p>To enable this endpoint, we have to modify the Boot code. We must add, at the end of the &#8216;boot&#8217; method, this line: <code>LiftRules.dispatch.append(PingRest)</code>.</p>
+
+<p>Now each request to the url _<a href="http://localhost:8080/api/ping/pong.json_">http://localhost:8080/api/ping/pong.json_</a> produces this answer</p>
+
+<pre lang="json">{
+  "ping":"pong"
+}</pre>
+
+
+<p>The libraries &#8216;net.liftweb.json.JsonAST._&#8217; and &#8216;net.liftweb.json.JsonDSL._&#8217; are used to create a JSON response.</p>
+
+<h2>Conclusion</h2>
+
+<p>Scala is designed to concisely express solutions in an elegant, type-safe and lightweight (low ceremonial) manner. Scala has full support for functional programming, including currying, pattern matching, algebraic data types, lazy evaluation, tail recursion, immutability, and so on.</p>
+
+<p>Scala allows the reusing of legacy java libraries, that&#8217;s true, but I really don&#8217;t like the idea to have another language server-side. I think that adding additional languages, like Scala or Coffeescript, will only increase the complexity of our project and makes it difficult to find people who know how to work on the project.</p>
+
+<p>Furthermore many web frameworks for Scala assume that part of Scala source code should be translated into Javascript code to be executed in the user browser: this introduces another difficulty in debugging Scala application. Other web framework use instead Javascript as main language (for example <a href="http://expressjs.com">express</a> in the MEAN stack) and in that case the code you write is the same code you should debug. Additionally you write Javascript on both client side and server side.</p>
+
+<p>You can download all the source code in this <a href="https://github.com/fsferrara/learn-scala">collection of project</a> on github.</p>
+]]></content>
+  </entry>
+  
+</feed>

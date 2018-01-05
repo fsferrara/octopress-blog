@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>A GIT Branching Model for Medium-size Companies - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="This article explains how a medium size company, which has several teams, can adopt GIT for the source code management. As a software configuration &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/git-branching-model-for-medium-size-companies/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/story">Story</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">A GIT Branching Model for Medium-size Companies</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-11-15T00:13:57+00:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:13 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This article explains how a medium size company, which has several teams, can adopt GIT for the source code management. As a software configuration management, GIT serves two different functions. The first one is the management support for controlling changes to software products, and the second one is merely development support for coordinating file changes among product developers. In particular here I want to talk about the branching model.</p>
+
+<!--more-->
+
+
+<p>The following branching model is for a single product, whereas only the last product version is maintained (i.e. a web site or a mobile app). Additionally this branching model support an agile process model, where a new product version is released (hopefully) at the end of each team sprint.</p>
+
+<p>This proposal is based on the &#8220;branch-by-purpose&#8221; model (@see <a href="http://svn.haxx.se/users/archive-2007-10/att-0101/SCMBranchingModels.pdf">The Importance of Branching Models in SCM</a>), but it also provide a branch for the next release.</p>
+
+<p>Main actors here are:</p>
+
+<ul>
+<li><strong>Developers</strong>, one or more developer teams</li>
+<li><strong>Release manager</strong>, or a release team</li>
+<li><strong>System administrator</strong>, or a sysadm team</li>
+</ul>
+
+
+<p>This branching model is inspired by the work of <a href="http://nvie.com/about/">Vincent Driessen</a>.</p>
+
+<h2>Branches organization</h2>
+
+<p>A good branching model for medium-size technology department should absolutely have these characteristics:</p>
+
+<ul>
+<li>Parallel Development</li>
+<li>Collaboration</li>
+<li>Release Staging</li>
+<li>Support for emergency fixes (hotfix)</li>
+</ul>
+
+
+<p>The proposed branching model has three branches, each with an infinite life. System administrators will always use the &#8216;master&#8217; branch: everything is happy and deployable in master. Developers should always use the &#8216;develop&#8217; branch, and all teams share this branch to commit their features. Also developers can&#8217;t commit anything in the master branch, the release manager is in charge of this operation. The release manager has its own branch &#8216;candidate&#8217; in order to integrate in it the team&#8217;s patches, test these patches, promote versions, and then commit stable versions in the &#8216;master&#8217; branch. The original work <a href="http://nvie.com/posts/a-successful-git-branching-model/">GitFlow</a> does not have the &#8216;candidate&#8217; branch, but uses a new branch for each release. I, instead, prefer to have the integration branch always with the same name: this can be useful in the future for the dependencies management.</p>
+
+<h2>Creating the three branches</h2>
+
+<p>Once created the repository with the master branch, you can create &#8216;candidate&#8217; and &#8216;develop&#8217; branches.</p>
+
+<pre lang="bash">[~/git]$ git clone https://github.com/fsferrara/lemon.git
+Cloning into 'lemon'...
+remote: Counting objects: 12, done.
+remote: Compressing objects: 100% (11/11), done.
+remote: Total 12 (delta 2), reused 10 (delta 0)
+Unpacking objects: 100% (12/12), done.
+[~/git]$ cd lemon
+
+[master][~/git/lemon]$ git branch -a
+* master
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/master
+
+[master][~/git/lemon]$ git branch candidate master
+[master][~/git/lemon]$ git branch develop candidate
+
+[master][~/git/lemon]$ git push origin candidate
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new branch]      candidate -&gt; candidate
+
+[master][~/git/lemon]$ git push origin develop
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new branch]      develop -&gt; develop</pre>
+
+
+<p>Now we have these branches:<figure id="attachment_314" style="max-width: 250px" class="wp-caption aligncenter"></p>
+
+<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg"><img class="size-medium wp-image-314" src="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches-250x300.jpg" alt="Three Branches" width="250" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches-250x300.jpg 250w, http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg 409w" sizes="(max-width: 250px) 100vw, 250px" /></a><figcaption class="wp-caption-text">Three Branches</figcaption></figure></p>
+
+<h2>The features</h2>
+
+<p>Any new feature should be developed in a separate branch. So, a developer that is on &#8216;develop&#8217; branch&#8230;</p>
+
+<pre lang="bash">[master][~/git/lemon]$ git checkout develop
+Switched to branch 'develop'
+[develop][~/git/lemon]$ git branch -a
+  candidate
+* develop
+  master
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/candidate
+  remotes/origin/develop
+  remotes/origin/master</pre>
+
+
+<p>&#8230;must start a feature branch, and share it with its team:</p>
+
+<pre lang="bash">[develop][~/git/lemon]$ git checkout -b myteam/amazing_feature
+Switched to a new branch 'myteam/amazing_feature'
+
+[myteam/amazing_feature][~/git/lemon]$ git push origin myteam/amazing_feature
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new branch]      myteam/amazing_feature -&gt; myteam/amazing_feature</pre>
+
+
+<p>Rebasing keeps our code working, merging easy, and history clean. Developer should maintain this branch always rebased with remote branches &#8216;origin/devel&#8217; and &#8216;origin/myteam/amazing_feature&#8217;, by doing these operations:</p>
+
+<pre lang="bash">[myteam/amazing_feature][~/git/lemon]$ git fetch origin
+[develop][~/git/lemon]$ git rebase origin/develop
+Current branch develop is up to date.
+[develop][~/git/lemon]$ git rebase origin/myteam/amazing_feature
+Current branch develop is up to date.</pre>
+
+
+<p>The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.<figure id="attachment_315" style="max-width: 145px" class="wp-caption aligncenter"></p>
+
+<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch.jpg"><img class="size-medium wp-image-315" src="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg" alt="Feature Branch" width="145" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg 145w, http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch.jpg 235w" sizes="(max-width: 145px) 100vw, 145px" /></a><figcaption class="wp-caption-text">Feature Branch</figcaption></figure></p>
+
+<p>At this point a &#8220;merge request&#8221; can be created also to manage the code review process. To finish a feature, perform these operations:</p>
+
+<pre lang="bash">[myteam/amazing_feature][~/git/lemon]$ git fetch
+[myteam/amazing_feature][~/git/lemon]$ git rebase -i origin/develop
+Successfully rebased and updated refs/heads/myteam/amazing_feature.
+
+[master][~/git/lemon]$ git checkout develop
+Switched to branch 'develop'
+
+[develop][~/git/lemon]$ git fetch
+[develop][~/git/lemon]$ git merge origin/develop
+Already up-to-date.
+
+[develop][~/git/lemon]$ git merge --no-ff myteam/amazing_feature
+Merge made by the 'recursive' strategy.
+ hello.js | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+[develop][~/git/lemon]$ git push origin develop
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 241 bytes, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+   cd84dc7..ee499c9  develop -&gt; develop</pre>
+
+
+<p>The option &#8220;&#8211;no-ff&#8221; preserves feature history and easy full-feature reverts merge. Now we can delete the feature branch:</p>
+
+<pre lang="bash">[develop][~/git/lemon]$ git branch -d myteam/amazing_feature
+Deleted branch myteam/amazing_feature (was a30b140).
+
+[develop][~/git/lemon]$ git push --delete origin myteam/amazing_feature
+To https://github.com/fsferrara/lemon.git
+ - [deleted]         myteam/amazing_feature</pre>
+
+
+<h2>Integration phase and release</h2>
+
+<p>At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:<figure id="attachment_316" style="max-width: 260px" class="wp-caption aligncenter"></p>
+
+<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg"><img class="size-medium wp-image-316" src="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch-260x300.jpg" alt="Candidate Branch" width="260" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch-260x300.jpg 260w, http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg 412w" sizes="(max-width: 260px) 100vw, 260px" /></a><figcaption class="wp-caption-text">Candidate Branch</figcaption></figure></p>
+
+<p>The integration starts with the <em>code chill</em> phase, that is the phase in which only small bugfixes are allowed. Personally I hate these bugfixes, and I prefer to perform all kind of tests directly on &#8216;devel&#8217; branch: for me the integration phase should be only the final check. Once the code is ready to be deployed in production, we have the reintegration with &#8216;master&#8217;. At this point the release engineer can create the tag directly on master. Optionally the tag to be created can point before to the head of &#8216;candidate&#8217; branch and then can be updated to point to &#8216;master&#8217;.</p>
+
+<h2>Deploying and emergency fixes</h2>
+
+<p>Everything is happy and up-to-date in master: the system administrator can use tags created by the release engineer to deploy a specific version of the product. This support the deploy of the latest version and also the roll-back to a previous version. Once reintegrated the branch &#8216;candidate&#8217; into &#8216;master&#8217;, a new tag is created following these steps:</p>
+
+<pre lang="bash">[master][~/git/lemon]$ git tag -a 1.2.3 -m "Promoted on `date`"
+[master][~/git/lemon]$ git tag -l
+1.2.3
+
+[master][~/git/lemon]$ git push --tags
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 182 bytes, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/fsferrara/lemon.git
+ * [new tag]         1.2.3 -&gt; 1.2.3
+
+[master][~/git/lemon]$ git ls-remote --tags origin
+83fd280e796bc4134c2e7b31106b9f8ed85ecf2c    refs/tags/1.2.3
+cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
+
+
+<p>If for testing purpose you already created the tag 1.2.3 pointing the &#8216;candidate&#8217; branch, now you can move this tag by using the option &#8220;-f&#8221;.</p>
+
+<p>Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:<figure id="attachment_317" style="max-width: 190px" class="wp-caption aligncenter"></p>
+
+<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix.jpg"><img class="size-medium wp-image-317" src="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg" alt="Hotfix Branch" width="190" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg 190w, http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix.jpg 312w" sizes="(max-width: 190px) 100vw, 190px" /></a><figcaption class="wp-caption-text">Hotfix Branch</figcaption></figure></p>
+
+<h2>Useful configuration</h2>
+
+<p>Autosetup rebase so that pulls operations rebase by default</p>
+
+<pre lang="bash">git config --global branch.autosetuprebase always</pre>
+
+
+<h2>DOs and DON&#8217;Ts</h2>
+
+<p>No DO or DON&#8217;T is sacred. You&#8217;ll obviously run into exceptions, and develop your own way of doing things. However, these are guidelines I&#8217;ve found useful.</p>
+
+<h3>DOs</h3>
+
+<ul>
+<li><em>do</em> master must always be deployable.</li>
+<li><em>do</em> all changes are made through feature branches</li>
+<li><em>do</em> use a &#8220;merge request&#8221; (aka &#8220;pull request&#8221;) to manage code-reviews</li>
+<li><em>do</em> rebase to avoid/resolve conflicts before to merge</li>
+<li><em>do</em> keep master in working order</li>
+<li><em>do</em> rebase your feature branches often</li>
+<li><em>do</em> tag releases</li>
+<li><em>do</em> learn to rebase and merge</li>
+</ul>
+
+
+<h3>DON&#8217;Ts</h3>
+
+<ul>
+<li><em>don&#8217;t</em> fork</li>
+<li><em>don&#8217;t</em> merge broken code.</li>
+<li><em>don&#8217;t</em> commit onto master directly.</li>
+<li><em>don&#8217;t</em> hotfix onto master! use a specific hotfix branch.</li>
+<li><em>don&#8217;t</em> rebase master.</li>
+<li><em>don&#8217;t</em> merge with conflicts. Handle conflicts upon rebasing.</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">fsferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-11-15T00:13:57+00:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:13 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>, <a class='category' href='/blog/categories/system-administration/'>system administration</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/git-branching-model-for-medium-size-companies/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/git-branching-model-for-medium-size-companies/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/git-explained-subversion-users/" title="Previous Post: GIT explained for Subversion users">&laquo; GIT explained for Subversion users</a>
+      
+      
+        <a class="basic-alignment right" href="/building-web-applications-scala/" title="Next Post: Building web applications with Scala">Building web applications with Scala &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Saverio Ferrara -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/git-branching-model-for-medium-size-companies/';
+        var disqus_url = 'http://fsferrara.github.io/git-branching-model-for-medium-size-companies/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

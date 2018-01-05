@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The Web and the Problem of Privacy - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="Introduzione alla problema della privacy Tempo fa il problema della privacy non era sentito perché dovevamo fidarci solo di un insieme ristretto di &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/web-and-privacy/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/story">Story</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">The Web and the Problem of Privacy</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-27T20:53:03+00:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>8:53 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>Introduzione alla problema della privacy</h2>
+
+<p>Tempo fa il problema della privacy non era sentito perché dovevamo fidarci solo di un insieme ristretto di persone; con Internet, e le moderne tecnologie, è diventato facilissimo raccogliere, scambiare, e trasferire informazione.</p>
+
+<p>C&#8217;è perdita di controllo su <em>cosa è raccolto</em> e soprattutto <em>come è utilizzato</em>.</p>
+
+<p>Il problema della privacy può sembrare una sciocchezza, ma un esempio vi farà cambiare subito idea!</p>
+
+<p>Quando un paziente è sfortunatamente ricoverato in ospedale i suoi dati sono a disposizione di: medico curante, medico specialistico, ospedale, infermieri, e farmacia&#8230; tutte persone con le quali il paziente deve condividere i suoi dati.</p>
+
+<p>Cosa succede se uno di questi ruba i dati dei pazienti e li rivende illegalmente ad enti che ne faranno uso improprio???</p>
+
+<p><strong>Si racconta (ed è una storia vera) che un funzionario di banca, in servizio in un comitato statale relativo alla sanità, ebbe accesso alla lista dei pazienti diagnosticata di tumore. Collegò i dati alla lista dei suoi clienti e annullò i prestiti.</strong> Adesso vi è chiaro il problema della privatezza?</p>
+
+<p><!--more-->Purtroppo i dati medici non sono gli unici dati ad essere sensibili; il Garante della Privacy in Italia nella Legge 675/96 che regola la raccolta, mantenimento, e divulgazione di informazioni personali, impone di chiedere sempre il consenso prima di raccogliere dati e definisce Dato Sensibile nell&#8217;articolo 22, comma 1: &#8220;</p>
+
+<p><em>I dati personali idonei a rivelare l&#8217;origine razziale ed etnica, le convinzioni religiose, filosofiche o di altro genere, le opinioni politiche, l&#8217;adesione a partiti, sindacati, associazioni od organizzazioni a carattere religioso, filosofico, politico o sindacale, nonché i dati personali idonei a rivelare lo stato di salute e la vita sessuale, possono essere oggetto di trattamento solo con il consenso scritto dell&#8217;interessato e previa autorizzazione del Garante.</em>&#8221;</p>
+
+<h2>Anonimizzatori (Anonymous Surfers)</h2>
+
+<p>I dati sono sempre raccolti sul Web mentre navighiamo, sfruttando varie tecniche come Link referenziali, File di log, Cookies, ecc&#8230; non sto qui a raccontarvi i dettagli tecnici di queste tecniche (ma se siete interessati contattatemi pure ;-) ), ma vi presento subito un modo per evitare di lasciare traccie in giro: gli Anonymous Surfers!</p>
+
+<p>Un Anonymous Surfer, o anonimizzatore, maschera il tuo indirizzo IP: infatti mentre navighi in Internet il tuo indirizzo ip e visibile a ogni server, e puoi essere rintracciato da chiunque. Navigando con un anonimizzatore invece non sarà il tuo indirizzo ip ad essere visibile, ma sarà visibile l&#8217;indirizzo dell&#8217;anonimizzatore stesso. A questo punto dobbiamo solo sperare che l&#8217;Anonymous Surfer non imbrogli e raccolga dati illegalmente!</p>
+
+<p>Esempi di Anonymous Surfer sono <a href="http://anonymouse.org/">http://anonymouse.org/</a> , <a href="http://proxify.co.uk/">http://proxify.co.uk/</a> , <a href="http://www.shadowsurf.com/">http://www.shadowsurf.com/</a> , e cercando su Google se ne trovano molti altri. Per usarli basta collegarci al sito e seguire le semplici istruzioni&#8230; spesso basta digitare l&#8217;indirizzo del Sito Web che vogliamo visitare.</p>
+
+<h3>1+1=2</h3>
+
+<p>Dopo questa semplice introduzione&#8230; sapete cosa deve fare uno sfortunato malato di epatite o tumore per cercare in rete informazioni sulla sua malattia? DEVE USARE UN COMPUTER PUBBLICO O ALMENO UTILIZZARE UN ANONIMIZZATORE!!!</p>
+
+<p>Per assurdo un motore di ricerca (gestito in modo illegale) potrebbe incrociare i suoi log sul server con i dati di un ISP (Internet Service Provider, suo complice) per sostituire l&#8217;indirizzo IP nei log con l&#8217;intestatario della linea telefonica, in modo da sapere chi ha cercato cosa :-)</p>
+
+<h2>Raccolta di Dati su Web</h2>
+
+<p>Purtroppo le persone sono ancora poco sensibili al problema della privacy, e rilasciano facilmente i propri dati sul Web utilizzando Social Network, o partecipando a questionari e sondaggi&#8230; quante volte hai trovato un &#8220;Religione: Ateo&#8221; oppure &#8220;Fumo: 3 pacchetti al giorno&#8221; su un social network???</p>
+
+<p>La FTC (Federal Trade Commission) è un ente che ha identificato cinque punti principali che un sito web dovrebbe rispettare per garantire privacy dei suoi utenti (Notifica, Consenso, Accesso, Sicurezza, Implementazione&#8230; manca però la richiesta di Cancellazione dei dati). Oltre alla FTC sono nati i <strong>Seal Program</strong>; enti che garantiscono la protezione della privacy da parte di alcuni siti web&#8230; quindi quando su un sito troviamo il sigillo di TRUSTe (<a href="http://truste.org/">http://truste.org/</a>), BBBOnLine, WebTrust, o altri, abbiamo una certa sicurezza che quel sito web non faccia uso improprio dei nostri dati personali.</p>
+
+<h2>P3P &#8211; Platform for Privacy Preferences Project</h2>
+
+<p>P3P è un modo per specificare le nostre preferenze di privacy direttamente nel browser, in modo che il controllo sia fatto in automatico con i vari siti web in cui navighiamo. P3P lo ritroviamo in tutti i moderni browser, ad esempio in Internet Explorer. Altri browser come Firefox, Opera, Safari, ed altri supportano in modo equivalente P3P. Purtroppo queste interfacce grafiche non ci permettono molto dettaglio nella configurazione&#8230; avendo a disposizione un plugin avanzato per P3P, un utente può configurare il browser in modo da essere avvisato quando un sito che richiede i dati anagrafici dichiara che li utilizzerà anche per inviare materiale commerciale.</p>
+
+<h3>Applicare P3P al proprio Sito Web</h3>
+
+<p>Un web master può applicare P3P al proprio sito web in quattro semplici passi:</p>
+
+<p>1) Creare il file /w3c/p3p.xml in questo modo:</p>
+
+<p><pre lang="XML">&lt;META xmlns=&ldquo;<a href="http://www.w3.org/2002/01/P3Pv1">http://www.w3.org/2002/01/P3Pv1</a>&rdquo;&gt;
+ &lt;POLICY-REFERENCES&gt;
+ &lt;POLICY-REF about=&ldquo;<a href="http://www.nomesito.it/w3c/p3p_full.xml#FireTeamPolicy">http://www.nomesito.it/w3c/p3p_full.xml#FireTeamPolicy</a>&rdquo;&gt;
+ &lt;INCLUDE&gt;/<em>&lt;/INCLUDE&gt;
+ &lt;COOKIE-INCLUDE name=&ldquo;</em>&rdquo; value=&ldquo;<em>&rdquo; domain=&ldquo;</em>&rdquo; path=&ldquo;*&rdquo;/&gt;
+ &lt;/POLICY-REF&gt;
+ &lt;/POLICY-REFERENCES&gt;
+&lt;/META&gt;</pre></p>
+
+<p>2) Creare il file /w3c/p3p_full.xml in questo modo:</p>
+
+<p><pre lang="XML">&lt;POLICIES xmlns=&ldquo;<a href="http://www.w3.org/2002/01/P3Pv1">http://www.w3.org/2002/01/P3Pv1</a>&rdquo;&gt; &lt;!&ndash; Versione P3P &ndash;&gt;</p>
+
+<p>&lt;POLICY name=&ldquo;FireTeamPolicy&rdquo; discuri=&ldquo;<a href="http://www.nomesito.it/w3c/privacy.html">http://www.nomesito.it/w3c/privacy.html</a>&rdquo; opturi=&ldquo;<a href="http://www.nomesito.it/w3c/privacy.html">http://www.nomesito.it/w3c/privacy.html</a>&rdquo;&gt;
+&lt;!&ndash; discuri e opturi contengono una versione human readable della politica p3p &ndash;&gt;</p>
+
+<p> &lt;!&ndash; Prevengo inconvenienti durante lo sviluppo della politica P3P &ndash;&gt;
+ &lt;TEST /&gt;</p>
+
+<p> &lt;!&ndash; Nome del Sito e lista dei contatti &ndash;&gt;
+ &lt;ENTITY&gt;
+ &lt;DATA-GROUP&gt;
+ &lt;DATA ref=&ldquo;#business.name&rdquo;&gt;nomesito.it&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.postal.street&rdquo;&gt;Garibaldi, 110&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.postal.city&rdquo;&gt;Avellino&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.postal.stateprov&rdquo;&gt;AV&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.postal.postalcode&rdquo;&gt;83100&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.postal.country&rdquo;&gt;Italy&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.online.email&rdquo;&gt;nome@nomesito.it&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.online.uri&rdquo;&gt;www.nomesito.it&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.telecom.telephone.intcode&rdquo;&gt;+39&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.telecom.telephone.loccode&rdquo;&gt;0825&lt;/DATA&gt;
+ &lt;DATA ref=&ldquo;#business.contact-info.telecom.telephone.number&rdquo;&gt;120031&lt;/DATA&gt;
+ &lt;/DATA-GROUP&gt;
+ &lt;/ENTITY&gt;</p>
+
+<p> &lt;ACCESS&gt;&lt;nonident/&gt;&lt;/ACCESS&gt;</p>
+
+<p> &lt;DISPUTES-GROUP&gt;
+ &lt;DISPUTES resolution-type=&ldquo;independent&rdquo;
+ service=&ldquo;<a href="http://www.nomesito.it">http://www.nomesito.it</a>&rdquo;
+ short-description=&ldquo;nomesito.it&rdquo;&gt;
+ &lt;IMG src=&ldquo;<a href="http://www.nomesito.it/w3c/logo.png">http://www.nomesito.it/w3c/logo.png</a>&rdquo; alt=&ldquo;Privacy Logo&rdquo;/&gt;
+ &lt;REMEDIES&gt;&lt;correct/&gt;&lt;/REMEDIES&gt;
+ &lt;/DISPUTES&gt;
+ &lt;/DISPUTES-GROUP&gt;</p>
+
+<p> &lt;STATEMENT&gt;
+ &lt;CONSEQUENCE&gt;Our hosting service keep standard web server log&lt;/CONSEQUENCE&gt;
+ &lt;PURPOSE&gt;&lt;admin/&gt;&lt;current/&gt;&lt;develop/&gt;&lt;/PURPOSE&gt;
+ &lt;RECIPIENT&gt;&lt;ours/&gt;&lt;/RECIPIENT&gt;
+ &lt;RETENTION&gt;&lt;stated-purpose/&gt;&lt;/RETENTION&gt;
+ &lt;DATA-GROUP&gt;
+ &lt;DATA ref=&ldquo;#dynamic.clickstream&rdquo;/&gt;
+ &lt;DATA ref=&ldquo;#dynamic.http&rdquo;/&gt;
+ &lt;/DATA-GROUP&gt;
+ &lt;/STATEMENT&gt;</p>
+
+<p>&lt;/POLICY&gt;</p>
+
+<p>&lt;/POLICIES&gt;</pre></p>
+
+<p>3) Nell&#8217;esempio non sono illustrati particolari usi delle informazioni raccolte, in questo passo si dovrebbero rivedere i file p3p.xml e p3p_full.xml in base alle proprie esigenze. Inoltre si deve avere un&#8217;immagine a piacere w3c/logo.png, e un file (w3c/privacy.html) in cui è scritta la politica di privatezza in linguaggio naturale (cioè in Italiano!!!).</p>
+
+<p>4) Copiare i file sul server e testarli con il validatore all&#8217;indirizzo <a href="http://www.w3.org/P3P/validator.html">http://www.w3.org/P3P/validator.html</a></p>
+
+<p>Purtroppo P3P è solo un modo per negoziare automaticamente politiche sulla privacy, ma non ci assicura che effettivamente quel sito web rispetti quello che dichiara&#8230; però se il server ha una politica P3P e non la rispetta, allora è attaccabile legalmente. E&#8217; bene fidarsi sempre in presenza di un sigillo da parte di un Seal Program :-)</p>
+
+<h2>Conclusioni</h2>
+
+<p>Il giusto equilibrio si può trovare con il buon senso, ricordando che ogni nostra pubblicazione su internet è di dominio pubblico&#8230; ricordando però che ci sono cose di cui andiamo orgogliosi e che potremo diffondere.</p>
+
+<p>E’ bene quindi dare poche informazioni su di noi, sia nelle pagine pubbliche disponibili sulla rete che a privati sconosciuti o conosciuti in rete. In particolare, gli esperti raccomandano ai minori di:</p>
+
+<ul>
+<li>Evitare di condividere foto che mostrano il proprio aspetto</li>
+<li>Non rivelare mai il proprio indirizzo fisico o numero di telefono</li>
+<li>Non rivelare mai i propri dati anagrafici</li>
+<li>Nascondere le proprie preferenze politiche, religiose, sessuali, o altro che potrebbe causarti problemi</li>
+</ul>
+
+
+<p>La prima raccomandazione è in contrasto con la partecipazione a molte reti sociali&#8230; ma hai ancora voglia di scrivere sul tuo Social Network preferito?</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">fsferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-06-27T20:53:03+00:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>8:53 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/security-and-privacy/'>security and privacy</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/web-and-privacy/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/web-and-privacy/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/installation-guide-of-windows-server-2003/" title="Previous Post: Installation guide of Windows Server 2003">&laquo; Installation guide of Windows Server 2003</a>
+      
+      
+        <a class="basic-alignment right" href="/windows-linux-commands-cheat-sheet/" title="Next Post: Windows-Linux commands cheat-sheet">Windows-Linux commands cheat-sheet &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Saverio Ferrara -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/web-and-privacy/';
+        var disqus_url = 'http://fsferrara.github.io/web-and-privacy/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

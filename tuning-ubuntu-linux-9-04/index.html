@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Tuning Ubuntu Linux 9.04 - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="Sulla rete ci sono parecchie guide sul come fare il tuning di ubuntu (cioè come alleggerire ubuntu) ma ho deciso di raggruppare il tutto in questa &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/tuning-ubuntu-linux-9-04/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/story">Story</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Tuning Ubuntu Linux 9.04</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-07-04T00:21:35+00:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:21 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Sulla rete ci sono parecchie guide sul come fare il tuning di ubuntu (cioè come alleggerire ubuntu) ma ho deciso di raggruppare il tutto in questa guida.</p>
+
+<p>Ubuntu Linux è una distribuzione piuttosto semplice da usare ma ma stabile, poiché basata su debian, tuttavia ubuntu di default ha molti pacchetti e servizi che si possono tranquillamente disabilitare o adattare secondo le proprie esigenze, così facendo guadagneremo in spazio sull&#8217;hdd e qualche mb di ram, questo significa avere un sistema operativo più snello e più reattivo.</p>
+
+<p>La presente guida è valida per la maggior parte degli utenti, ma ovviamente informatevi prima se un servizio\pacchetto non vi serve davvero&#8230; ad esempio chi possiede una stampante HP non dovrebbe disabilitare i relativi servizi per la sua gestione :-P</p>
+
+<!--more-->
+
+
+<h2>Disabilitare Servizi</h2>
+
+<p>bene possiamo cominciare:</p>
+
+<p>inanzitutto installiamo da synaptic il boot-up manager che permette di disabilitare alcuni servizi:</p>
+
+<ul>
+<li><strong>anacron</strong>, <strong>atd</strong>, <strong>cron</strong> &#8211; servizi di pianificazione, servono per gli aggiornamenti automatici dei pacchetti di Ubuntu, e altri compiti  un po’ obsoleti,disattivabile.<span style="text-decoration: line-through;"><br /> </span></li>
+<li><strong>apport</strong> &#8211; generatore di rapporti per i crash, che andranno salvati in /var/crash.</li>
+<li><strong>brltty</strong> &#8211; gestione di dispositivi braille</li>
+<li><strong>bluetooth</strong> &#8211; gestisce il bluetooth,se ne fate uso non disabilitatelo</li>
+<li><strong>cupsys</strong> &#8211; se non avete\usate una stampante connessa al PC, sappiate che potete disabilitarlo</li>
+<li><strong>dhcp3-server</strong> &#8211; se non fate da server dhcp in una rete potete disabilitarlo</li>
+<li><strong>hotkey-setup</strong> &#8211; se non usate tasti speciali (ad esempio inun notebook o nelle moderne tastiere multimediali) potete disabilitarlo</li>
+<li><strong>laptop-mode</strong> &#8211; si occupa della gestione ottimizzata per allungare la vita alla batteria in un portatile.</li>
+<li><strong>phplip</strong> &#8211; se non avete una stampante HP potete disabilitarlo</li>
+<li><strong>powernowd</strong>* &#8211; gestione dello scaling della CPU, di solito si usa sui portatili</li>
+<li><strong>readahead</strong><em> &#8211; serve a precaricare in memoria file/librerie elencate in /etc/readahead/</em> se avete molta ram potete abilitarlo.</li>
+<li><strong>rsync</strong> &#8211; serve a copiare/sincronizzare file in remoto. difficilmente serve</li>
+<li><strong>screen</strong> -non so cosa sia ma non ci sono problemi a disabilitarlo (credo)</li>
+</ul>
+
+
+<h2>Disinstallazione di Pacchetti</h2>
+
+<p>Questi sono pacchetti di che di solito sono installati di default ma che sono dinsintallabili (a seconda della necessità dell&#8217;utente). Vi ricordo di leggere prima la descrizione del pacchetto prima di eliminarlo dal sistema!!!</p>
+
+<p>bluez (bluetooth)</p>
+
+<p>hpijs e hplip* (stampanti HP)</p>
+
+<p>ubuntu-docs (documentazione)</p>
+
+<p>gnome-games (i giochi di ubuntu)</p>
+
+<p>gnome-games-data (file contenenti giochi di ubuntu)openoffice.org-help-en-us (file d’aiuto per OpenOffice in inglese)</p>
+
+<p>openoffice.org-help-en-gb (file d’aiuto per OpenOffice in inglese)</p>
+
+<p>openoffice.org-thesaurus-en-au  (supporto lingua inglese/australiano per OpenOffice)</p>
+
+<p>openoffice.org-help-it (file d’aiuto per OpenOffice in italiano)</p>
+
+<p>gimp-help-common (file d’aiuto per GIMP in italiano)</p>
+
+<p>example-content (contenuti d’esempio)</p>
+
+<p>cups* (vari pacchetti relativi alla stampa, <strong>attenzione</strong> con questi!)</p>
+
+<p>gnome-screensaver (gli screensaver)</p>
+
+<p>xsane (consente gi gestire gli scanner)</p>
+
+<h2>Rimuovere Mono</h2>
+
+<p>con questo comando potremmo liberarci di mono,pacchetto presente di default su ubuntu:</p>
+
+<blockquote><p><p style="text-align: left;">
+  <strong>Mono è un progetto open sourceNovell (precedentemente da Ximian) per creare un insieme di strumenti compatibili con il Framework .NET, secondo gli standard ECMA coordinato da </strong>
+</p></p>
+
+<p><ul style="text-align: left;">
+  <li>
+    <strong> è un programma di instant messaging per MSN.</strong>
+  </li>
+  <li>
+    <strong>GLyrics è un programma per la ricerca di testi musicali.</strong>
+  </li>
+  <li>
+    <strong>Gnome Do è un lanciatore per Linux (simile a Quicksilver).</strong>
+  </li>
+  <li>
+    <strong>iFolder 3 (della Novell) permette la condivisione di file attraverso molteplici computer e con altri utenti tramite peer-to-peer o attraverso server groupware di Novell.</strong>
+  </li>
+  <li>
+    <strong>Imendio Blam! è un aggregatore di news e feed RSS buono tra l&#8217;altro per la lettura di feed planet come Planet Gnome.</strong>
+  </li>
+  <li>
+    <strong>MonoDevelop è un IDE per la creazione di applicazioni Mono. Originariamente è stato un port di SharpDevelop per Gtk#, ma oggi viene sviluppato indipendentemente.</strong>
+  </li>
+  <li>
+    <strong>Muine è un riproduttore musicale con una interfaccia utente progettata per essere intuitiva, sviluppato da Jorn Baayen il quale ha già collaborato allo sviluppo di Rhythmbox.</strong>
+  </li>
+  <li>
+    <strong>Second Life, il mondo virtuale creato da Linden Lab, si dice stia per passare dall&#8217;utilizzo del Linden Scripting Language (LSL) a Mono, in un futuro prossimo.</strong>
+  </li>
+  <li>
+    <strong>SkyNET è una mappa stellare.</strong>
+  </li>
+  <li>
+    <strong>smuxi è un client IRC per utenti esperti scritto usando Gtk#/Gnome#, SmartIrc4net e Nini.</strong>
+  </li>
+  <li>
+    <strong>Tomboy è una applicazione desktop per annotazioni che utilizza un sistema di link simile al Wiki.</strong>
+  </li>
+</ul></p>
+
+<p><p style="text-align: left;">
+  (tratto da wikipedia)
+</p></p></blockquote>
+
+<p><strong><code>sudo apt-get --purge remove libmono0</code></strong></p>
+
+<h2 style="text-align: left;">
+  Ulteriore Tuning
+</h2>
+
+
+
+
+<p style="text-align: left;">
+  in generale potete alleggerire il sistema con programmi meno pesanti ad esempio epiphany al posto di firefox,abi word al posto di opneoffice e via dicendo con questo comando eliminate “<strong>evolution-exchange</strong>“ che è un pacchetto che si occupa di cercare il server ms-exchange che spesso non è utilizzato ma occupa ram:
+</p>
+
+
+<p><strong><code>sudo apt-get --purge remove evolution-exchange</code></strong></p>
+
+<p style="text-align: left;">
+  ora andate su servizi ed eliminate quelli che non usate o non vi interessano,posto una lista di quelli meno usati (sui dextop)
+</p>
+
+
+
+
+<p style="text-align: left;">
+  bootlogd e stop-bootlogd<br /> rsync<br /> apmd<br /> powernowd<br /> acpi-support<br /> laptop-mode<br /> mdadm
+</p>
+
+
+<p>un altro consiglio che posso darvi è dare un &#8220;apt-get install localepurge&#8221; per installare un programma da utilizzare tramite terminale che consente di eliminare le lingue non utilizzate</p>
+
+<p>Ciao al prossimo articolo!!!</p>
+
+<p><p style="text-align: left;"></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">fsferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-07-04T00:21:35+00:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:21 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/system-administration/'>system administration</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/tuning-ubuntu-linux-9-04/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/tuning-ubuntu-linux-9-04/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/multidimensional-arrays-in-c/" title="Previous Post: Multidimensional Arrays in C">&laquo; Multidimensional Arrays in C</a>
+      
+      
+        <a class="basic-alignment right" href="/c-implementation-of-quicksort-algorithm/" title="Next Post: C implementation of Quicksort algorithm">C implementation of Quicksort algorithm &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Saverio Ferrara -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/tuning-ubuntu-linux-9-04/';
+        var disqus_url = 'http://fsferrara.github.io/tuning-ubuntu-linux-9-04/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

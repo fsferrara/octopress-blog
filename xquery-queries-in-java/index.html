@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>XQuery Queries in Java - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="XQuery, una abbrevazione per XML Query Language, è un linguaggio di programmazione specificato dal W3C e destinato ad interrogare documenti e basi &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/xquery-queries-in-java/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/story">Story</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">XQuery Queries in Java</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-10-29T00:55:37+00:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:55 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p style="text-align: justify;">
+  XQuery, una abbrevazione per XML Query Language, è un linguaggio di programmazione specificato dal W3C e destinato ad interrogare documenti e basi di dati XML. Questo perché XML si sta proponendo come la tecnologia per rimpiazzare i vecchi DBMS relazionali :-)
+</p>
+
+
+
+
+<p style="text-align: justify;">
+  Il w3c ha definito il linguaggio XQuery 1.0; usa la sintassi delle espressioni di XPath  2.0, con l&#8217;aggiunta delle cosiddette espressioni FLWOR per la formulazione di query complesse. Il risultato è un linguaggio di programmazione funzionale, dichiarativo, con somiglianze con il vecchio SQL.
+</p>
+
+
+
+
+<p style="text-align: justify;">
+  Per effettuare delle query xquery su un file XML possiamo usare delle librerie come BaseX e Saxon. Purtroppo attualmente Saxon non è un prodotto del tutto gratuito, quindi scegliamo di usare BaseX, un processore Xquery-XPath open source.
+</p>
+
+
+
+
+<p style="text-align: justify;">
+  <!--more-->In realtà BaseX, oltre ad essere utlilizzabile come libreria all&#8217;interno del linguaggio Java, ci mette a disposizione un&#8217;interfaccia grafica dalla quale possiamo effettuare query su file XML ben formati arbitrari.
+</p>
+
+
+
+
+<h2 style="text-align: justify;">
+  Primo esempio di query
+</h2>
+
+
+
+
+<p style="text-align: justify;">
+  La prima cosa da fare è inserire i file jar di BaseX nel build path del nostro progetto; la seconda è assicurarsi di avere java 1.6 (non funziona con java 1.5) perché BaseX utilizza il package javax.xml.stream.
+</p>
+
+
+
+
+<p style="text-align: justify;">
+  Questo è un sempio dove si esegue la query <strong>//li </strong>sul file &#8216;<strong>input</strong>&#8216;:
+</p>
+
+
+
+
+<pre lang="java">import javax.xml.xquery.XQConnection;
+import javax.xml.xquery.XQDataSource;
+import javax.xml.xquery.XQPreparedExpression;
+import javax.xml.xquery.XQResultSequence;
+
+public final class XQueryAPIExample {
+ /** Database Driver. */
+ static final String DRIVER = "org.basex.api.xqj.BXQDataSource";
+
+ public static void main(final String[] args) throws Exception {
+
+ // Gets the XQDataSource for the specified Driver.
+ XQDataSource source = (XQDataSource) Class.forName(DRIVER).newInstance();
+
+ // Creates an XQConnection
+ XQConnection conn = source.getConnection();
+
+ // Prepares the Expressionwith the Document and the Query.
+ XQPreparedExpression expr = conn.prepareExpression("doc('input')//li");
+
+ // Executes the XQuery query.
+ XQResultSequence result = expr.executeQuery();
+
+ // Gets all results of the execution.
+ while(result.next()) {
+ // Prints the results to the console.
+ System.out.println(result.getItemAsString(null));
+ }
+
+ }
+}</pre>
+
+
+
+
+<p style="text-align: justify;">
+  Questo esempio funziona solo se il file XML interrogato non dichiara nessun namespace.
+</p>
+
+
+
+
+<h2 style="text-align: justify;">
+  Query in presenza di namespace
+</h2>
+
+
+
+
+<p style="text-align: justify;">
+  Supponiamo adesso di interrogare un file XML con namespace&#8230; ad esempio un file in formato XML Mpeg-7 che usa i seguenti namespace:<br /> xmlns=&#8221;urn:mpeg:mpeg7:schema:2001&#8243;<br /> xmlns:mpeg7=&#8221;urn:mpeg:mpeg7:schema:2001&#8243;<br /> xmlns:xsi=&#8221;http://www.w3.org/2001/XMLSchema-instance&#8221;
+</p>
+
+
+
+
+<p style="text-align: justify;">
+  Per far riconoscere i namespace dobbiamo dichiararli nel prologo della xquery in questo modo:<br /> declare default element namespace &#8220;urn:mpeg:mpeg7:schema:2001&#8221;<br /> declare  namespace mpeg7 = &#8220;urn:mpeg:mpeg7:schema:2001&#8221;<br /> declare  namespace xsi = &#8220;http://www.w3.org/2001/XMLSchema-instance&#8221;
+</p>
+
+
+
+
+<p style="text-align: justify;">
+  Questo è il codice che esegue la query sul file file/video/extract.xml:
+</p>
+
+
+
+
+<pre lang="java">String prologoQuery = "" +
+ "declare default element namespace \"urn:mpeg:mpeg7:schema:2001\"; " +
+ "declare  namespace mpeg7 = \"urn:mpeg:mpeg7:schema:2001\"; " +
+ "declare  namespace xsi = \"http://www.w3.org/2001/XMLSchema-instance\"; ";
+
+ // Gets the XQDataSource for the specified Driver.
+ XQDataSource source = (XQDataSource) Class.forName(DRIVER).newInstance();
+ // Creates an XQConnection
+ XQConnection conn = source.getConnection();
+ // Prepares the Expressionwith the Document and the Query.
+ //XQPreparedExpression expr = conn.prepareExpression("&lt;xml&gt;1 + 2 = { 1+2 }&lt;/xml&gt;/text()");
+ //XQPreparedExpression expr = conn.prepareExpression("doc('file/video/20090201_video_15213221.xml')//meta");
+ XQPreparedExpression expr = conn.prepareExpression(prologoQuery + " doc('file/video/extract.xml')//Name");
+
+ // Executes the XQuery query.
+ XQResultSequence result = expr.executeQuery();
+ // Gets all results of the execution.
+ while(result.next()) {
+ //element = (org.w3c.dom.Element) result.getObject();
+ System.out.println(result.getItemAsString(null));
+ }</pre>
+
+
+
+
+<p style="text-align: justify;">
+  Nella riga 18 è commentato un altro modo per usare gli oggetti restiuiti dalla query, che ci restituisce il risultato come elementi della struttura DOM del file XML.
+</p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">fsferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-10-29T00:55:37+00:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:55 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/xquery-queries-in-java/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/xquery-queries-in-java/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/describing-media-with-xml-and-mpeg-7/" title="Previous Post: Describing media with XML and MPEG-7">&laquo; Describing media with XML and MPEG-7</a>
+      
+      
+        <a class="basic-alignment right" href="/java-implementation-of-the-ackermann-function/" title="Next Post: Java implementation of the Ackermann function">Java implementation of the Ackermann function &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Saverio Ferrara -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/xquery-queries-in-java/';
+        var disqus_url = 'http://fsferrara.github.io/xquery-queries-in-java/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

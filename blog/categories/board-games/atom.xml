@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Board Games | Saverio Ferrara]]></title>
+  <link href="http://fsferrara.github.io/blog/categories/board-games/atom.xml" rel="self"/>
+  <link href="http://fsferrara.github.io/"/>
+  <updated>2018-01-06T00:34:31+01:00</updated>
+  <id>http://fsferrara.github.io/</id>
+  <author>
+    <name><![CDATA[Saverio Ferrara]]></name>
+    <email><![CDATA[me@fsferrara.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Luppolo the Drinking Game]]></title>
+    <link href="http://fsferrara.github.io/luppolo/"/>
+    <updated>2013-10-21T22:29:38+00:00</updated>
+    <id>http://fsferrara.github.io/luppolo</id>
+    <content type="html"><![CDATA[<p>The Drinking Games are games in which participants are often invited to drink alcoholic beverages. These games have been played since ancient times, and now are more popular among young people, especially students.</p>
+
+<p>Luppolo (the Italian word for hops) is a drinking game designed by me.</p>
+
+<!--more-->
+
+
+<p>It is a board game and you can play with friends, at home, or in the pub favorite.</p>
+
+<p>In my dreams the table it will be printed directly on the tables of the pubs.</p>
+
+<p>The rules are simple &#8230; just roll the dice hitting the gaming table, and follow the instructions of the dice :)</p>
+
+<p>Luppolo is only in Italian, and is released under the <a href="http://creativecommons.org/licenses/by-nc-nd/2.5/legalcode">Creative Commons</a> license. Anyone wishing to contribute with suggestions, ideas, translations, and so on, is welcome.</p>
+
+<p>You can <a href="/wp-content/downloads/luppolo.pdf">download luppolo</a>, print it, build it, and then you can freely play with your friends.</p>
+]]></content>
+  </entry>
+  
+</feed>

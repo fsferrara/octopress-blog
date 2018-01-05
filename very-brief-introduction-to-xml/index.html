@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Very Brief Introduction to XML - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="Il linguaggio XML è diventato uno degli elementi fondamentali per la realizzazione di sistemi informativi, indipendentemente dalla tecnologia usata. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/very-brief-introduction-to-xml/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/story">Story</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Very Brief Introduction to XML</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-10-26T01:15:26+00:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>1:15 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Il linguaggio XML è diventato uno degli elementi fondamentali per la realizzazione di sistemi informativi, indipendentemente dalla tecnologia usata.</p>
+
+<h2>Storia</h2>
+
+<p>Il World Wide Web Consortium (W3C), in seguito alla guerra dei browser fu costretto a seguire le individuali estensioni al linguaggio HTML. Dovette scegliere quali caratteristiche standardizzare e quali lasciare fuori dalle specifiche ufficiali dell&#8217;HTML. Fu in questo contesto che iniziò a delinearsi la necessità di un linguaggio di markup che desse maggiore libertà nella definizione dei tag, pur rimanendo in uno standard.</p>
+
+<p>Il &#8220;progetto XML&#8221;, che ebbe inizio alla fine degli anni &#8217;80 nell&#8217;ambito della SGML Activity del W3C, suscitò un così forte interesse a tal punto che la W3C creò un gruppo di lavoro, chiamato XML Working Group, composto da esperti mondiali delle tecnologie SGML, ed una commissione, XML Editorial Review Board, deputata alla redazione delle specifiche del progetto.</p>
+
+<p>Nel febbraio del 1998 le specifiche divennero una raccomandazione ufficiale con il nome di Extensible Mark-up Language, versione 1.0. Ben presto ci si accorse che XML non era solo limitato al contesto web, ma era qualcosa di più: uno strumento che permetteva di essere utilizzato nei più diversi contesti, dalla definizione della struttura di documenti, allo scambio delle informazioni tra sistemi diversi, dalla rappresentazione di immagini alla definizione di formati di dati.</p>
+
+<!--more-->
+
+
+<h2>Il Linguaggio</h2>
+
+<ul>
+<li><strong>Definizione XML</strong>: (acronimo di eXtensible Markup Language) è un metalinguaggio di markup, ovvero un linguaggio marcatore che definisce un meccanismo sintattico che consente di estendere o controllare il significato di altri linguaggi marcatori. Costituisce il tentativo di produrre una versione semplificata di SGML che consenta di definire in modo semplice nuovi linguaggi di markup</li>
+</ul>
+
+
+<p>Quindi quello che si fa con XML è definire/progettare dei propri “Linguaggi XML” (cioè un linguaggio basato su XML); ad esempio possiamo scegliere di codificare in XML i risultati di una giornata del campionato di calcio:</p>
+
+<!--more-->
+
+
+
+
+<pre lang="xml">&lt;partite giornata=”3°”&gt;
+ &lt;partita numero=”1”&gt;
+  &lt;squadra&gt;Napoli&lt;/squadra&gt;
+  &lt;squadra&gt;Juventus&lt;/squadra&gt;
+  &lt;risultato&gt;3-0&lt;/risultato&gt;
+ &lt;/partita&gt;
+  &lt;partita numero=”2”&gt;
+  &lt;squadra&gt;Roma&lt;/squadra&gt;
+  &lt;squadra&gt;Lazio&lt;/squadra&gt;
+  &lt;risultato&gt;2-2&lt;/risultato&gt;
+ &lt;/partita&gt;
+&lt;/partite&gt;</pre>
+
+
+<p>Il processo di sviluppo di un linguaggio XML è detto “XMLificazione”: ossia la scelta dei tag (partite, partita, squadra, risultato), degli attributi (giornata, numero), e della loro struttura.</p>
+
+<p>Ci possono essere però altri linguaggi XML che usano i nostri stessi tag, e mischiare più linguaggi XML con nomi dei tag uguali può portare a confusione, per questo possiamo introdurre un namespace per i nostri nomi.</p>
+
+<ul>
+<li><strong>Namespace XML</strong>: Un namespace è una collezione di nomi di entità, definite dal programmatore, omogeneamente usate in uno o più file sorgente. Lo scopo dei namespace è quello di evitare confusione ed equivoci nel caso siano necessarie molte entità con nomi simili, fornendo il modo di raggruppare i nomi per categorie.Nel linguaggio XML i namespaces sono definiti esplicitamente.</li>
+</ul>
+
+
+<p>Nel nostro caso la prima riga diventerà:</p>
+
+<p><partite giornata=”3°” xmlns=”http://www.fireteam.it”></p>
+
+<p>In questo modo indichiamo che il tag &#8216;partite&#8217; e tutto il suo contenuto appartengono al namespace &#8216;<a href="http://www.fireteam.it&amp;#8217;">http://www.fireteam.it&amp;#8217;</a> di default.</p>
+
+<p>Fin qui XML sembra la più banale delle tecnologie, eppure ha avuto così tanto successo&#8230; allora perché è così importante?</p>
+
+<h2>La Tecnologia XML</h2>
+
+<p>Il primo motivo è che tutti i file XML sono codificati in UNICODE (i famosi UTF-8 UTF-16, ed UTF-32), e sono stati eliminati in questo modo molto dei fastidi che affligevano i formati testuali.</p>
+
+<p>Il secondo motivo è che con XML si può rappresentare l&#8217;informazione in modo semplice, mantenendo un minimo di struttura; non a caso l&#8217;informazione codificata in XML è detta semistrutturata, che è il compromesso dalla completa strutturazione (come ad esempio la struttura rigida di uno schema di un database relazionale) e l&#8217;assenza di struttura (schema-less, ossia il testo puro).</p>
+
+<p>Il terzo motivo, che ritengo più importante, è che attorno a questo semplice linguaggio di markup sono state definite parecchie tecnologie utili a risparmiare lavoro durante il trattamento dei dati. Queste sono:</p>
+
+<ul>
+<li><p><strong>Xpath</strong>: è un linguaggio parte della famiglia XML che permette di individuare i nodi all&#8217;interno di un documento XML.</p></li>
+<li><p><strong>Linguaggi Schema</strong>: un linguaggio di schema è un linguaggio formale per esprimere “schemi”. Uno schema è la definizione formale della sintassi di un linguaggio XML, ovvero una famiglia di documenti XML.</p>
+
+<ul>
+<li><strong>DTD</strong>: Il linguaggio DTD è utile a definire schemi DTD per un particolare linguaggio XML. DTD è semplice, con un potere espressivo limitato, non è autoesplicativo poiché non usa una notazione XML (è descritto da una grammatica BNF), e tra i tanti difetti non supporta i namespace in quanto il linguaggio DTD stato definito è stato definito prima dei namespace.</li>
+<li><strong>Schema</strong>: è un linguaggio di schema nato per sostituire DTD. E&#8217; più espressivo, è quasi autoesplicativo (è scritto in XML e la sua sintassi è definibile con XML schema stesso, ma non si riescono a catturare tutti gli aspetti sintattici del linguaggio). Inoltre introduce i tipi di dato e permette di crearne nuovi, in modo da riuscire a fare buoni controlli sui contenuti dei file XML.</li>
+</ul>
+</li>
+<li><p><strong>XSL</strong>: acronimo di eXtensible Stylesheet Language, è il linguaggio di descrizione dei fogli di stile per i documenti in formato XML. Com&#8217;è noto, lo standard XML prevede che i contenuti di un documento siano separati dalla formattazione della pagina in cui verranno pubblicati.</p>
+
+<ul>
+<li><strong>XSLT</strong>: XSL Transformations &#8211; il linguaggio di trasformazione dell&#8217;XML. Fa uso di XPath per accedere alle parti di un documento XML. La trasformazione è fatta da un modulo detto Processore XSLT, come ad esempio quello incluso nei browser.</li>
+<li><strong>XSL-FO</strong>: XSL Formatting Objects &#8211; usato per l&#8217;applicazione degli stili e del modo di apparizione a un documento XML.</li>
+</ul>
+</li>
+<li><p><strong>XQuery</strong>: abbrevazione per XML Query Language, è un linguaggio di programmazione specificato dal W3C e destinato ad interrogare documenti e basi di dati XML.</p></li>
+</ul>
+
+
+<p>Qui è d&#8217;obbligo soffermarsi per discutere sull&#8217;utilità di un linguaggio di interrogazione XML. Un&#8217;ambiziosa applicazione di XML ha come scopo la generalizzazione del tradizionale modello delle basi di dati relazionali. Da tempo si sta cercando un&#8217;alternativa ai vecchissimi database relazionali, e si è provato in svariate direzioni&#8230; database gerarchici, database multidimensionali, database ad oggetti, ecc.</p>
+
+<p>XML è un alternativa allettane! Oggi si scrive molto in XML, specialmente sul web dove vi sono pagine XHTML (che sono XML), e l&#8217;idea di avere un database XML perfettamente integrabile con tutti gli altri nostri dati non è affatto male&#8230; il World Wide Web può così diventare una gigantesca base di dati.</p>
+
+<p>XQuery è un linguaggio per interrogare file XML, allo stesso modo in cui SQL interroga base di dati relazionali&#8230; ed è qui che una collezione di file XML è spesso chiamata Database XML.</p>
+
+<p>E come tutti i linguaggi di interrogazione che si rispettano anche per XQuery c&#8217;è un algebra&#8230; XML Query Algebra definita dal W3C. In realtà i lavori sono ancora in progresso e ci sono varie proposte di algebra:</p>
+
+<ul>
+<li><strong>Algebra per linguaggi di interrogazione XML</strong>: sono stati proposti svariati linguaggi di interrogazione XML, come XQuery, XML-QL, ed altri; quindi c&#8217;è un interesse crescente verso l&#8217;interrogazione di file XML. Non ancora però è stata definita un&#8217;algebra comune per questi linguaggi. Un algebra formale è un passo obbligato per avere una buona ottimizzazione delle query.
+
+<ul>
+<li><strong>TAX</strong>: E&#8217; una proposta di algebra non standard, utilizzata da un motore di database XML chiamato “Timber XML”. TAX sta per “Tree Algebra for XML”, ed è una proposta interessante perché usa un modello di dati dove i documenti XML sono effettivamente visti come alberi, quindi le varie operazioni (Selezione, Proiezione, Prodotto, Set, Raggruppamento, Aggregazione, Renaming, Reordering, Copy-and-Paste, Cancellazione, Inserimento) risultano definite in modo naturale.</li>
+<li><strong>XML Query Algebra</strong>: anche chiamata “The Algebra” è la proposta di standardizzazione da parte del W3C. Questa algebra, che sembra assomigliare ad un linguaggio di programmazione dichiarativo, non definisce le operazioni con operatori ad HOC, ma riesce a ricavare le consuete operazioni mediante l&#8217;uso di cicli for, assegnazioni di variabili, costrutti condizionali, ed altro. Inoltre i tipi di dato sono molto importanti, e sono definiti per ogni espressione. Una volta tradotta una query, la sua ottimizzazione sfrutta delle regole di inferenza logica; un metodo del tutto innovativo.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>E quando queste tecnologie non riescono a soddisfare le nostre richieste, entra in gioco la solita programmazione:</p>
+
+<ul>
+<li><p><strong>Programmazione XML</strong>: Benchè gli strumenti XML (Schema, XSLT, XQuery, XPath, ecc&#8230;) ci permettono di fare molti tipi di elaborazione, spesso c&#8217;è la necessita di manipolare file XML da linguaggi di programmazione di uso generale come ad esempio Java.</p>
+
+<ul>
+<li><strong>DOM</strong>: Il Document Object Model (DOM) è una forma di rappresentazione dei documenti strutturati come modello orientato agli oggetti. DOM definisce un API per accedere e manipolare file XML comune a diversi linguaggi.</li>
+<li><strong>SAX</strong>: (Simple API for XML) è un&#8217;API per numerosi linguaggi di programmazione che permette di leggere ed elaborare dei documenti XML. Contrariarmente al DOM, il SAX processa i documenti linea per linea. Il flusso di dati XML è unidirezionale, così che dati a cui si è acceduto in precedenza non possono essere riletti senza la rielaborazione dell&#8217;intero documento.</li>
+<li><strong>JDOM</strong>: JDom è un API per accedere ed elaborare documenti XMl specifica per il linguaggio di programmaziopne Java, che (rispettando il principio del 80/20) permette di sviluppare con semplicità l&#8217;80% delle applicazione, mentre richiede una soluzione ad HOC per il restante 20%&#8230; cioè JDom sacrifica parte della generalità per dar miglior supporto alle applicazioni più comuni.</li>
+</ul>
+</li>
+<li><p><strong>XML Retrieval</strong>: L&#8217;information retrieval (IR) è la disciplina che studia le tecniche utilizzate per il recupero mirato dell’informazione in formato elettronico.</p></li>
+</ul>
+
+
+<h2>Le Applicazioni XML</h2>
+
+<p>XML è oggi una tecnologia matura ed utilizzata negli ambiti più disparati&#8230; basta provare a salvare un documento di testo scritto con il famosissimo word processor OpenOffice, rinominare questo file .zip, e provare ad estrarre il contenuto: dentro troveremo il nostro documento descritto in XML!!!</p>
+
+<p>Un altro esempio è SVG, lo standard aperto per la grafica vettoriale che punta a sostituire la tecnologia &#8216;flash&#8217; sul web. Un file .svg è interamente scritto in XML, tant&#8217;è vero che si può aprire senza problemi con un qualsiasi editor di testo.</p>
+
+<p>Alcuni linguaggi XML hanno avuto particolare successo come XHTML, CML (Chemical Markup Language), WML (usato nella tecnologia WAP dei cellulari), RSS ed altri&#8230; in particolare Mpeg7:</p>
+
+<ul>
+<li><strong>Mpeg-7</strong>: MPEG-7 è uno standard nato per codificare i contenuti multimediali; non è uno standard nato per codificare flussi audio o video come, ad esempio, MPEG-1 MPEG-2 o MPEG-4 ma per definire metadati sui dati multimediali.La codifica utilizza l&#8217;XML per memorizzare dei metadati che utilizzano a loro volta il timecode del filmato permettendo di sincronizzare i flussi multimediali con particolari eventi. Per esempio, permette di sincronizzare un filmato con i suoi sottotitoli o un video con il testo della canzone.</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">fsferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-10-26T01:15:26+00:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>26</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>1:15 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/very-brief-introduction-to-xml/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/very-brief-introduction-to-xml/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/very-brief-introduction-to-regular-expressions/" title="Previous Post: Very brief introduction to Regular Expressions">&laquo; Very brief introduction to Regular Expressions</a>
+      
+      
+        <a class="basic-alignment right" href="/describing-media-with-xml-and-mpeg-7/" title="Next Post: Describing media with XML and MPEG-7">Describing media with XML and MPEG-7 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Saverio Ferrara -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/very-brief-introduction-to-xml/';
+        var disqus_url = 'http://fsferrara.github.io/very-brief-introduction-to-xml/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

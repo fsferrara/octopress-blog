@@ -1,0 +1,601 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Getting Started With GraphQL - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="What is GraphQL? The draft RFC specification (October 2016), defines it as &#8220;a query language created by Facebook in 2012 for describing the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/getting-started-with-graphql/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/story">Story</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Getting Started With GraphQL</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2017-12-10T22:53:50+00:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>10:53 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div>
+  What is GraphQL? The <a href="http://facebook.github.io/graphql/October2016/">draft RFC specification</a> (October 2016), defines it as &#8220;a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for client‐server applications&#8221;. More simply, GraphQL is a language specification for API. It defines in which way the client should query the server, and in which way the server should execute those queries.
+</div>
+
+
+
+
+<div>
+  <!--more-->
+</div>
+
+
+
+
+<div>
+</div>
+
+
+
+
+<div>
+  From the definition above, it is clear that GraphQL can be adopted as an alternative to REST. Let&#8217;s now analyze its features with an example in order to understand GraphQL base concepts.<br /> Think about your favourite website for booking hotel rooms, that is obviously <a href="https://www.hotels.com/">hotels.com</a>, and let&#8217;s try to design a GraphQL service that provides the reservation list for a specific user.
+</div>
+
+
+<h2>Data model</h2>
+
+<div>
+  The first thing to do is defining the graph of the data provided by the service.
+</div>
+
+
+
+
+<div>
+  The <strong>data model</strong> we are going to define follows this structure:
+</div>
+
+
+
+
+<div>
+  <pre class="striped:false nums:false lang:default highlight:0 decode:true">+--------------------------------------+         +----------------------------+         +---------------------+
+| QueryType                            |         | ReservationType            |         | HotelType           |
++--------------------------------------+         +----------------------------+         +---------------------+
+|                                      |         |                            |         |                     |
+| reservationList: [ReservationType!]! +-------&gt; | hotelId: ID!               |         | hotelName: String!  |
+|                                      |         | checkIn: String!           |         | fullAddress: String |
++--------------------------------------+         | checkOut: String!          |         | starRating: Int!    |
+                                                 | hotelDetails: HotelType!   +-------&gt; |                     |
+                                                 | status: ReservationStatus! |         +---------------------+
+                                                 |                            |
+                                                 +----------------------------+</pre>
+
+  <p>
+    GraphQL models your data as a graph but it still needs entry points to that graph. Those entry points are the queries defined in the QueryType, that is the root of all the queries.<br /> In this example, it is defined only one query named &#8220;reservationList&#8221; that returns a list of &#8220;ReservationType&#8221;. In turn, ReservationType describes a hotel reservation and HotelType describe a hotel.
+  </p>
+
+  <h2>
+    GraphQL Schema definition
+  </h2>
+
+  <p>
+    Using the &#8220;<em>GraphQL schema language</em>&#8220;, explained in the <a href="http://graphql.org/learn/schema/">official GraphQL website</a>, our <strong>data model</strong> can be described in this way:
+  </p>
+</div>
+
+
+
+
+<div>
+  <pre class="lang:default highlight:0 decode:true">schema {
+    query: QueryType
+}
+ 
+type QueryType {
+  reservationsList(userId: ID!): [ReservationType!]!
+}
+ 
+type ReservationType {
+  hotelId: ID!
+  checkIn: String!
+  checkOut: String!
+  hotelDetails: HotelType!
+  status: ReservationStatus!
+}
+ 
+type HotelType {
+  hotelName: String!
+  fullAddress: String
+  starRating: Int!
+}
+ 
+enum ReservationStatus {
+  UPCOMING
+  COMPLETED
+  CANCELLED
+}</pre>
+
+  <p>
+    In very short, in this graphql<strong> schema definition</strong> we have:
+  </p>
+</div>
+
+
+
+
+<div>
+  <ul>
+    <li>
+      the keyword &#8220;schema&#8221;, that is the root of the schema;
+    </li>
+    <li>
+      ID, String, and Int are built-in <a href="http://graphql.org/learn/schema/#scalar-types">Scalar Types</a>;
+    </li>
+    <li>
+      ReservationStatus is an <a href="http://graphql.org/learn/schema/#enumeration-types">Enumeration Type</a>;
+    </li>
+    <li>
+      the others are <a href="http://graphql.org/learn/schema/#object-types-and-fields">Object Types</a>.
+    </li>
+  </ul>
+</div>
+
+
+
+
+<div>
+  This GraphQL schema can be parsed in order to be used for a real service. For instance, Apollo &#8220;<a href="https://github.com/apollographql/graphql-tools">graphql tools</a>&#8221; is a javascript utility for parsing such a schema.
+</div>
+
+
+<h2>Query example</h2>
+
+<div>
+  This is an example of a query, valid for our schema:
+</div>
+
+
+
+
+<div>
+  <pre class="lang:default highlight:0 decode:true">{
+  reservationsList(userId: 12345) {
+    hotelId
+    checkIn
+    checkOut
+    hotelDetails {
+      hotelName
+      fullAddress
+      starRating
+    }
+    status
+  }
+}</pre>
+
+  <p>
+    This query is sent from the client to the server in order to request the list of hotel ids in which the user number 12345 has made a reservation. Once the server receives this query, it is validated against the defined schema and then it is executed.
+  </p>
+
+  <h2>
+    Response example
+  </h2>
+
+  <p>
+    The generated response is JSON with the exact shape of the request:
+  </p>
+</div>
+
+
+
+
+<div>
+  <pre class="lang:default decode:true">{
+  "data": {
+    "reservationsList": [
+      {
+        "hotelId": "103",
+        "checkIn": "2018-11-29",
+        "checkOut": "2018-11-30",
+        "hotelDetails": {
+          "hotelName": "Hotel Campanile Metz Nord - Talange",
+          "fullAddress": "Zone Actipole, Talange, Moselle, 57525, France",
+          "starRating": 5
+        },
+        "status": "UPCOMING"
+      }
+    ]
+  }
+}</pre>
+</div>
+
+
+
+
+<div>
+  Please note that the client asks only for the data it needs, and with only one query. This is an advantage of using GraphQL because, in general, it <span style="text-decoration: underline;">reduces the number of roundtrips</span> and <span style="text-decoration: underline;">minimizes the amount of data transferred on the network</span>.
+</div>
+
+
+<h2>Query execution</h2>
+
+<div>
+  But what happened on the server when a query is executed?
+</div>
+
+
+
+
+<div>
+  Every field has a function associated with it, and every time the server needs to produce that field then that function is executed. Those functions are named <strong>resolvers</strong>.
+</div>
+
+
+
+
+<div>
+  In this specific example, it is defined a custom resolver for &#8220;reservationList&#8221; that provides a list of reservations and a custom resolver for &#8220;hotelDetails&#8221; that provides the necessary details for each hotel. For all the others fields, a built-in resolver is used to produce a scalar value.
+</div>
+
+
+
+
+<div>
+  If you are interested in analyzing the entire source code for this example, with the complete resolvers definition, you can find a really nice <a href="https://github.com/fsferrara/from-rest-to-graphql-meetup">javascript implementation on github</a> :-).
+</div>
+
+
+
+
+<div>
+</div>
+
+
+
+
+<div>
+  The execution aspect of a GraphQL server is described <a href="http://graphql.org/learn/execution/">here</a>. Once again, GraphQL is not an implementation: it only defines aspect for servers to execute queries. Even if GraphQL is not a ready-to-use library, there are already <a href="http://graphql.org/code/">several GraphQL implementations</a> such as graphql.js, graphql-ruby, graphql-java, and so on.
+</div>
+
+
+<h2>Introspection</h2>
+
+<div>
+  A really cool feature of a GraphQL service is the <a href="http://graphql.org/learn/introspection/">ability to introspect</a> itself. Every GraphQL server has a special schema field at the query root named &#8220;__schema&#8221;:
+</div>
+
+
+
+
+<div>
+  <pre class="lang:default decode:true">{
+  __schema {
+    ...
+  }
+}</pre>
+
+  <p>
+    Using that field, the service can expose the definition of every object and every field it can provide. This leads to really nice features like:
+  </p>
+</div>
+
+
+<ul>
+<li><span style="text-decoration: underline;">Auto documentation</span>: the client knows the exact GraphQL schema.</li>
+<li><span style="text-decoration: underline;">Code generation</span>: the client can use a client generated from the schema.</li>
+<li><span style="text-decoration: underline;">Static validation</span>: the GraphQL client can validate the query before sending it to the server</li>
+</ul>
+
+
+<div>
+  As a consequence, there are available very useful tools like <a href="https://github.com/graphql/graphiql">GraphiQL</a>, that is a kind of schema explorer for GraphQL. It is really useful to try and discover server features.
+</div>
+
+
+<h2>HTTP Caching</h2>
+
+<div>
+  We get a lot of advantages using GraphQL, but there are also drawbacks. The one I faced is HTTP caching.
+</div>
+
+
+
+
+<div>
+  A GraphQL endpoint can receive queries in different formats and it is really hard to define a caching policy server-side. Often the solution is to use a client-side cache. There are already libraries to implement normalized cache client-side, such as <a href="https://www.apollographql.com/">Apollo</a> and <a href="http://facebook.github.io/relay/">Relay</a>.
+</div>
+
+
+
+
+<div>
+  Even if caching on the client is a good solution in most cases, I believe this situation can be improved in the future.
+</div>
+
+
+
+
+<div>
+  For instance, a &#8220;smart&#8221; cache system can analyze a GraphQL request and understand which part of the query can take advantage of the cache.
+</div>
+
+
+<h2>Conclusion</h2>
+
+<div>
+  Personally, I am quite happy in using GrapQL server-side and I tend to prefer it over REST. I think the most valuable advantage is the fact that clients already know how to query a GraphQL service and this makes integration straightforward.
+</div>
+
+
+
+
+<div>
+  Anyway, this article covers only a few GraphQL features. There are more such as mutations, subscriptions, deferred queries, live queries, and batch operations. Please refer to the official <a href="http://graphql.org/">GraphQL website</a> for further information.
+</div>
+
+
+
+
+<div>
+  A really useful resource is <a href="https://www.howtographql.com/">https://www.howtographql.com/</a> which contains free tutorials to learn all about GraphQL covering several GraphQL implementations.
+</div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">fsferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2017-12-10T22:53:50+00:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>10:53 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/getting-started-with-graphql/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/getting-started-with-graphql/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/my-eight-rules-to-effectively-work-in-a-global-team/" title="Previous Post: My eight rules to effectively work in a global team">&laquo; My eight rules to effectively work in a global team</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/" title="Next Post: Blogging with Octopress and Jekyll">Blogging with Octopress and Jekyll &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2018 - Saverio Ferrara -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/getting-started-with-graphql/';
+        var disqus_url = 'http://fsferrara.github.io/getting-started-with-graphql/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
