@@ -1,0 +1,26 @@
+---
+layout: page
+title: "about"
+date: 2018-01-05 23:15
+comments: false
+sharing: true
+footer: true
+---
+**Hello,**
+my name is Francesco Saverio Ferrara and I'm a Software Engineer.  
+Addicted to the Linux operating system, I love learning new things and working with all the open source technologies.
+
+**Want to know more?**
+* [LinkedIn](http://www.linkedin.com/in/fsferrara)
+* [Twitter](http://twitter.com/fsferrara)
+* [Google Plus](http://plus.google.com/+SaverioFerrara)
+* [GitHub](http://github.com/fsferrara)
+* [About me](http://about.me/fsferrara)
+
+**Want to hire me?**
+
+* [Résumé](http://www.fsferrara.com/wp-content/downloads/fsferrara-cv-it.pdf)
+* me(at)fsferrara.com
+* mobile: (+39) 3405114184
+* skype: fs.ferrara
+* Rome, Italy
