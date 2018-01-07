@@ -1,11 +1,7 @@
 ---
-comments: false
 title: TradurreAntico
-date: 2018-01-03T00:26:48+00:00
-author: fsferrara
 layout: page
-guid: http://www.fsferrara.com/?page_id=478
-image: /wp-content/uploads/2013/10/tradurreantico.jpg
+comments: false
 ---
 tags: #html #css #mysql #joomla! #php
 

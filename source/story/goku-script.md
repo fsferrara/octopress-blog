@@ -1,11 +1,7 @@
 ---
-comments: false
 title: Goku Script
-date: 2018-01-02T17:17:17+00:00
-author: fsferrara
 layout: page
-guid: http://www.fsferrara.com/?page_id=458
-image: /wp-content/uploads/2013/10/goku_script_me.jpg
+comments: false
 ---
 tags: #irc #mirc #mirc-script
 

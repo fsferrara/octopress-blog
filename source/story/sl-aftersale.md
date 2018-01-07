@@ -1,11 +1,7 @@
 ---
-comments: false
 title: SL AfterSale
-date: 2018-01-03T00:28:12+00:00
-author: fsferrara
 layout: page
-guid: http://www.fsferrara.com/?page_id=480
-image: /wp-content/uploads/2013/10/slaftersale.jpg
+comments: false
 ---
 tags: #html #css #mysql #php #wordpress
 

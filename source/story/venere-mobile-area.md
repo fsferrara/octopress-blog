@@ -1,11 +1,7 @@
 ---
-comments: false
 title: Venere Mobile Area
-date: 2018-01-03T00:30:27+00:00
-author: fsferrara
 layout: page
-guid: http://www.fsferrara.com/?page_id=484
-image: /wp-content/uploads/2015/04/venere-mobile-apps.png
+comments: false
 ---
 tags: #android #cordova #hybrid-app #mobile #java
 

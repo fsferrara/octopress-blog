@@ -1,11 +1,7 @@
 ---
-comments: false
 title: www.e-matching.it
-date: 2018-01-03T00:21:44+00:00
-author: fsferrara
 layout: page
-guid: http://www.fsferrara.com/?page_id=470
-image: /wp-content/uploads/2013/10/e-matching-it_2008.jpg
+comments: false
 ---
 tags: #cluster #java #jboss #jboss-seam #postgresql #python #redhat #zope
 

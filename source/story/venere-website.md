@@ -1,11 +1,7 @@
 ---
-comments: false
 title: Venere Website
-date: 2018-01-03T00:29:20+00:00
-author: fsferrara
 layout: page
-guid: http://www.fsferrara.com/?page_id=482
-image: /wp-content/uploads/2013/10/venere.jpg
+comments: false
 ---
 tags: #php #mysql #java #javascript #node #spring
 

@@ -13,12 +13,7 @@ tags:
   What is GraphQL? The <a href="http://facebook.github.io/graphql/October2016/">draft RFC specification</a> (October 2016), defines it as &#8220;a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for client‐server applications&#8221;. More simply, GraphQL is a language specification for API. It defines in which way the client should query the server, and in which way the server should execute those queries.
 </div>
 
-<div>
-  <!--more-->
-</div>
-
-<div>
-</div>
+<!--more-->
 
 <div>
   From the definition above, it is clear that GraphQL can be adopted as an alternative to REST. Let&#8217;s now analyze its features with an example in order to understand GraphQL base concepts.<br /> Think about your favourite website for booking hotel rooms, that is obviously <a href="https://www.hotels.com/">hotels.com</a>, and let&#8217;s try to design a GraphQL service that provides the reservation list for a specific user.

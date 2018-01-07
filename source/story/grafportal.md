@@ -1,11 +1,7 @@
 ---
-comments: false
 title: GrafPortal
-date: 2018-01-03T00:25:23+00:00
-author: fsferrara
 layout: page
-guid: http://www.fsferrara.com/?page_id=476
-image: /wp-content/uploads/2013/10/graf_portal.png
+comments: false
 ---
 tags: #java #java-ee #gwt #smart-gwt #jpa #mysql
 

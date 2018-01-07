@@ -1,11 +1,7 @@
 ---
-comments: false
 title: Query rewriting module for SADAS Engine
-date: 2018-01-03T00:23:52+00:00
-author: fsferrara
 layout: page
-guid: http://www.fsferrara.com/?page_id=473
-image: /wp-content/uploads/2013/10/sadas_db.jpg
+comments: false
 ---
 tags: #c++ #dbms
 

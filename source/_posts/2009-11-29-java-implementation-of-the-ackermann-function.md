@@ -15,7 +15,9 @@ La funzione di Ackermann è una funzione f(x,y,z) che ha come dominio l&#8217;in
 
 Essa è un esempio di funzione ricorsiva che non è primitiva ricorsiva poiché cresce più velocemente di qualsiasi funzione ricorsiva primitiva.
 
-<!--more--><figure id="attachment_122" style="max-width: 300px" class="wp-caption alignnone">
+<!--more-->
+
+<figure id="attachment_122" style="max-width: 300px" class="wp-caption alignnone">
 
 [<img class="size-medium wp-image-122" src="http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann-300x54.png" alt="Ackermann function description" width="300" height="54" srcset="http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann-300x54.png 300w, http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann.png 477w" sizes="(max-width: 300px) 100vw, 300px" />](http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann.png)<figcaption class="wp-caption-text">Ackermann function description</figcaption></figure>
 

@@ -1,11 +1,7 @@
 ---
-comments: false
 title: MPV955 Device Driver for LynxOS
-date: 2018-01-03T00:16:37+00:00
-author: fsferrara
 layout: page
-guid: http://www.fsferrara.com/?page_id=463
-image: /wp-content/uploads/2013/10/mpv955.png
+comments: false
 ---
 tags: #c #driver #java #swing #lynxos #unix
 
