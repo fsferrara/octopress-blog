@@ -4,7 +4,7 @@
   <title><![CDATA[Saverio Ferrara]]></title>
   <link href="http://fsferrara.github.io/atom.xml" rel="self"/>
   <link href="http://fsferrara.github.io/"/>
-  <updated>2018-01-07T16:14:47+01:00</updated>
+  <updated>2018-01-07T16:25:25+01:00</updated>
   <id>http://fsferrara.github.io/</id>
   <author>
     <name><![CDATA[Saverio Ferrara]]></name>
@@ -3321,7 +3321,15 @@ main()
 <!--more-->
 
 
-<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann-300x54.png" title="'Ackermann function description'" ></p>
+<p>La descrizione matematica della funzione di Ackermann è:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>A(m,n) = n+1             // se m=0
+</span><span class='line'>A(m,n) = A(m-1,1)        // se m&gt;0 e n=0
+</span><span class='line'>A(m,n) = A(m-1,A(m,n-1)) // se m&gt;0 e n&gt;0</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Qui il codice java che implementa questa funzione:</p>
 
