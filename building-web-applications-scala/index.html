@@ -68,10 +68,10 @@
 </form>
   
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/story">Story</a></li>
-  <li><a href="/about">About</a></li>
+  <li><a href="/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Blog</a></li>
+  <li><a href="/story"><i class="fa fa-code-fork" aria-hidden="true"></i> Story</a></li>
+  <li><a href="/social"><i class="fa fa-hashtag" aria-hidden="true"></i> Social</a></li>
+  <li><a href="/about"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a></li>
 </ul>
 
 </nav>
@@ -408,6 +408,9 @@ object PingRest extends RestHelper {
     
   </ul>
 </section>
+<section>
+>>&nbsp;<a href="/blog/archives"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;Blog&nbsp;Archives</a>
+</section>
 
 <section>
   <h1>GitHub Repos</h1>
@@ -450,9 +453,6 @@ object PingRest extends RestHelper {
 </section>
 
 
-<section>
-  <a class="twitter-timeline" href="https://twitter.com/fsferrara?ref_src=twsrc%5Etfw">Tweets by fsferrara</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</section>
 
   
 </aside>
@@ -461,7 +461,7 @@ object PingRest extends RestHelper {
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2018 - Saverio Ferrara -
+  <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Some rights reserved</a> · 2018 · Saverio Ferrara ·
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
