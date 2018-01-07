@@ -17,7 +17,13 @@ Essa è un esempio di funzione ricorsiva che non è primitiva ricorsiva poiché 
 
 <!--more-->
 
-{% img http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann-300x54.png 'Ackermann function description' %}
+La descrizione matematica della funzione di Ackermann è:
+
+```
+A(m,n) = n+1             // se m=0
+A(m,n) = A(m-1,1)        // se m>0 e n=0
+A(m,n) = A(m-1,A(m,n-1)) // se m>0 e n>0
+```
 
 Qui il codice java che implementa questa funzione:
 
