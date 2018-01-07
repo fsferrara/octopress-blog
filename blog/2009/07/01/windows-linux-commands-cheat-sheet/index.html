@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Windows-Linux Commands Cheat-sheet - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="In un sistema operativo, una shell (o terminale) è un programma che permette agli utenti di comunicare con il sistema e di avviare altri programmi. È &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/blog/2009/07/01/windows-linux-commands-cheat-sheet/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Blog</a></li>
+  <li><a href="/story"><i class="fa fa-code-fork" aria-hidden="true"></i> Story</a></li>
+  <li><a href="/social"><i class="fa fa-hashtag" aria-hidden="true"></i> Social</a></li>
+  <li><a href="/about"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Windows-Linux Commands Cheat-sheet</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-07-01T00:00:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2009</span></span> <span class='time'>12:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>In un sistema operativo, una shell (o terminale) è un programma che permette agli utenti di comunicare con il sistema e di avviare altri programmi. È una delle componenti principali di un sistema operativo, insieme al kernel. La shell è l&#8217;ambiente di lavoro attraverso il quale è possibile impartire al computer comandi, richiedendo l&#8217;esecuzione di programmi.</p>
+
+<p>Esistono molti tipi di shell; quando si parla semplicemente di &#8220;shell&#8221;, o anche di &#8220;terminale&#8221;, si intende di solito una shell testuale con cui l&#8217;utente interagisce attraverso un terminale o un emulatore di terminale.</p>
+
+<!--more-->
+
+
+<p>Una shell testuale è un programma dotato di un&#8217;interfaccia a riga di comando, che viene eseguito all&#8217;interno di un terminale testuale. L&#8217;utente digita un comando, ovvero richiede l&#8217;esecuzione di un programma, e il programma eseguito può interagire con l&#8217;utente e/o mostrare dati sul terminale.</p>
+
+<p>Una delle più note shell testuali è il tradizionale &#8220;prompt dei comandi&#8221;, ben noto a quanti hanno familiarità con i sistemi operativi DOS (MS-DOS, DR-DOS, FreeDOS). Per gli utenti di MS-DOS e di alcuni dei sistemi Microsoft Windows la shell è il programma command.com. Anche i sistemi della famiglia Windows NT dispongono di una shell testuale, il programma cmd.exe.</p>
+
+<p>Nei sistemi operativi Unix e Unix-like esistono diverse shell testuali; tra le più note vi sono sicuramente Bash (Bourne-Again Shell) e la Korn shell, ma ne esistono altre come la C shell, con un insieme di funzionalità e caratteristiche di base in comune.</p>
+
+<p>Sono inoltre presenti potenti strumenti per collegare tra loro diversi programmi per svolgere compiti complessi, come le pipe e la redirezione. I programmi Unix più propensi ad essere collegati in questo modo sono detti filtri.</p>
+
+<p>Le moderne shell testuali posseggono diverse funzionalità ergonomiche, tra le quali:</p>
+
+<ul>
+<li><p>la cronologia dei comandi eseguiti (o command history), che permette di ripetere gli ultimi comandi digitati;</p></li>
+<li><p>il completamento dei comandi (o completion), che permette di completare automaticamente nomi di programmi e di file</p></li>
+<li><p>il job control, che permette di avviare in background più programmi o di sospenderli temporaneamente.</p></li>
+</ul>
+
+
+<p>Le shell testuali dei sistemi Unix integrano un linguaggio di scripting con il quale è possibile scrivere veri e propri programmi che possono ad esempio automatizzare le operazioni di amministrazione di sistema, semplificandola. La sintassi di tale linguaggio è un&#8217;estensione di quella usata interattivamente, per cui chi è familiare con l&#8217;uso interattivo della shell trova facile e naturale creare degli script.</p>
+
+<p>Alcune delle funzionalità delle shell dei sistemi Unix sono state riprese in varia misura anche dalle shell testuali per i sistemi Microsoft Windows&#8230; Un utente che passa a Linux ha spesso bisogno di &#8220;tradurre&#8221; i comandi ms-dos in comandi per la shell bash. Bene&#8230; a me è capitato l&#8217;inverso, dopo 5 anni di utilizzo della shell Linux mi è capitato di gestire un server Windows 2003, e non conoscevo i comandi!!!</p>
+
+<p>Per questo ho letto un manuale, ed ho scoperto che possiamo trovare comandi simili nei due ambienti; eccoli riportati in tabella:</p>
+
+<table border="1" width="100%" cellspacing="1" cellpadding="1">
+  <tr align="center">
+    <td>
+      <strong>Descrizione</strong>
+    </td>
+
+    <td>
+      <strong>Windows/Dos</strong>
+    </td>
+
+    <td>
+      <strong>Linux</strong>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Listato dettagliato dei file della directory corrente
+    </td>
+
+    <td>
+      DIR
+    </td>
+
+    <td>
+      ls -l
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Listato dei file della directory corrente
+    </td>
+
+    <td>
+      DIR /W
+    </td>
+
+    <td>
+      ls
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Crea una directory Pippo
+    </td>
+
+    <td>
+      MD Pippo
+    </td>
+
+    <td>
+      mkdir Pippo
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Cambia la directory corrente in ./Pippo
+    </td>
+
+    <td>
+      CD Pippo
+    </td>
+
+    <td>
+      cd Pippo
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Rimuove la directory Pippo (solo se vuota)
+    </td>
+
+    <td>
+      RD Pippo
+    </td>
+
+    <td>
+      rmdir Pippo
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Copia tutti i file nella directory Prova
+    </td>
+
+    <td>
+      COPY *.* \Prova
+    </td>
+
+    <td>
+      cp * /Prova
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Copia ricorsivamente tutti i file nella directory Prova
+    </td>
+
+    <td>
+      XCOPY *.* \PROVA /E /S
+    </td>
+
+    <td>
+      cp -dpR * /prova
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Rinomina Atricolo in Lettera
+    </td>
+
+    <td>
+      REN Articolo Lettera
+    </td>
+
+    <td>
+      mv Articolo Lettera
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Muove tutti i file nella directory Prova
+    </td>
+
+    <td>
+      MOVE *.* \PROVA
+    </td>
+
+    <td>
+      mv * /prova
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Cancella il file Articolo
+    </td>
+
+    <td>
+      DEL Articolo
+    </td>
+
+    <td>
+      rm Articolo
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Cancella ricorsivamente una directory (non incluso in windows xp e 2003)
+    </td>
+
+    <td>
+      DELTREE Temp
+    </td>
+
+    <td>
+      rm -R Temp
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza il contenuto di Lettera
+    </td>
+
+    <td>
+      TYPE Lettera
+    </td>
+
+    <td>
+      cat Lettera
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza il contenuto di Lettera dividendolo per schermate
+    </td>
+
+    <td>
+      TYPE LETTERA | MORE
+    </td>
+
+    <td>
+      cat lettera | more
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Aiuto sui comandi
+    </td>
+
+    <td>
+      HELP HELP
+    </td>
+
+    <td>
+      man man
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Formatta un floppy
+    </td>
+
+    <td>
+      FORMAT A: /N:18 /T:80
+    </td>
+
+    <td>
+      fdformat /dev/fd0u1440
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Copia un floppy in un altro usando due drive
+    </td>
+
+    <td>
+      DISKCOPY A: B:
+    </td>
+
+    <td>
+      cp /dev/fd0 /dev/fd1
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Copia un floppy in un altro usando un solo drive
+    </td>
+
+    <td>
+      DISKCOPY A: A:
+    </td>
+
+    <td>
+      cp /dev/fd0 /tmp/pippo ; cp /tmp/pippo /dev/fd0
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Carica le impostazione della tastiera italiana
+    </td>
+
+    <td>
+      KEYB IT
+    </td>
+
+    <td>
+      loadkeys it
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Pulisce lo schermo
+    </td>
+
+    <td>
+      CLS
+    </td>
+
+    <td>
+      clear
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Cerca la stringa &#8220;saluti&#8221; nel file Primo.doc
+    </td>
+
+    <td>
+      FIND &#8220;saluti&#8221; Primo.doc
+    </td>
+
+    <td>
+      grep &#8220;saluti&#8221; Primo.doc
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Partizionare e gestire i dischi
+    </td>
+
+    <td>
+      DiskPart
+    </td>
+
+    <td>
+      [c]fdisk
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Formattare le partizioni
+    </td>
+
+    <td>
+      FORMAT
+    </td>
+
+    <td>
+      mkfs.(tipo-fs)
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Cerca la stringa &#8220;saluti&#8221; in tutti i dile .doc
+    </td>
+
+    <td>
+      FOR %A IN (*.DOC) DO<br /> FIND &#8220;saluti&#8221; %A
+    </td>
+
+    <td>
+      grep &#8220;saluti&#8221; *.doc
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza le variabili di ambiente
+    </td>
+
+    <td>
+      SET
+    </td>
+
+    <td>
+      env
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Setta una variabile d&#8217;ambiente temporanea
+    </td>
+
+    <td>
+      SET Var=Value
+    </td>
+
+    <td>
+      export Var=Value
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Cancella una variabile d&#8217;ambiente temporanea
+    </td>
+
+    <td>
+      SET Var=
+    </td>
+
+    <td>
+      unset Var
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Elenca i driver caricati nel sistema
+    </td>
+
+    <td>
+      DRIVERQUERY
+    </td>
+
+    <td>
+      lsmod (non solo per i driver)
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza il tempo di funzionamento del sistema
+    </td>
+
+    <td>
+      SYSTEMINFO
+    </td>
+
+    <td>
+      uptime
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Visualizza lo stato della memoria RAM
+    </td>
+
+    <td>
+      MEM
+    </td>
+
+    <td>
+      free
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      Schedulare processi in modo automatico.<br /> Notare che questo è un modo per far eseguire a windows processi in background
+    </td>
+
+    <td>
+      schtasks<br /> at
+    </td>
+
+    <td>
+      cron
+    </td>
+  </tr>
+</table>
+
+
+<p>La lista non finisce qua, questi sono solo i comandi più importanti :-) , con la quale potete tradurre comandi per DOS in comandi per Linux, e comandi per Linux in comandi per DOS. Se sei un nuovo utente, ti consiglio la shell di Linux, molto più espressiva e personalizzabile!</p>
+
+<p>Se conoscete altri comandi utili alla gestione dei sistemi, commentate pure questo articolo. CIAO!!!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Saverio Ferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-07-01T00:00:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2009</span></span> <span class='time'>12:00 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/system-administration/'>system administration</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/blog/2009/07/01/windows-linux-commands-cheat-sheet/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/blog/2009/07/01/windows-linux-commands-cheat-sheet/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/06/27/web-and-privacy/" title="Previous Post: The Web and the problem of Privacy">&laquo; The Web and the problem of Privacy</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/07/03/multidimensional-arrays-in-c/" title="Next Post: Multidimensional Arrays in C">Multidimensional Arrays in C &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/12/10/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/06/16/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/12/18/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/03/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+>>&nbsp;<a href="/blog/archives"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;Blog&nbsp;Archives</a>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Some rights reserved</a> · 2018 · Saverio Ferrara ·
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/blog/2009/07/01/windows-linux-commands-cheat-sheet/';
+        var disqus_url = 'http://fsferrara.github.io/blog/2009/07/01/windows-linux-commands-cheat-sheet/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

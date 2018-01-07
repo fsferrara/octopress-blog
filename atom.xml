@@ -4,7 +4,7 @@
   <title><![CDATA[Saverio Ferrara]]></title>
   <link href="http://fsferrara.github.io/atom.xml" rel="self"/>
   <link href="http://fsferrara.github.io/"/>
-  <updated>2018-01-07T01:45:01+01:00</updated>
+  <updated>2018-01-07T16:07:02+01:00</updated>
   <id>http://fsferrara.github.io/</id>
   <author>
     <name><![CDATA[Saverio Ferrara]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Blogging With Octopress and Jekyll]]></title>
     <link href="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/"/>
-    <updated>2018-01-05T23:01:08+01:00</updated>
+    <updated>2018-01-05T00:00:00+01:00</updated>
     <id>http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll</id>
     <content type="html"><![CDATA[<p>Nowadays, most blogs are powered by <em>Wordpress</em>. I am a Wordpress users too and I have to admit it is really a great for blogs.<br/>
 As others CMS, Wordpress requires a database and PHP in order to process the <strong>dynamic</strong> pages server-side.
@@ -228,9 +228,9 @@ This task will also watch for local changes and apply them immediately to the lo
   
   <entry>
     <title type="html"><![CDATA[Getting Started With GraphQL]]></title>
-    <link href="http://fsferrara.github.io/getting-started-with-graphql/"/>
-    <updated>2017-12-10T22:53:50+00:00</updated>
-    <id>http://fsferrara.github.io/getting-started-with-graphql</id>
+    <link href="http://fsferrara.github.io/blog/2017/12/10/getting-started-with-graphql/"/>
+    <updated>2017-12-10T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2017/12/10/getting-started-with-graphql</id>
     <content type="html"><![CDATA[<div>
   What is GraphQL? The <a href="http://facebook.github.io/graphql/October2016/">draft RFC specification</a> (October 2016), defines it as &#8220;a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for client‐server applications&#8221;. More simply, GraphQL is a language specification for API. It defines in which way the client should query the server, and in which way the server should execute those queries.
 </div>
@@ -238,15 +238,7 @@ This task will also watch for local changes and apply them immediately to the lo
 
 
 
-<div>
-  <!--more-->
-</div>
-
-
-
-
-<div>
-</div>
+<!--more-->
 
 
 
@@ -559,9 +551,9 @@ enum ReservationStatus {
   
   <entry>
     <title type="html"><![CDATA[My Eight Rules to Effectively Work in a Global Team]]></title>
-    <link href="http://fsferrara.github.io/my-eight-rules-to-effectively-work-in-a-global-team/"/>
-    <updated>2016-06-16T08:24:12+00:00</updated>
-    <id>http://fsferrara.github.io/my-eight-rules-to-effectively-work-in-a-global-team</id>
+    <link href="http://fsferrara.github.io/blog/2016/06/16/my-eight-rules-to-effectively-work-in-a-global-team/"/>
+    <updated>2016-06-16T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2016/06/16/my-eight-rules-to-effectively-work-in-a-global-team</id>
     <content type="html"><![CDATA[<p>I still remember when I joined Hotels.com technology team and how much excited I was to start such a new challenge. Since the very early days I realised that working in a global company is quite different from working in the same building. That is obvious, I know, but it wasn’t easy to get used to the new way of working.</p>
 
 <p>I missed getting in touch with new teammates, and sometimes felt isolated from others and had the feeling of being a remote worker. Actually working in a global team has a lot in common with the remote work, and in this article I will list all of the good practices that allowed me to collaborate effectively with colleagues scattered across the world.</p>
@@ -651,9 +643,9 @@ enum ReservationStatus {
   
   <entry>
     <title type="html"><![CDATA[Aspect Oriented Programming With Spring and AspectJ]]></title>
-    <link href="http://fsferrara.github.io/aspect-oriented-programming-with-spring-and-aspectj/"/>
-    <updated>2015-12-18T23:57:23+00:00</updated>
-    <id>http://fsferrara.github.io/aspect-oriented-programming-with-spring-and-aspectj</id>
+    <link href="http://fsferrara.github.io/blog/2015/12/18/aspect-oriented-programming-with-spring-and-aspectj/"/>
+    <updated>2015-12-18T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2015/12/18/aspect-oriented-programming-with-spring-and-aspectj</id>
     <content type="html"><![CDATA[<p><strong>Aspect-Oriented Programming</strong> (<em>AOP</em>) powerfully complements <strong>Object-Oriented Programming</strong> (<em>OOP</em>) by providing another way of thinking about program structure.</p>
 
 <p>Drawing a comparison between AOP and OOP we can say that the key unit of modularity in OOP is the class, whereas in AOP the unit of modularity is the aspect. With aspects, you can group application behaviour that was once spread throughout your applications into reusable modules. You can then declare exactly where and how this behaviour is applied. This reduces code duplication and lets your classes focus on their main functionality.</p>
@@ -957,9 +949,9 @@ public static void main(String[] args) {
   
   <entry>
     <title type="html"><![CDATA[Running Containers With Docker]]></title>
-    <link href="http://fsferrara.github.io/running-containers-with-docker/"/>
-    <updated>2015-04-03T17:03:29+00:00</updated>
-    <id>http://fsferrara.github.io/running-containers-with-docker</id>
+    <link href="http://fsferrara.github.io/blog/2015/04/03/running-containers-with-docker/"/>
+    <updated>2015-04-03T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2015/04/03/running-containers-with-docker</id>
     <content type="html"><![CDATA[<p><strong>Docker</strong> is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of <strong>Docker Engine</strong>, a portable, <em>lightweight runtime and packaging tool</em>, and <strong>Docker Hub</strong>, a <em>cloud service for sharing applications and automating workflows</em>, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
 
 <p>This post describes how to run Docker machines with the help of Boot2Docker.</p>
@@ -1186,9 +1178,9 @@ Username:
   
   <entry>
     <title type="html"><![CDATA[Planning a Cluster for Hadoop BigData]]></title>
-    <link href="http://fsferrara.github.io/planning-cluster-hadoop-bigdata/"/>
-    <updated>2014-02-21T19:39:20+00:00</updated>
-    <id>http://fsferrara.github.io/planning-cluster-hadoop-bigdata</id>
+    <link href="http://fsferrara.github.io/blog/2014/02/21/planning-cluster-hadoop-bigdata/"/>
+    <updated>2014-02-21T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2014/02/21/planning-cluster-hadoop-bigdata</id>
     <content type="html"><![CDATA[<p>This post is about how to plan, for the first time, a cluster for Apache Hadoop and HBase. Hadoop, together with its friends, enable us to elaborate a large amount of data in a cheaply way: by large I mean data large about 100 gigabytes and above.</p>
 
 <p>Hadoop implements the MapReduce framework, that is a way to take a query (or Job) over a dataset, divide it in several queries (or Tasks), and the run these queries in parallel over multiple node of a cluster. Nothing new until now, this looks like the divide-et-impera paradigm: the innovation lies in the fact that the cluster node that is in charge of executing a task has already the data on which process the query. So we are not moving data in order to elaborate them, but we&#8217;re assigning task on the right cluster node that already has the data!</p>
@@ -1283,9 +1275,9 @@ Username:
   
   <entry>
     <title type="html"><![CDATA[Building Web Applications With Scala]]></title>
-    <link href="http://fsferrara.github.io/building-web-applications-scala/"/>
-    <updated>2013-11-22T11:02:39+00:00</updated>
-    <id>http://fsferrara.github.io/building-web-applications-scala</id>
+    <link href="http://fsferrara.github.io/blog/2013/11/22/building-web-applications-scala/"/>
+    <updated>2013-11-22T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/11/22/building-web-applications-scala</id>
     <content type="html"><![CDATA[<p>Scala is general purpose programming language very popular for building web application. But why? At the moment I really don&#8217;t know why :) , I&#8217;m just reading about it and sharing my thoughts with you.</p>
 
 <p>Let&#8217;s start from Scala. It&#8217;s a programming language both object-oriented and functional: we can refer to this kind of programming language as &#8220;object-functional&#8221;. We say that is a programming language because there is a compiler for it, but also an interpreter is available.</p>
@@ -1518,9 +1510,9 @@ object PingRest extends RestHelper {
   
   <entry>
     <title type="html"><![CDATA[A GIT Branching Model for Medium-size Companies]]></title>
-    <link href="http://fsferrara.github.io/git-branching-model-for-medium-size-companies/"/>
-    <updated>2013-11-15T00:13:57+00:00</updated>
-    <id>http://fsferrara.github.io/git-branching-model-for-medium-size-companies</id>
+    <link href="http://fsferrara.github.io/blog/2013/11/15/git-branching-model-for-medium-size-companies/"/>
+    <updated>2013-11-15T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/11/15/git-branching-model-for-medium-size-companies</id>
     <content type="html"><![CDATA[<p>This article explains how a medium size company, which has several teams, can adopt GIT for the source code management. As a software configuration management, GIT serves two different functions. The first one is the management support for controlling changes to software products, and the second one is merely development support for coordinating file changes among product developers. In particular here I want to talk about the branching model.</p>
 
 <!--more-->
@@ -1586,9 +1578,9 @@ To https://github.com/fsferrara/lemon.git
  * [new branch]      develop -&gt; develop</pre>
 
 
-<p>Now we have these branches:<figure id="attachment_314" style="max-width: 250px" class="wp-caption aligncenter"></p>
+<p>Now we have these branches:</p>
 
-<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg"><img class="size-medium wp-image-314" src="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches-250x300.jpg" alt="Three Branches" width="250" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches-250x300.jpg 250w, http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg 409w" sizes="(max-width: 250px) 100vw, 250px" /></a><figcaption class="wp-caption-text">Three Branches</figcaption></figure></p>
+<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg" title="'Three Branches'" ></p>
 
 <h2>The features</h2>
 
@@ -1626,9 +1618,9 @@ Current branch develop is up to date.
 Current branch develop is up to date.</pre>
 
 
-<p>The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.<figure id="attachment_315" style="max-width: 145px" class="wp-caption aligncenter"></p>
+<p>The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.</p>
 
-<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch.jpg"><img class="size-medium wp-image-315" src="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg" alt="Feature Branch" width="145" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg 145w, http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch.jpg 235w" sizes="(max-width: 145px) 100vw, 145px" /></a><figcaption class="wp-caption-text">Feature Branch</figcaption></figure></p>
+<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg" title="'Feature Branch'" ></p>
 
 <p>At this point a &#8220;merge request&#8221; can be created also to manage the code review process. To finish a feature, perform these operations:</p>
 
@@ -1668,9 +1660,9 @@ To https://github.com/fsferrara/lemon.git
 
 <h2>Integration phase and release</h2>
 
-<p>At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:<figure id="attachment_316" style="max-width: 260px" class="wp-caption aligncenter"></p>
+<p>At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:</p>
 
-<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg"><img class="size-medium wp-image-316" src="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch-260x300.jpg" alt="Candidate Branch" width="260" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch-260x300.jpg 260w, http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg 412w" sizes="(max-width: 260px) 100vw, 260px" /></a><figcaption class="wp-caption-text">Candidate Branch</figcaption></figure></p>
+<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg" title="'Candidate Branch'" ></p>
 
 <p>The integration starts with the <em>code chill</em> phase, that is the phase in which only small bugfixes are allowed. Personally I hate these bugfixes, and I prefer to perform all kind of tests directly on &#8216;devel&#8217; branch: for me the integration phase should be only the final check. Once the code is ready to be deployed in production, we have the reintegration with &#8216;master&#8217;. At this point the release engineer can create the tag directly on master. Optionally the tag to be created can point before to the head of &#8216;candidate&#8217; branch and then can be updated to point to &#8216;master&#8217;.</p>
 
@@ -1696,9 +1688,9 @@ cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
 
 <p>If for testing purpose you already created the tag 1.2.3 pointing the &#8216;candidate&#8217; branch, now you can move this tag by using the option &#8220;-f&#8221;.</p>
 
-<p>Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:<figure id="attachment_317" style="max-width: 190px" class="wp-caption aligncenter"></p>
+<p>Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:</p>
 
-<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix.jpg"><img class="size-medium wp-image-317" src="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg" alt="Hotfix Branch" width="190" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg 190w, http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix.jpg 312w" sizes="(max-width: 190px) 100vw, 190px" /></a><figcaption class="wp-caption-text">Hotfix Branch</figcaption></figure></p>
+<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg" title="'Hotfix Branch'" ></p>
 
 <h2>Useful configuration</h2>
 
@@ -1741,9 +1733,9 @@ cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
   
   <entry>
     <title type="html"><![CDATA[GIT Explained for Subversion Users]]></title>
-    <link href="http://fsferrara.github.io/git-explained-subversion-users/"/>
-    <updated>2013-11-03T23:31:45+00:00</updated>
-    <id>http://fsferrara.github.io/git-explained-subversion-users</id>
+    <link href="http://fsferrara.github.io/blog/2013/11/03/git-explained-subversion-users/"/>
+    <updated>2013-11-03T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/11/03/git-explained-subversion-users</id>
     <content type="html"><![CDATA[<p><code>This guide shows the most common procedures usually performed by SVN users, but using GIT.&lt;br /&gt;
 Why this guide should be better than the others already on-line? There isn't a particular reason ;) . I'm now a SVN user and I'm just migrating to GIT, so I'm going to find a way to perform with GIT all the operations that I usually do with Subversion: this will be useful for Subversion users who want to start using GIT quickly.</code></p>
 
@@ -2207,9 +2199,9 @@ To https://github.com/fsferrara/lemon.git
   
   <entry>
     <title type="html"><![CDATA[Luppolo the Drinking Game]]></title>
-    <link href="http://fsferrara.github.io/luppolo/"/>
-    <updated>2013-10-21T22:29:38+00:00</updated>
-    <id>http://fsferrara.github.io/luppolo</id>
+    <link href="http://fsferrara.github.io/blog/2013/10/21/luppolo/"/>
+    <updated>2013-10-21T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/10/21/luppolo</id>
     <content type="html"><![CDATA[<p>The Drinking Games are games in which participants are often invited to drink alcoholic beverages. These games have been played since ancient times, and now are more popular among young people, especially students.</p>
 
 <p>Luppolo (the Italian word for hops) is a drinking game designed by me.</p>
@@ -2225,315 +2217,15 @@ To https://github.com/fsferrara/lemon.git
 
 <p>Luppolo is only in Italian, and is released under the <a href="http://creativecommons.org/licenses/by-nc-nd/2.5/legalcode">Creative Commons</a> license. Anyone wishing to contribute with suggestions, ideas, translations, and so on, is welcome.</p>
 
-<p>You can <a href="http://fsferrara.github.io/wp-content/downloads/luppolo.pdf">download luppolo</a>, print it, build it, and then you can freely play with your friends.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Early Development of Artificial Intelligence]]></title>
-    <link href="http://fsferrara.github.io/early-development-of-artificial-intelligence/"/>
-    <updated>2013-10-20T01:37:43+00:00</updated>
-    <id>http://fsferrara.github.io/early-development-of-artificial-intelligence</id>
-    <content type="html"><![CDATA[<p>Primi sviluppi dell&#8217;Intelligenza Artificiale.</p>
-
-<p>E&#8217; difficile dare una definizione di Intelligenza Artificiale (IA) in quando essa è vista sia dal punto di vista ingegneristico (che punta a costruire macchine intelligenti per assistere l&#8217;uomo), sia dal punto di vista psicologico (che punta a riprodurre nelle macchine le caratteristiche dell&#8217;attività cognitiva umana).</p>
-
-<p>Seppur con idee diverse, i pionieri dell&#8217;IA (McCarthy, Minsky, Rochesterm, e Shannon) videro nel calcolatore digitale uno strumento con capacità di elaborazione ineguagliate, quindi uno strumento adatto al confronto con alcuni aspetti della mente umana.</p>
-
-<p>Si cominciarono a sviluppare i primi programmi relativi ad ambiti ben delimitati in cui c&#8217;erano  solo regole esplicite per l&#8217;elaborazione simbolica e poca conoscenza specializzata. Motivo di questo inizio era la scarsa capacità di memoria e di calcolo dei calcolatori di quei tempi.</p>
-
-<p>Successivamente si parte con lo sviluppo di sistemi esperti, dove la conoscenza specializzata nel campo ci porta ad avere buone prestazioni.</p>
-
-<p>La diffusione di queste tecniche di IA ci conferma il successo dal punto di vista ingegneristico, ma cosa possiamo dire dal punto di vista psicologico?</p>
-
-<p>Cosa implica la costruzione di macchine che riproducono caratteristiche essenziali dell&#8217;attività umana? Dove si colloca l&#8217;IA nell&#8217;ambito delle ricerche sul sistema cervello-mente che coinvolgono le neuroscienze e la psicologia?</p>
-
-<!--more-->
-
-
-<h2>Turing e la Macchina di Turing Universale</h2>
-
-<p>Abbinando le MdT (Macchine di Turing) alle codifiche di Godel, nasce un modo di codificare le MdT. Si ha inoltre un <em>procedimento effettivo</em> per la codifica e la decodifica.</p>
-
-<p>Dalle MdT codificate, Turing arriva alla macchina universale, che è una particolare MdT che, accettando in input la descrizione di una qualsiasi MdT, riesce a comportarsi come essa.</p>
-
-<p>Dalla <strong>MdT Universale</strong> nasce la nozione di <strong>Macchina Programmabile</strong>.</p>
-
-<p>Da questa considerzione ci si chiese se le macchine possano essere intelligenti. Su questo Turing scrive l&#8217;articolo &#8220;Macchine calcolatrici e intelligenza&#8221;.</p>
-
-<h2>Macchine calcolatrici e intelligenza</h2>
-
-<p>Turing considera la domanda: &#8220;<em>Possono pensare le macchine?</em>&#8220;. In questa domanda i termini <strong>macchina</strong> e <strong>pensare</strong> non sono di facile definizione.</p>
-
-<p>Possiamo definire la parola <strong>macchina</strong> possiamo imporre che la macchina sia composta da tre parti: memoria, unità operativa, e governo; dove la memoria è un deposito di informazioni, l&#8217;unità operativa è la parte atta ad eseguire operazioni, ed il governo coordina l&#8217;unità operativa e la memoria.</p>
-
-<p>Quindi scendendo più in dettaglio riusciamo a definire cos&#8217;è una macchina.</p>
-
-<p>Cosa possiamo invece definire la parola <strong>pensare</strong>? Turing non riesce a farlo.</p>
-
-<p>Per questo pensa di riformulare la domanda &#8220;<em>Possono pensare le macchine?</em>&#8221; con un&#8217;altra. Riformula il problema in termini di un gioco dove si trovano tre persona A (un uomo), B (una donna), e C (un&#8217;interrogante). C è isolato in una stanza, e può comunicare con A e B mediante messaggi di tipo linguistico.</p>
-
-<p>Lo scopo di C, che parla con due individui, è di capire chi è la donna e chi è l&#8217;uomo. B (che è la donna) ha il compito di aiutare l&#8217;interrogante C, mentre lo scopo di A (l&#8217;uomo) è quello di ingannarlo.</p>
-
-<p>La domanda riformulata è: &#8220;<em>Che cosa accadrà se una macchina prende il posto di A nel gioco? La frequenza delle risposte errate da parte di C sarà la stessa di quando il gioco si svolge tra uomini?</em>&#8220;.</p>
-
-<p>Chiamiamo questo <strong>Test di Turing</strong>.</p>
-
-<h3>Test di Turing e Intelligenza</h3>
-
-<p>Superare il test di Turing, non è una condizione né necessaria, né sufficiente per stabilire se un individuo o una macchina è intelligente.</p>
-
-<ul>
-<li>Condizione Necessaria: se un essere è intelligente deve necessariamente superare il Test di Turing. Ma ci sono situazioni, come quelle delle persone nello stato locked-in (ad esempio il famoso caso di Piergiorgio Welby), in cui l&#8217;individuo non è in grado di superare il test, ma comunque non possiamo dire che tale individuo non è intelligente.</li>
-<li>Condizione Sufficiente: supponiamo una macchina con un programma complicatissimo, che è fatta apposta per superare il Test di Turing. Questa macchina sa solo superare questo test e basta: possiamo definirela intelligente?</li>
-</ul>
-
-
-<p>Quindi il superamento del Test di Turing da parte di una macchina non è né condizione necessaria, né condizione sufficiente per affermare che la macchina stressa sia intelligente.</p>
-
-<h3>Osservazioni all&#8217;articolo</h3>
-
-<p><span style="text-decoration: underline;">Prima Osservazione: Funzionalismo</span></p>
-
-<p>Notiamo che in questo gioco la macchina da risposte di tipo linguistico; infatti Turing divide nettamente le capacità fisiche di un essere umano, dalle capacità intellettuali (o mentali). Questo non è vero nell&#8217;eccezione Darwiniana in cui le capacità mentali di un essere vivente sono di fondamentale importanza per coordinare le capacità motorie, e permettono così di sopravvivere.</p>
-
-<p>Essendo la mente umana composta da materiali diversi da quelli con i quali è costruita una macchina, Turing adotta il funzionalismo, ossia paragona il funzionamento degli oggetti anche se costruiti in modo diverso.</p>
-
-<p><span style="text-decoration: underline;">Seconda Osservazione: La mente funziona a stati discreti</span></p>
-
-<p>I calcolatori digitali sono indubbiamente delle macchine a <em>stati discreti</em>. Ovvero si muovono a scatti improvvisi ben distinguibili l&#8217;uno dall&#8217;altro.</p>
-
-<p>Anche se in realtà in natura niente è discreto; se indaghiamo un calcolatore digitale funziona anch&#8217;esso in modo <em>continuo</em>. Ma consideriamolo una macchina a stati discreti.</p>
-
-<p><em>Ci conviene discretizzare la mente paragonandola ad un calcolatore digitale</em>?</p>
-
-<p><span style="text-decoration: underline;">Terza Osservazione: I calcolatori digitali non sono caotici</span></p>
-
-<p>Dato un input in ingresso ad una macchina riusciamo a predire tutti i suoi stati, ed il suo output, in modo esatto. Nel mondo invece vige la teoria del caos, nella quale piccole variazioni nelle condizioni iniziali producono grandi variazioni nel comportamento a lungo termine di un sistema. Ad esempio il battito d&#8217;ali di una farfalla può essere la causa di un uragano dall&#8217;altra parte del mondo.</p>
-
-<h3>Obiezioni Contrarie all&#8217;argomento principale dell&#8217;articolo</h3>
-
-<p><span style="text-decoration: underline;">Obiezione Teologica:</span> &#8220;Solo Dio ha il potere di creare esseri pensanti&#8221;.</p>
-
-<p>Questa obiezione pone serie restrizioni alla provvidenza divina: chi ci dice che Dio non ci abbia dato il potere di creare macchine pensanti?</p>
-
-<p><span style="text-decoration: underline;">Obiezione della Testa nella Sabbia:</span> Questa è l&#8217;obiezione di chi ha paura delle macchine pensanti. A queste persone piace sentirsi superiori di ogni altra cosa, e si sentono minacciati da questo tentativo di creare macchine pensanti.</p>
-
-<p><span style="text-decoration: underline;">Obiezione Matematica:</span> I teoremi di incompletezza di Godel, ed altri risultati ad esso annessi, dimostrano che le macchine non possono conoscere tutte le verità. Quindi esistono dei limiti, e si sostiene che la mente umana non abbia questi limiti.</p>
-
-<p>Ma non è giusto condannare così i calcolatori; diamo risposte errate anche noi. Inoltre ci possono essere uomini più abili di una macchina, ma possono essere costruite altre macchine più abili di questi uomini. Quindi non ci possono essere uomini più abili di tutte le macchine.</p>
-
-<p><span style="text-decoration: underline;">Obiezione dell&#8217;Autocoscienza</span>: Possiamo dividere la coscienza in &#8220;essere consapevole del proprio stato&#8221;, ed &#8220;essere consapevoli di provare&#8221;. Possiamo costruire macchine con medoti di <strong>Machine Learning</strong> che sono consapevoli del proprio stato, ma non ancora riusciamo ad immaginare macchine che sappiano provare dei sentimenti.</p>
-
-<p><span style="text-decoration: underline;">Obiezioni basate su incapacità varie</span>: ad esempio una macchina è capace di gustare le fragole con la panna.</p>
-
-<p>Queste obiezioni nascono dal fatto che vogliamo far assomigliare le macchine agli essere umani. Ma, non essendo le macchine degli essere umani, è difficile avere un rapporto di amicizia tra un uomo ed una macchina.</p>
-
-<p><span style="text-decoration: underline;">Obiezione di Lady Lovelace:</span> &#8220;La macchina può eseguire solo quello che gli diciamo di fare!&#8221;. Questa obiezione è vecchia e risale ai tempi della macchina universale di Babbage.</p>
-
-<p>Con i moderni metodi di <strong>Machine Learning</strong> possiamo avere delle macchine che riescono ad apprendere, anche se sono formate da un nucleo di base non modificabile. Quindi anche essendo una macchina <em>deterministica</em>, possiamo avere macchine che modificano il proprio comportamento man mano che apprendono nuove regole.</p>
-
-<p><span style="text-decoration: underline;">Obiezione fondata sulla continuità del sistema nervoso:</span> Ancora una volta ci rifacciamo al concetto di funzionalismo, secondo il quale cerchiamo di ottenere solo un comportamento intelligente, e non pretendiamo che internamente le cose funzionino allo stesso modo.</p>
-
-<h3>Possono le macchine pensare?</h3>
-
-<p>Dopo l&#8217;articolo di Turing partono gli studi per costruire macchine in grado di competere con l&#8217;uomo in ambiti intellettuali. Ma quel&#8217;è la strada migliore per iniziare a costruire queste macchine?</p>
-
-<p>L&#8217;<em>IA</em> comincia a sviluppare programmi per calcolatori digitali capaci di svolgere attività molto astratte, come giocare a scacchi.</p>
-
-<p>La <em>robotica</em> invece inizia mettendo in risalto il comportamento intelligente degli esseri viventi, e comincia a costruire dispositivi meccanici che si comportano in modo intelligente.</p>
-
-<p>Parallelamente a queste due nasce anche la branca della <strong>Machine Learning</strong>, un&#8217;intuizione geniale da parte di Turing.</p>
-
-<h2>La cibernetica prima dei calcolatori digitali</h2>
-
-<p>La cibernetica nasce con i sistemi a retroazione. La differenza con il punto di vista di Turing, è che questa volta <span style="text-decoration: underline;">il comportamento intelligente è visto come un comportamento flessibile-adattativo all&#8217;ambiente</span>: c&#8217;è un tentativo di collegare questi sistemi a retroazione ai sistemi biologici, con un conseguente collegamento alla scienza molto più forte.</p>
-
-<p>Da un altro punto di vista notiamo che i cibernetici partono dal basso, costruendo prima sistemi molto semplici, mentre Turing punta a riprodurre l&#8217;attività mentale umana con un macchina&#8230; un compito arduo.</p>
-
-<p>Un primo esempio di sistema a retroazione è la valvola di sfiato della caldaia di una locomotiva a vapore; il suo compito era quello di tenere la pressione costante all&#8217;interno della caldaia, in modo da mantenere costante la velocità del treno. Quindi quando la pressione era troppo alta, la valvola faceva uscire del vapore per farla diminuire.</p>
-
-<p>Questo primo meccanismo di sistema a retroazione puntava a correggere l&#8217;errore, in un ciclo di questo tipo:</p>
-
-<ol>
-<li>Osservare l&#8217;output del sistema</li>
-<li>Misurare l&#8217;errore</li>
-<li>Apportare le modifiche atte a correggere l&#8217;errore</li>
-</ol>
-
-
-<p>Questi meccanismi hanno delle caratteristiche in comune con i sistemi biologici: ad esempio il corpo umano ha un meccanismo simile per controllare la temperatura corporea (la sudorazione).</p>
-
-<p>Rosenblueth, Wiener, e Bigelow, nel loro articolo &#8220;<em>Coportamento, Scopo, e Teleologia</em>&#8221; affermano che i metodi di studio sia per gli organismi viventi, sia per le macchine, sono simili in quanto non sono state trovare delle caratteristiche qualitativamente diverse che caratterizzano un gruppo e non l&#8217;altro.</p>
-
-<p>Possiamo dividere le cause dei mutamenti della natura in quelli provocati da:</p>
-
-<p>&#8211; cause efficienti: è l&#8217;agente che determina operativamente il mutamento</p>
-
-<p>&#8211; cause finali: è l&#8217;intenzione di qualche essere vivente a raggiungere un certo scopo</p>
-
-<p>I cibernetici puntano a descrivere il comportamento intelligente usando solo le cause efficienti, in quanto le cause finali sono caratteristiche dei sistemi biologici.</p>
-
-<p>Come esempio possiamo considerare il comportamento della falena che è stato descritto da uno studioso americano con sole cause efficienti.</p>
-
-<h3>Comportamento, Scopo, e Teleologia</h3>
-
-<p>Il comportamento intelligente può essere diviso in due grosse classi: il comportamento rivolto ad uno scopo (finalizzato), e il comportamento non rivolto ad uno scopo (causale).</p>
-
-<p>Noi ci interessiamo al comportamento rivolto ad uno scopo. Ma cos&#8217;è uno scopo? Abbiamo un <strong>tentativo riduzionista</strong>, <span style="text-decoration: underline;">che riduce lo scopo ad un oggetto, e il suo raggiungimento è uno spostamento spazio/temporale dell&#8217;oggetto stesso</span>.</p>
-
-<p>Su questa visione di vedere uno scopo si inseriscono i critici obiettando il fatto che non sempre lo scopo è un oggetto.</p>
-
-<p>Il comportamento rivolto ad uno scopo può essere diviso a sua volta in comportamento rivolto ad uno scopo con retroazione (o teleologico) o senza retroazione (non teleologico).</p>
-
-<p>Il comportamento rivolto ad uno scopo senza retroazione raggruppa tutti quei casi in cui il movimento è talmente veloce in cui è impensabile che ci sia del tempo utile a modificare il movimento mentre lo si sta facendo. Ad esempio, il comportamento di una rana mentre colpisce una mosca per mangiarsela, è senza retroazione.</p>
-
-<p>Ci interesseremo al comportamento rivolto ad uno scopo con retroazione, nel quale l&#8217;azione che si sta svolgendo è modificabile mentre la si sta facendo. Questo tipo di comportamento è più efficace del comportamento senza retroazione, specialmente quando lo scopo è un oggetto fermo.</p>
-
-<p>Il comportamento rivolto ad uno scopo con retroazione può essere ulteriormente diviso in comportamento rivolto ad uno scopo con retroazione non predittivo o non estrapolativo (la falena che cammina verso la luce) e predittivo o estrapolativo (il gatto che balza per catturare un topo nella posizione in cui il topo dovrebbe stare dopo il balzo, quindi il gatto è capace di estrapolare la posizione del topo in un istante di tempo futuro).</p>
-
-<h3>Intelligenza e Comportamento rivolto ad uno scopo</h3>
-
-<p>Nell&#8217;articolo &#8220;<em>Coportamento, Scopo, e Teleologia</em>&#8221; non sono state individuate le condizioni necessarie e sufficienti per affermare che un agente ha il comportamento intelligente per raggiungere uno scopo. Questo perché il tentativo riduzionista per la descrizione di cosa si intende per scopo ci vincola troppo.</p>
-
-<ul>
-<li>Condizione Necessaria: Supponiamo ci sia un cavaliere alla ricerca del Santo Graal. Se il Santo Graal non esiste, come descriviamo lo scopo di questo cavaliere se imponiamo che lo scopo sia un oggetto?</li>
-<li>Condizione Sufficiente: Supponiamo una persona si sveglia all&#8217;improvviso durante la notte, e spara un colpo di pistola allo specchio. Come descriviamo lo scopo di questo signore? Il suo intento non era sparare nello specchio, ma l&#8217;ha fatto per motivi che non conosciamo.</li>
-</ul>
-
-
-<p>Quindi la definizione di Scopo come una relazione spazio/temporale relativa ad un oggetto è troppo restrittiva per descrivere il comportamento intelligente rivolto ad uno scopo.</p>
-
-<h3>Il ruolo dei Modelli nella Scienza</h3>
-
-<p>La cibernetica lavora con i <strong>modelli</strong>. Obiettivo della scienza è ottenere la <strong>comprensione</strong> ed il <strong>controllo</strong> di una qualche parte dell&#8217;universo. Ad esempio la lancetta del barometro che si abbassa ha come causa  (comprensione) l&#8217;abbassamento della pressione; ed anche, la cura per una malattia (controllo) mediante antibiotici.</p>
-
-<p>Ma nessuna parte dell&#8217;universo si lascia afferrare senza un minimo di astrazione. I <strong>modelli</strong> ci aiutano proprio a questo: un modello formale (o intellettuale) rappresenta con astrazione un <strong>sistema studiato</strong> (cioè la parte dell&#8217;universo che stiamo studiando).</p>
-
-<p>Possiamo dividere i modelli in:</p>
-
-<ul>
-<li><strong>Modello materiale</strong>: rappresentazione del <em>sistema studiato</em> ottenuto mediante un altro sistema, di solito più semplice, ma con proprietà simili al <em>sistema studiato</em>.</li>
-<li><strong>Modello Formale</strong>: rappresenta in termini logici il <em>sistema studiato</em> in maniera semplice, con proprietà simili.</li>
-</ul>
-
-
-<p>I modelli materiali sono utili quando:</p>
-
-<p>&#8211; Vogliamo studiare un sistema di un campo inconsueto (sistema studiato), in un campo più familiare (modello meccanico)</p>
-
-<p>&#8211; Il modello materiale permette di svolgere esperimenti in condizioni più favorevoli rispetto a quelle date dal sistema studiato. Ad esempio ci conviene sperimentare nuovi farmaci prima sui topi, e poi sugli umani. Ma su quale base diciamo che un topo è un modello materiale dell&#8217;umano? Lo diciamo secondo alcuni criteri di &#8220;somiglianza&#8221; rispetto al modello originale.</p>
-
-<p>I modelli non sono utili quando:</p>
-
-<p>&#8211; Se il modello formale non rispecchia bene il sistema studiato, anche il modello materiale sarà poco significativo.</p>
-
-<p>&#8211; Se il modello materiale suggerisce esperimenti predittibili dal modello formale, allora esso è superfluo.</p>
-
-<p>Possiamo dividere i problemi in quelli a scatola chiusa e quelli a scatola aperta.</p>
-
-<p>Nei problemi a <strong>scatola chiusa</strong> conosciamo solo alcuni input e possiamo verificare gli output, ma non sappiamo cosa avviene dentro la scatola. <em>La legge di trasformazione è quella legge che mette in relazione l&#8217;input con l&#8217;output</em>. Per scoprire cosa c&#8217;è nella scatola possiamo provare ad aprirla ed individuare altri input e/o altri output in modo da svolgere studi più approfonditi. Man mano che apriamo tutte le scatole trovate durante lo studio, abbiamo un problema a <strong>scatola aperta</strong>.</p>
-
-<p>Nell&#8217;aprire le scatole, e quindi nell&#8217;aggiungere dettagli alla nostra descrizione, facciamo un&#8217;ipotesi di modularità, ipotizzando che gli input individuati siano debolmente accoppiati con gli altri elementi della scatola. Bisogna stare attenti quando si studiano questi problemi a scendere nel dettaglio fino ad un livello per noi soddisfacente, in modo da avere una buona descrizione del problema senza complicarlo in modo eccessivo.</p>
-
-<h2>&#8220;Computer Simulation of Human Thinking&#8221; &#8211; Newell &amp; Simon</h2>
-
-<p>Abbiamo discusso gli sviluppi della prima Cibernetica. Adesso ci spostiamo sul ramo della prima IA, ed esaminiamo il lavoro di Newell &amp; Simon.</p>
-
-<p>Newell &amp; Simon, due neuroscienziati che studiavano la mente, avevano lo scopo di cercare dei <strong>modelli del mentale</strong>, ossia dei <strong>modelli</strong> che rappresentassero l&#8217;attività cognitiva umana.</p>
-
-<p>Quindi volevano costruire dei programmi che simulassero i compiti cognitivi umani in modo psicologicamente realistico.</p>
-
-<p>Per fare ciò si costruirono delle <strong>Microteorie</strong>. Ogni microteoria era relativa ad un particolare categoria di compiti cognitivi, ad esempio giocare a dama: essi chiedevano alla persona sotto esame di giocare a dama e pensare a voce alta, quindi riferire tutti i suoi ragionamenti selettivi ed euristici (introspezione).</p>
-
-<p>Il programma risultante di questo studio, non solo doveva dare gli stessi risultati del ragionamento cognitivo (e quindi supera il test di Turing), ma nel calcolarli doveva elaborare le informazioni nello stesso modo di un essere umano. Quest&#8217;ultima condizione serve ad avere una simulazione psicologicamente realistica del ragionamento umano.</p>
-
-<p>Una volta costruito un modello per un compito cognitivo, abbiamo una microteoria. Newell &amp; Simon volevano trarre un modello della mente combinando tra loro tutte le microteorie ottenute.</p>
-
-<p>La differenza con Turing, è che Newell &amp; Simon consideravano il test di Turing &#8220;debole&#8221; in quando non riguarda i processi del pensiero, ma prende in considerazione solo la prestazione finale.</p>
-
-<h3>Critiche al lavoro di Newell &amp; Simon</h3>
-
-<p><strong>Critica sull&#8217;uso del protocollo verbale</strong></p>
-
-<p>Il protocollo verbale, con il quale i soggetti studiati illustravano il proprio processo di pensiero sono <strong>incompleti</strong> perché non tutti i processi della mente sono accessibili all&#8217;introspezione.</p>
-
-<p>Inoltre questo metodo di studio del mentale è scorretto perché pensare e descrivere cosa si sta pensando sono due compiti concorrenti che possono interferire tra loro.</p>
-
-<p>Si sta studiando il modo di pensare, o il modo in cui un essere umano descrive il proprio pensiero?</p>
-
-<p><strong>Critica sul dominio di applicazione</strong></p>
-
-<p>Le microteorie sono strettamente collegate al particolare problema. Quindi applicando il modello suggerito da una microteoria ad un problema simile a quello di partenza non si hanno buoni risultati.</p>
-
-<p><strong>Critica sul campione di persone</strong></p>
-
-<p>Il campione scelto per eseguire i test è ristretto, e non rispecchia il modo di pensare di tutta la popolazione. Inoltre ogni persona ha un modo particolare di pensare.</p>
-
-<p><strong>Critica sulla modularità</strong></p>
-
-<p>Newell &amp; Simon non fanno ipotesi di modularità sulla mente e la considerano interamente in un&#8217;unica architettura unificata. Successivi studi (Chomsky, Marr, Fodor, ed altri) tentano di dividere la mente in moduli, in modo da poterli studiare indipendentemente.</p>
-
-<h3>Conclusioni</h3>
-
-<p>Il lavoro di Newell &amp; Simon è stato fallimentare, ma il loro contributo all&#8217;IA è stato enorme. Tutt&#8217;oggi le euristiche da loro definite sono molto utilizzate.</p>
-
-<h2>Chomsky ed il Linguaggio Universale</h2>
-
-<p>Un esempio di ipotesi di modularità è il <strong>Linguaggio Universale</strong> di Chomsky. Lui osserva come i bambini nei loro primi anni di vita riescono ad imparare la lingua, e nota che gli stimoli che essi ricevono sono di scarsa qualità per ottenere i risultati che si hanno.</p>
-
-<p>Quindi l&#8217;ipotesi di modularità di Chomsky è che nella nostra mente esiste un modulo di <strong>Grammatica Universale</strong> (UG) che ci aiuta ad imparare il linguaggio parlato.</p>
-
-<p>Quello che ha fatto Chomsky è isolare questo modulo UG dalle restanti parti della mente, e studiarlo a se stante.</p>
-
-<p>Questo è proprio quello che manca nel lavoro fatto da Newell &amp; Simon, in quanto non avendo fatto ipotesi di modularità, non riescono a trovare delle variabili in comune a tutti gli essere umani con le quali è possibile creare un modello di tutta la mente umana.</p>
-
-<h2>David Marr</h2>
-
-<p>Marr, essendo allievo di Chomsky, prende da lui spunto, e nel suo articolo &#8220;Artificial Intelligence &#8211; A Personal View&#8221; espone la sua critica al lavoro di Newell &amp; Simon.</p>
-
-<p>Secondo Marr, un risultato nel campo dell&#8217;IA doveva seguire questi passaggi:</p>
-
-<ol>
-<li>Definizione di <strong>cosa</strong> è calcolato, e <strong>perché</strong> è calcolato</li>
-<li>Definire <strong>come</strong> calcolarlo, quindi definizione di un algoritmo</li>
-<li>Dimostrazione di funzionamento</li>
-</ol>
-
-
-<p>Il &#8220;perché&#8221; non è interessante da definire in quanto è legato alla natura del problema: il mondo è fatto così. Il &#8220;cosa&#8221; invece è molto interessante, in quanto questo passaggio non è stato considerato da Newell &amp; Simon. Infatti è difficile definire &#8220;cosa&#8221; calcolare in modo preciso quando si sta tentando di costruire un modello per l&#8217;intera mente umana.</p>
-
-<p>Marri chiama <em>teorie di tipo 1</em> quelle in cui si riesce a trovare una buona descrizione di cosa è calcolato, e chiama <em>teorie di tipo 2</em> quelle in cui non si è ancora riusciti a dare una descrizione formale.</p>
-
-<h2>Antonio Damasio</h2>
-
-<p>Molti hanno criticato Newell &amp; Simon per mancanza di ipotesi di modularità. In realtà un&#8217;ipotesi di modularità è stata fatta: l&#8217;attività di problem solving della mente umana è considerata indipendente dalle emozioni provate.</p>
-
-<p>Damasio, neurologo e neuroscienziato degli anni 80, nello studiare un caso clinico si accorge che il paziente non è in grado di provare emozioni.</p>
-
-<p>Questo paziente è perfettamente in grado di effettuare ragionamenti razionali, e risponde correttamente a domande a lui poste. Però quando è coinvolto in prima persona non riesce a prendere le decisioni giuste con i suoi ragionamenti.</p>
-
-<p>L&#8217;ipotesi di Damasio è che <em>le emozioni hanno un ruolo importante nel ragionamento pratico</em>.</p>
-
-<p>Test effettuati con questo paziente mostrano che non è in grado di provare emozioni. Ad esempio in una partita a poker non prova tristezza se perde una mano di gioco, oppure riesce a parlare in modo freddo della sua malattia (o di eventi brutti) con freddezza.</p>
-
-<p>Damasio va oltre questa ipotesi e ne formula un&#8217;altra, in cui afferma che, come le emozioni, <em>le immagini mentali hanno un ruolo nel ragionamento pratico</em>.</p>
-
-<p>Supponiamo di essere stati morsi da un cane mentre passeggiavamo nel parco. Dopo qualche giorno se ripensiamo a quel cane, riusciamo ad immaginarlo e a ricostruirci nel nostro <em>buffer visivo</em> la sua immagine. Assieme alla scena ricostruita associamo un&#8217;emozione che può essere bella o brutta a seconda se il morso del cane ci è piaciuto oppure no (ovviamente in questo caso non ci è piaciuto). Quindi in futuro cercheremo di non passare vicino a quel cane perché rischiamo di essere morsi nuovamente: così facendo nel nostro ragionamento pratico elimineremo tutti gli scenari possibili che ci portano nelle vicinanze di quel cane.</p>
-
-<p>Damasio dice con questa ipotesi che il paziente da lui studiato è incapace associare le immagini mentali alle emozioni, e quindi nel suo ragionamento pratico può scegliere un&#8217;azione che lo riporta a commettere un errore già fatto in passato.</p>
-
-<p>Con queste ipotesi Damasio ha cercato di spiegare l&#8217;assenza di pianificazione e di prudenza che ha il suo paziente durante i ragionamenti pratici che lo coinvolgono i prima persona.</p>
-
-<p>Inoltre mostra come le emozioni hanno un ruolo centrale nel ragionamento, e quindi è sbagliato considerarle indipendenti dal problem solving. Quindi sarà possibile progettare macchine con prestazioni pari a quelle degli essere umani anche se non provano emozioni?</p>
+<p>You can <a href="http://fsferrara.github.io/downloads/luppolo.pdf">download luppolo</a>, print it, build it, and then you can freely play with your friends.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[The Birth of Computer Science]]></title>
-    <link href="http://fsferrara.github.io/the-birth-of-computer-science/"/>
-    <updated>2013-10-20T01:33:41+00:00</updated>
-    <id>http://fsferrara.github.io/the-birth-of-computer-science</id>
+    <link href="http://fsferrara.github.io/blog/2013/10/20/the-birth-of-computer-science/"/>
+    <updated>2013-10-20T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/10/20/the-birth-of-computer-science</id>
     <content type="html"><![CDATA[<p>La nascita dell&#8217;informatica.</p>
 
 <p>Il primo kernel Linux è stato pubblicato nel 1991, l’annuncio del primo sistema operativo della famiglia Windows risale al 1983, la nascita dell&#8217;informatica come disciplina scientifica risale al 1953, il primo calcolatore programmabile digitale al 1941 (Z3 di Zuse); in realtà tutto scaturisce da una storia molto più lunga che parte dagli studi di Leibniz quando non esistevano i calcolatori digitali, e coinvolge grandi studiosi come Frege, Gödel, e Turing.</p>
@@ -2908,10 +2600,310 @@ To https://github.com/fsferrara/lemon.git
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Early Development of Artificial Intelligence]]></title>
+    <link href="http://fsferrara.github.io/blog/2013/10/20/early-development-of-artificial-intelligence/"/>
+    <updated>2013-10-20T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/10/20/early-development-of-artificial-intelligence</id>
+    <content type="html"><![CDATA[<p>Primi sviluppi dell&#8217;Intelligenza Artificiale.</p>
+
+<p>E&#8217; difficile dare una definizione di Intelligenza Artificiale (IA) in quando essa è vista sia dal punto di vista ingegneristico (che punta a costruire macchine intelligenti per assistere l&#8217;uomo), sia dal punto di vista psicologico (che punta a riprodurre nelle macchine le caratteristiche dell&#8217;attività cognitiva umana).</p>
+
+<p>Seppur con idee diverse, i pionieri dell&#8217;IA (McCarthy, Minsky, Rochesterm, e Shannon) videro nel calcolatore digitale uno strumento con capacità di elaborazione ineguagliate, quindi uno strumento adatto al confronto con alcuni aspetti della mente umana.</p>
+
+<p>Si cominciarono a sviluppare i primi programmi relativi ad ambiti ben delimitati in cui c&#8217;erano  solo regole esplicite per l&#8217;elaborazione simbolica e poca conoscenza specializzata. Motivo di questo inizio era la scarsa capacità di memoria e di calcolo dei calcolatori di quei tempi.</p>
+
+<p>Successivamente si parte con lo sviluppo di sistemi esperti, dove la conoscenza specializzata nel campo ci porta ad avere buone prestazioni.</p>
+
+<p>La diffusione di queste tecniche di IA ci conferma il successo dal punto di vista ingegneristico, ma cosa possiamo dire dal punto di vista psicologico?</p>
+
+<p>Cosa implica la costruzione di macchine che riproducono caratteristiche essenziali dell&#8217;attività umana? Dove si colloca l&#8217;IA nell&#8217;ambito delle ricerche sul sistema cervello-mente che coinvolgono le neuroscienze e la psicologia?</p>
+
+<!--more-->
+
+
+<h2>Turing e la Macchina di Turing Universale</h2>
+
+<p>Abbinando le MdT (Macchine di Turing) alle codifiche di Godel, nasce un modo di codificare le MdT. Si ha inoltre un <em>procedimento effettivo</em> per la codifica e la decodifica.</p>
+
+<p>Dalle MdT codificate, Turing arriva alla macchina universale, che è una particolare MdT che, accettando in input la descrizione di una qualsiasi MdT, riesce a comportarsi come essa.</p>
+
+<p>Dalla <strong>MdT Universale</strong> nasce la nozione di <strong>Macchina Programmabile</strong>.</p>
+
+<p>Da questa considerzione ci si chiese se le macchine possano essere intelligenti. Su questo Turing scrive l&#8217;articolo &#8220;Macchine calcolatrici e intelligenza&#8221;.</p>
+
+<h2>Macchine calcolatrici e intelligenza</h2>
+
+<p>Turing considera la domanda: &#8220;<em>Possono pensare le macchine?</em>&#8220;. In questa domanda i termini <strong>macchina</strong> e <strong>pensare</strong> non sono di facile definizione.</p>
+
+<p>Possiamo definire la parola <strong>macchina</strong> possiamo imporre che la macchina sia composta da tre parti: memoria, unità operativa, e governo; dove la memoria è un deposito di informazioni, l&#8217;unità operativa è la parte atta ad eseguire operazioni, ed il governo coordina l&#8217;unità operativa e la memoria.</p>
+
+<p>Quindi scendendo più in dettaglio riusciamo a definire cos&#8217;è una macchina.</p>
+
+<p>Cosa possiamo invece definire la parola <strong>pensare</strong>? Turing non riesce a farlo.</p>
+
+<p>Per questo pensa di riformulare la domanda &#8220;<em>Possono pensare le macchine?</em>&#8221; con un&#8217;altra. Riformula il problema in termini di un gioco dove si trovano tre persona A (un uomo), B (una donna), e C (un&#8217;interrogante). C è isolato in una stanza, e può comunicare con A e B mediante messaggi di tipo linguistico.</p>
+
+<p>Lo scopo di C, che parla con due individui, è di capire chi è la donna e chi è l&#8217;uomo. B (che è la donna) ha il compito di aiutare l&#8217;interrogante C, mentre lo scopo di A (l&#8217;uomo) è quello di ingannarlo.</p>
+
+<p>La domanda riformulata è: &#8220;<em>Che cosa accadrà se una macchina prende il posto di A nel gioco? La frequenza delle risposte errate da parte di C sarà la stessa di quando il gioco si svolge tra uomini?</em>&#8220;.</p>
+
+<p>Chiamiamo questo <strong>Test di Turing</strong>.</p>
+
+<h3>Test di Turing e Intelligenza</h3>
+
+<p>Superare il test di Turing, non è una condizione né necessaria, né sufficiente per stabilire se un individuo o una macchina è intelligente.</p>
+
+<ul>
+<li>Condizione Necessaria: se un essere è intelligente deve necessariamente superare il Test di Turing. Ma ci sono situazioni, come quelle delle persone nello stato locked-in (ad esempio il famoso caso di Piergiorgio Welby), in cui l&#8217;individuo non è in grado di superare il test, ma comunque non possiamo dire che tale individuo non è intelligente.</li>
+<li>Condizione Sufficiente: supponiamo una macchina con un programma complicatissimo, che è fatta apposta per superare il Test di Turing. Questa macchina sa solo superare questo test e basta: possiamo definirela intelligente?</li>
+</ul>
+
+
+<p>Quindi il superamento del Test di Turing da parte di una macchina non è né condizione necessaria, né condizione sufficiente per affermare che la macchina stressa sia intelligente.</p>
+
+<h3>Osservazioni all&#8217;articolo</h3>
+
+<p><span style="text-decoration: underline;">Prima Osservazione: Funzionalismo</span></p>
+
+<p>Notiamo che in questo gioco la macchina da risposte di tipo linguistico; infatti Turing divide nettamente le capacità fisiche di un essere umano, dalle capacità intellettuali (o mentali). Questo non è vero nell&#8217;eccezione Darwiniana in cui le capacità mentali di un essere vivente sono di fondamentale importanza per coordinare le capacità motorie, e permettono così di sopravvivere.</p>
+
+<p>Essendo la mente umana composta da materiali diversi da quelli con i quali è costruita una macchina, Turing adotta il funzionalismo, ossia paragona il funzionamento degli oggetti anche se costruiti in modo diverso.</p>
+
+<p><span style="text-decoration: underline;">Seconda Osservazione: La mente funziona a stati discreti</span></p>
+
+<p>I calcolatori digitali sono indubbiamente delle macchine a <em>stati discreti</em>. Ovvero si muovono a scatti improvvisi ben distinguibili l&#8217;uno dall&#8217;altro.</p>
+
+<p>Anche se in realtà in natura niente è discreto; se indaghiamo un calcolatore digitale funziona anch&#8217;esso in modo <em>continuo</em>. Ma consideriamolo una macchina a stati discreti.</p>
+
+<p><em>Ci conviene discretizzare la mente paragonandola ad un calcolatore digitale</em>?</p>
+
+<p><span style="text-decoration: underline;">Terza Osservazione: I calcolatori digitali non sono caotici</span></p>
+
+<p>Dato un input in ingresso ad una macchina riusciamo a predire tutti i suoi stati, ed il suo output, in modo esatto. Nel mondo invece vige la teoria del caos, nella quale piccole variazioni nelle condizioni iniziali producono grandi variazioni nel comportamento a lungo termine di un sistema. Ad esempio il battito d&#8217;ali di una farfalla può essere la causa di un uragano dall&#8217;altra parte del mondo.</p>
+
+<h3>Obiezioni Contrarie all&#8217;argomento principale dell&#8217;articolo</h3>
+
+<p><span style="text-decoration: underline;">Obiezione Teologica:</span> &#8220;Solo Dio ha il potere di creare esseri pensanti&#8221;.</p>
+
+<p>Questa obiezione pone serie restrizioni alla provvidenza divina: chi ci dice che Dio non ci abbia dato il potere di creare macchine pensanti?</p>
+
+<p><span style="text-decoration: underline;">Obiezione della Testa nella Sabbia:</span> Questa è l&#8217;obiezione di chi ha paura delle macchine pensanti. A queste persone piace sentirsi superiori di ogni altra cosa, e si sentono minacciati da questo tentativo di creare macchine pensanti.</p>
+
+<p><span style="text-decoration: underline;">Obiezione Matematica:</span> I teoremi di incompletezza di Godel, ed altri risultati ad esso annessi, dimostrano che le macchine non possono conoscere tutte le verità. Quindi esistono dei limiti, e si sostiene che la mente umana non abbia questi limiti.</p>
+
+<p>Ma non è giusto condannare così i calcolatori; diamo risposte errate anche noi. Inoltre ci possono essere uomini più abili di una macchina, ma possono essere costruite altre macchine più abili di questi uomini. Quindi non ci possono essere uomini più abili di tutte le macchine.</p>
+
+<p><span style="text-decoration: underline;">Obiezione dell&#8217;Autocoscienza</span>: Possiamo dividere la coscienza in &#8220;essere consapevole del proprio stato&#8221;, ed &#8220;essere consapevoli di provare&#8221;. Possiamo costruire macchine con medoti di <strong>Machine Learning</strong> che sono consapevoli del proprio stato, ma non ancora riusciamo ad immaginare macchine che sappiano provare dei sentimenti.</p>
+
+<p><span style="text-decoration: underline;">Obiezioni basate su incapacità varie</span>: ad esempio una macchina è capace di gustare le fragole con la panna.</p>
+
+<p>Queste obiezioni nascono dal fatto che vogliamo far assomigliare le macchine agli essere umani. Ma, non essendo le macchine degli essere umani, è difficile avere un rapporto di amicizia tra un uomo ed una macchina.</p>
+
+<p><span style="text-decoration: underline;">Obiezione di Lady Lovelace:</span> &#8220;La macchina può eseguire solo quello che gli diciamo di fare!&#8221;. Questa obiezione è vecchia e risale ai tempi della macchina universale di Babbage.</p>
+
+<p>Con i moderni metodi di <strong>Machine Learning</strong> possiamo avere delle macchine che riescono ad apprendere, anche se sono formate da un nucleo di base non modificabile. Quindi anche essendo una macchina <em>deterministica</em>, possiamo avere macchine che modificano il proprio comportamento man mano che apprendono nuove regole.</p>
+
+<p><span style="text-decoration: underline;">Obiezione fondata sulla continuità del sistema nervoso:</span> Ancora una volta ci rifacciamo al concetto di funzionalismo, secondo il quale cerchiamo di ottenere solo un comportamento intelligente, e non pretendiamo che internamente le cose funzionino allo stesso modo.</p>
+
+<h3>Possono le macchine pensare?</h3>
+
+<p>Dopo l&#8217;articolo di Turing partono gli studi per costruire macchine in grado di competere con l&#8217;uomo in ambiti intellettuali. Ma quel&#8217;è la strada migliore per iniziare a costruire queste macchine?</p>
+
+<p>L&#8217;<em>IA</em> comincia a sviluppare programmi per calcolatori digitali capaci di svolgere attività molto astratte, come giocare a scacchi.</p>
+
+<p>La <em>robotica</em> invece inizia mettendo in risalto il comportamento intelligente degli esseri viventi, e comincia a costruire dispositivi meccanici che si comportano in modo intelligente.</p>
+
+<p>Parallelamente a queste due nasce anche la branca della <strong>Machine Learning</strong>, un&#8217;intuizione geniale da parte di Turing.</p>
+
+<h2>La cibernetica prima dei calcolatori digitali</h2>
+
+<p>La cibernetica nasce con i sistemi a retroazione. La differenza con il punto di vista di Turing, è che questa volta <span style="text-decoration: underline;">il comportamento intelligente è visto come un comportamento flessibile-adattativo all&#8217;ambiente</span>: c&#8217;è un tentativo di collegare questi sistemi a retroazione ai sistemi biologici, con un conseguente collegamento alla scienza molto più forte.</p>
+
+<p>Da un altro punto di vista notiamo che i cibernetici partono dal basso, costruendo prima sistemi molto semplici, mentre Turing punta a riprodurre l&#8217;attività mentale umana con un macchina&#8230; un compito arduo.</p>
+
+<p>Un primo esempio di sistema a retroazione è la valvola di sfiato della caldaia di una locomotiva a vapore; il suo compito era quello di tenere la pressione costante all&#8217;interno della caldaia, in modo da mantenere costante la velocità del treno. Quindi quando la pressione era troppo alta, la valvola faceva uscire del vapore per farla diminuire.</p>
+
+<p>Questo primo meccanismo di sistema a retroazione puntava a correggere l&#8217;errore, in un ciclo di questo tipo:</p>
+
+<ol>
+<li>Osservare l&#8217;output del sistema</li>
+<li>Misurare l&#8217;errore</li>
+<li>Apportare le modifiche atte a correggere l&#8217;errore</li>
+</ol>
+
+
+<p>Questi meccanismi hanno delle caratteristiche in comune con i sistemi biologici: ad esempio il corpo umano ha un meccanismo simile per controllare la temperatura corporea (la sudorazione).</p>
+
+<p>Rosenblueth, Wiener, e Bigelow, nel loro articolo &#8220;<em>Coportamento, Scopo, e Teleologia</em>&#8221; affermano che i metodi di studio sia per gli organismi viventi, sia per le macchine, sono simili in quanto non sono state trovare delle caratteristiche qualitativamente diverse che caratterizzano un gruppo e non l&#8217;altro.</p>
+
+<p>Possiamo dividere le cause dei mutamenti della natura in quelli provocati da:</p>
+
+<p>&#8211; cause efficienti: è l&#8217;agente che determina operativamente il mutamento</p>
+
+<p>&#8211; cause finali: è l&#8217;intenzione di qualche essere vivente a raggiungere un certo scopo</p>
+
+<p>I cibernetici puntano a descrivere il comportamento intelligente usando solo le cause efficienti, in quanto le cause finali sono caratteristiche dei sistemi biologici.</p>
+
+<p>Come esempio possiamo considerare il comportamento della falena che è stato descritto da uno studioso americano con sole cause efficienti.</p>
+
+<h3>Comportamento, Scopo, e Teleologia</h3>
+
+<p>Il comportamento intelligente può essere diviso in due grosse classi: il comportamento rivolto ad uno scopo (finalizzato), e il comportamento non rivolto ad uno scopo (causale).</p>
+
+<p>Noi ci interessiamo al comportamento rivolto ad uno scopo. Ma cos&#8217;è uno scopo? Abbiamo un <strong>tentativo riduzionista</strong>, <span style="text-decoration: underline;">che riduce lo scopo ad un oggetto, e il suo raggiungimento è uno spostamento spazio/temporale dell&#8217;oggetto stesso</span>.</p>
+
+<p>Su questa visione di vedere uno scopo si inseriscono i critici obiettando il fatto che non sempre lo scopo è un oggetto.</p>
+
+<p>Il comportamento rivolto ad uno scopo può essere diviso a sua volta in comportamento rivolto ad uno scopo con retroazione (o teleologico) o senza retroazione (non teleologico).</p>
+
+<p>Il comportamento rivolto ad uno scopo senza retroazione raggruppa tutti quei casi in cui il movimento è talmente veloce in cui è impensabile che ci sia del tempo utile a modificare il movimento mentre lo si sta facendo. Ad esempio, il comportamento di una rana mentre colpisce una mosca per mangiarsela, è senza retroazione.</p>
+
+<p>Ci interesseremo al comportamento rivolto ad uno scopo con retroazione, nel quale l&#8217;azione che si sta svolgendo è modificabile mentre la si sta facendo. Questo tipo di comportamento è più efficace del comportamento senza retroazione, specialmente quando lo scopo è un oggetto fermo.</p>
+
+<p>Il comportamento rivolto ad uno scopo con retroazione può essere ulteriormente diviso in comportamento rivolto ad uno scopo con retroazione non predittivo o non estrapolativo (la falena che cammina verso la luce) e predittivo o estrapolativo (il gatto che balza per catturare un topo nella posizione in cui il topo dovrebbe stare dopo il balzo, quindi il gatto è capace di estrapolare la posizione del topo in un istante di tempo futuro).</p>
+
+<h3>Intelligenza e Comportamento rivolto ad uno scopo</h3>
+
+<p>Nell&#8217;articolo &#8220;<em>Coportamento, Scopo, e Teleologia</em>&#8221; non sono state individuate le condizioni necessarie e sufficienti per affermare che un agente ha il comportamento intelligente per raggiungere uno scopo. Questo perché il tentativo riduzionista per la descrizione di cosa si intende per scopo ci vincola troppo.</p>
+
+<ul>
+<li>Condizione Necessaria: Supponiamo ci sia un cavaliere alla ricerca del Santo Graal. Se il Santo Graal non esiste, come descriviamo lo scopo di questo cavaliere se imponiamo che lo scopo sia un oggetto?</li>
+<li>Condizione Sufficiente: Supponiamo una persona si sveglia all&#8217;improvviso durante la notte, e spara un colpo di pistola allo specchio. Come descriviamo lo scopo di questo signore? Il suo intento non era sparare nello specchio, ma l&#8217;ha fatto per motivi che non conosciamo.</li>
+</ul>
+
+
+<p>Quindi la definizione di Scopo come una relazione spazio/temporale relativa ad un oggetto è troppo restrittiva per descrivere il comportamento intelligente rivolto ad uno scopo.</p>
+
+<h3>Il ruolo dei Modelli nella Scienza</h3>
+
+<p>La cibernetica lavora con i <strong>modelli</strong>. Obiettivo della scienza è ottenere la <strong>comprensione</strong> ed il <strong>controllo</strong> di una qualche parte dell&#8217;universo. Ad esempio la lancetta del barometro che si abbassa ha come causa  (comprensione) l&#8217;abbassamento della pressione; ed anche, la cura per una malattia (controllo) mediante antibiotici.</p>
+
+<p>Ma nessuna parte dell&#8217;universo si lascia afferrare senza un minimo di astrazione. I <strong>modelli</strong> ci aiutano proprio a questo: un modello formale (o intellettuale) rappresenta con astrazione un <strong>sistema studiato</strong> (cioè la parte dell&#8217;universo che stiamo studiando).</p>
+
+<p>Possiamo dividere i modelli in:</p>
+
+<ul>
+<li><strong>Modello materiale</strong>: rappresentazione del <em>sistema studiato</em> ottenuto mediante un altro sistema, di solito più semplice, ma con proprietà simili al <em>sistema studiato</em>.</li>
+<li><strong>Modello Formale</strong>: rappresenta in termini logici il <em>sistema studiato</em> in maniera semplice, con proprietà simili.</li>
+</ul>
+
+
+<p>I modelli materiali sono utili quando:</p>
+
+<p>&#8211; Vogliamo studiare un sistema di un campo inconsueto (sistema studiato), in un campo più familiare (modello meccanico)</p>
+
+<p>&#8211; Il modello materiale permette di svolgere esperimenti in condizioni più favorevoli rispetto a quelle date dal sistema studiato. Ad esempio ci conviene sperimentare nuovi farmaci prima sui topi, e poi sugli umani. Ma su quale base diciamo che un topo è un modello materiale dell&#8217;umano? Lo diciamo secondo alcuni criteri di &#8220;somiglianza&#8221; rispetto al modello originale.</p>
+
+<p>I modelli non sono utili quando:</p>
+
+<p>&#8211; Se il modello formale non rispecchia bene il sistema studiato, anche il modello materiale sarà poco significativo.</p>
+
+<p>&#8211; Se il modello materiale suggerisce esperimenti predittibili dal modello formale, allora esso è superfluo.</p>
+
+<p>Possiamo dividere i problemi in quelli a scatola chiusa e quelli a scatola aperta.</p>
+
+<p>Nei problemi a <strong>scatola chiusa</strong> conosciamo solo alcuni input e possiamo verificare gli output, ma non sappiamo cosa avviene dentro la scatola. <em>La legge di trasformazione è quella legge che mette in relazione l&#8217;input con l&#8217;output</em>. Per scoprire cosa c&#8217;è nella scatola possiamo provare ad aprirla ed individuare altri input e/o altri output in modo da svolgere studi più approfonditi. Man mano che apriamo tutte le scatole trovate durante lo studio, abbiamo un problema a <strong>scatola aperta</strong>.</p>
+
+<p>Nell&#8217;aprire le scatole, e quindi nell&#8217;aggiungere dettagli alla nostra descrizione, facciamo un&#8217;ipotesi di modularità, ipotizzando che gli input individuati siano debolmente accoppiati con gli altri elementi della scatola. Bisogna stare attenti quando si studiano questi problemi a scendere nel dettaglio fino ad un livello per noi soddisfacente, in modo da avere una buona descrizione del problema senza complicarlo in modo eccessivo.</p>
+
+<h2>&#8220;Computer Simulation of Human Thinking&#8221; &#8211; Newell &amp; Simon</h2>
+
+<p>Abbiamo discusso gli sviluppi della prima Cibernetica. Adesso ci spostiamo sul ramo della prima IA, ed esaminiamo il lavoro di Newell &amp; Simon.</p>
+
+<p>Newell &amp; Simon, due neuroscienziati che studiavano la mente, avevano lo scopo di cercare dei <strong>modelli del mentale</strong>, ossia dei <strong>modelli</strong> che rappresentassero l&#8217;attività cognitiva umana.</p>
+
+<p>Quindi volevano costruire dei programmi che simulassero i compiti cognitivi umani in modo psicologicamente realistico.</p>
+
+<p>Per fare ciò si costruirono delle <strong>Microteorie</strong>. Ogni microteoria era relativa ad un particolare categoria di compiti cognitivi, ad esempio giocare a dama: essi chiedevano alla persona sotto esame di giocare a dama e pensare a voce alta, quindi riferire tutti i suoi ragionamenti selettivi ed euristici (introspezione).</p>
+
+<p>Il programma risultante di questo studio, non solo doveva dare gli stessi risultati del ragionamento cognitivo (e quindi supera il test di Turing), ma nel calcolarli doveva elaborare le informazioni nello stesso modo di un essere umano. Quest&#8217;ultima condizione serve ad avere una simulazione psicologicamente realistica del ragionamento umano.</p>
+
+<p>Una volta costruito un modello per un compito cognitivo, abbiamo una microteoria. Newell &amp; Simon volevano trarre un modello della mente combinando tra loro tutte le microteorie ottenute.</p>
+
+<p>La differenza con Turing, è che Newell &amp; Simon consideravano il test di Turing &#8220;debole&#8221; in quando non riguarda i processi del pensiero, ma prende in considerazione solo la prestazione finale.</p>
+
+<h3>Critiche al lavoro di Newell &amp; Simon</h3>
+
+<p><strong>Critica sull&#8217;uso del protocollo verbale</strong></p>
+
+<p>Il protocollo verbale, con il quale i soggetti studiati illustravano il proprio processo di pensiero sono <strong>incompleti</strong> perché non tutti i processi della mente sono accessibili all&#8217;introspezione.</p>
+
+<p>Inoltre questo metodo di studio del mentale è scorretto perché pensare e descrivere cosa si sta pensando sono due compiti concorrenti che possono interferire tra loro.</p>
+
+<p>Si sta studiando il modo di pensare, o il modo in cui un essere umano descrive il proprio pensiero?</p>
+
+<p><strong>Critica sul dominio di applicazione</strong></p>
+
+<p>Le microteorie sono strettamente collegate al particolare problema. Quindi applicando il modello suggerito da una microteoria ad un problema simile a quello di partenza non si hanno buoni risultati.</p>
+
+<p><strong>Critica sul campione di persone</strong></p>
+
+<p>Il campione scelto per eseguire i test è ristretto, e non rispecchia il modo di pensare di tutta la popolazione. Inoltre ogni persona ha un modo particolare di pensare.</p>
+
+<p><strong>Critica sulla modularità</strong></p>
+
+<p>Newell &amp; Simon non fanno ipotesi di modularità sulla mente e la considerano interamente in un&#8217;unica architettura unificata. Successivi studi (Chomsky, Marr, Fodor, ed altri) tentano di dividere la mente in moduli, in modo da poterli studiare indipendentemente.</p>
+
+<h3>Conclusioni</h3>
+
+<p>Il lavoro di Newell &amp; Simon è stato fallimentare, ma il loro contributo all&#8217;IA è stato enorme. Tutt&#8217;oggi le euristiche da loro definite sono molto utilizzate.</p>
+
+<h2>Chomsky ed il Linguaggio Universale</h2>
+
+<p>Un esempio di ipotesi di modularità è il <strong>Linguaggio Universale</strong> di Chomsky. Lui osserva come i bambini nei loro primi anni di vita riescono ad imparare la lingua, e nota che gli stimoli che essi ricevono sono di scarsa qualità per ottenere i risultati che si hanno.</p>
+
+<p>Quindi l&#8217;ipotesi di modularità di Chomsky è che nella nostra mente esiste un modulo di <strong>Grammatica Universale</strong> (UG) che ci aiuta ad imparare il linguaggio parlato.</p>
+
+<p>Quello che ha fatto Chomsky è isolare questo modulo UG dalle restanti parti della mente, e studiarlo a se stante.</p>
+
+<p>Questo è proprio quello che manca nel lavoro fatto da Newell &amp; Simon, in quanto non avendo fatto ipotesi di modularità, non riescono a trovare delle variabili in comune a tutti gli essere umani con le quali è possibile creare un modello di tutta la mente umana.</p>
+
+<h2>David Marr</h2>
+
+<p>Marr, essendo allievo di Chomsky, prende da lui spunto, e nel suo articolo &#8220;Artificial Intelligence &#8211; A Personal View&#8221; espone la sua critica al lavoro di Newell &amp; Simon.</p>
+
+<p>Secondo Marr, un risultato nel campo dell&#8217;IA doveva seguire questi passaggi:</p>
+
+<ol>
+<li>Definizione di <strong>cosa</strong> è calcolato, e <strong>perché</strong> è calcolato</li>
+<li>Definire <strong>come</strong> calcolarlo, quindi definizione di un algoritmo</li>
+<li>Dimostrazione di funzionamento</li>
+</ol>
+
+
+<p>Il &#8220;perché&#8221; non è interessante da definire in quanto è legato alla natura del problema: il mondo è fatto così. Il &#8220;cosa&#8221; invece è molto interessante, in quanto questo passaggio non è stato considerato da Newell &amp; Simon. Infatti è difficile definire &#8220;cosa&#8221; calcolare in modo preciso quando si sta tentando di costruire un modello per l&#8217;intera mente umana.</p>
+
+<p>Marri chiama <em>teorie di tipo 1</em> quelle in cui si riesce a trovare una buona descrizione di cosa è calcolato, e chiama <em>teorie di tipo 2</em> quelle in cui non si è ancora riusciti a dare una descrizione formale.</p>
+
+<h2>Antonio Damasio</h2>
+
+<p>Molti hanno criticato Newell &amp; Simon per mancanza di ipotesi di modularità. In realtà un&#8217;ipotesi di modularità è stata fatta: l&#8217;attività di problem solving della mente umana è considerata indipendente dalle emozioni provate.</p>
+
+<p>Damasio, neurologo e neuroscienziato degli anni 80, nello studiare un caso clinico si accorge che il paziente non è in grado di provare emozioni.</p>
+
+<p>Questo paziente è perfettamente in grado di effettuare ragionamenti razionali, e risponde correttamente a domande a lui poste. Però quando è coinvolto in prima persona non riesce a prendere le decisioni giuste con i suoi ragionamenti.</p>
+
+<p>L&#8217;ipotesi di Damasio è che <em>le emozioni hanno un ruolo importante nel ragionamento pratico</em>.</p>
+
+<p>Test effettuati con questo paziente mostrano che non è in grado di provare emozioni. Ad esempio in una partita a poker non prova tristezza se perde una mano di gioco, oppure riesce a parlare in modo freddo della sua malattia (o di eventi brutti) con freddezza.</p>
+
+<p>Damasio va oltre questa ipotesi e ne formula un&#8217;altra, in cui afferma che, come le emozioni, <em>le immagini mentali hanno un ruolo nel ragionamento pratico</em>.</p>
+
+<p>Supponiamo di essere stati morsi da un cane mentre passeggiavamo nel parco. Dopo qualche giorno se ripensiamo a quel cane, riusciamo ad immaginarlo e a ricostruirci nel nostro <em>buffer visivo</em> la sua immagine. Assieme alla scena ricostruita associamo un&#8217;emozione che può essere bella o brutta a seconda se il morso del cane ci è piaciuto oppure no (ovviamente in questo caso non ci è piaciuto). Quindi in futuro cercheremo di non passare vicino a quel cane perché rischiamo di essere morsi nuovamente: così facendo nel nostro ragionamento pratico elimineremo tutti gli scenari possibili che ci portano nelle vicinanze di quel cane.</p>
+
+<p>Damasio dice con questa ipotesi che il paziente da lui studiato è incapace associare le immagini mentali alle emozioni, e quindi nel suo ragionamento pratico può scegliere un&#8217;azione che lo riporta a commettere un errore già fatto in passato.</p>
+
+<p>Con queste ipotesi Damasio ha cercato di spiegare l&#8217;assenza di pianificazione e di prudenza che ha il suo paziente durante i ragionamenti pratici che lo coinvolgono i prima persona.</p>
+
+<p>Inoltre mostra come le emozioni hanno un ruolo centrale nel ragionamento, e quindi è sbagliato considerarle indipendenti dal problem solving. Quindi sarà possibile progettare macchine con prestazioni pari a quelle degli essere umani anche se non provano emozioni?</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Recursive Implementation of Heap Sort Algorithm]]></title>
-    <link href="http://fsferrara.github.io/c-recursive-implementation-of-heap-sort-algorithm/"/>
-    <updated>2010-07-11T00:46:14+00:00</updated>
-    <id>http://fsferrara.github.io/c-recursive-implementation-of-heap-sort-algorithm</id>
+    <link href="http://fsferrara.github.io/blog/2010/07/11/c-recursive-implementation-of-heap-sort-algorithm/"/>
+    <updated>2010-07-11T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2010/07/11/c-recursive-implementation-of-heap-sort-algorithm</id>
     <content type="html"><![CDATA[<p>L&#8217; heapsort è un algoritmo di ordinamento iterativo ed in-place proposto da Williams nel 1964, che si basa su strutture dati ausiliarie.</p>
 
 <blockquote><p>L&#8217; heapsort per eseguire l&#8217;ordinamento, utilizza una struttura chiamata heap (mucchio); un heap è rappresentabile con un albero binario in cui tutti i nodi seguono una data proprietà, detta priorità. Esso è completo almeno fino al penultimo livello dell&#8217;albero e ad ogni nodo corrisponde uno ed un solo elemento.</p>
@@ -3045,9 +3037,9 @@ main()
   
   <entry>
     <title type="html"><![CDATA[C Implementation of Heap Sort Algorithm]]></title>
-    <link href="http://fsferrara.github.io/c-implementation-of-heap-sort-algorithm/"/>
-    <updated>2010-07-10T00:40:54+00:00</updated>
-    <id>http://fsferrara.github.io/c-implementation-of-heap-sort-algorithm</id>
+    <link href="http://fsferrara.github.io/blog/2010/07/10/c-implementation-of-heap-sort-algorithm/"/>
+    <updated>2010-07-10T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2010/07/10/c-implementation-of-heap-sort-algorithm</id>
     <content type="html"><![CDATA[<p>L&#8217; heapsort è un algoritmo di ordinamento iterativo ed in-place proposto da Williams nel 1964, che si basa su strutture dati ausiliarie.</p>
 
 <blockquote><p>L&#8217; heapsort per eseguire l&#8217;ordinamento, utilizza una struttura chiamata heap (mucchio); un heap è rappresentabile con un albero binario in cui tutti i nodi seguono una data proprietà, detta priorità. Esso è completo almeno fino al penultimo livello dell&#8217;albero e ad ogni nodo corrisponde uno ed un solo elemento.</p>
@@ -3191,9 +3183,9 @@ main()
   
   <entry>
     <title type="html"><![CDATA[ISDN Technology]]></title>
-    <link href="http://fsferrara.github.io/isdn-technology/"/>
-    <updated>2010-01-09T01:28:47+00:00</updated>
-    <id>http://fsferrara.github.io/isdn-technology</id>
+    <link href="http://fsferrara.github.io/blog/2010/01/09/isdn-technology/"/>
+    <updated>2010-01-09T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2010/01/09/isdn-technology</id>
     <content type="html"><![CDATA[<p>Integrated Services Digital Network, o ISDN, è una rete digitale che dà supporto a molti servizi di voce e dati. La definizione tecnica dell&#8217;ISDN, che investe diverse componenti delle reti, risale alle raccomandazioni ITU-T della serie I del 1984 e comprende numerose altre pubblicazioni dello stesso ITU-T e dell&#8217;ETSI (European Telecommunications Standard Institute) fatte negli anni successivi.</p>
 
 <!--more-->
@@ -3317,62 +3309,64 @@ main()
   
   <entry>
     <title type="html"><![CDATA[Java Implementation of the Ackermann Function]]></title>
-    <link href="http://fsferrara.github.io/java-implementation-of-the-ackermann-function/"/>
-    <updated>2009-11-29T01:24:14+00:00</updated>
-    <id>http://fsferrara.github.io/java-implementation-of-the-ackermann-function</id>
+    <link href="http://fsferrara.github.io/blog/2009/11/29/java-implementation-of-the-ackermann-function/"/>
+    <updated>2009-11-29T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2009/11/29/java-implementation-of-the-ackermann-function</id>
     <content type="html"><![CDATA[<p>Wilhelm Friedrich Ackermann (29/3/1896 – 24/12/1962) was a German mathematician best known for the Ackermann function, an important example in the theory of computation.</p>
 
 <p>La funzione di Ackermann è una funzione f(x,y,z) che ha come dominio l&#8217;insieme delle terne di numeri naturali e come codominio i numeri naturali.</p>
 
 <p>Essa è un esempio di funzione ricorsiva che non è primitiva ricorsiva poiché cresce più velocemente di qualsiasi funzione ricorsiva primitiva.</p>
 
-<p><!--more--><figure id="attachment_122" style="max-width: 300px" class="wp-caption alignnone"></p>
+<!--more-->
 
-<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann.png"><img class="size-medium wp-image-122" src="http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann-300x54.png" alt="Ackermann function description" width="300" height="54" srcset="http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann-300x54.png 300w, http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann.png 477w" sizes="(max-width: 300px) 100vw, 300px" /></a><figcaption class="wp-caption-text">Ackermann function description</figcaption></figure></p>
+
+<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann-300x54.png" title="'Ackermann function description'" ></p>
 
 <p>Qui il codice java che implementa questa funzione:</p>
 
 <p><span style="text-decoration: underline;">Ackermann.java</span></p>
 
-<p><pre lang="java">public class Ackermann {</p>
+<pre lang="java">public class Ackermann {
 
-<p> static long count = 0;</p>
+ static long count = 0;
 
-<p> private static long h(long m, long n) {</p>
+ private static long h(long m, long n) {
 
-<p>  count++;</p>
+  count++;
 
-<p>  if (m == 0) {
+  if (m == 0) {
    return n + 1;
   }
   if (n == 0) {
    return h(m-1, 1);
-  }</p>
+  }
 
-<p>  return h(m-1, h(m,n-1) );
- }</p>
+  return h(m-1, h(m,n-1) );
+ }
 
-<p> private static long ack(long n) {
+ private static long ack(long n) {
   return h(n, n);
- }</p>
+ }
 
-<p> public static void main(String[] args) {</p>
+ public static void main(String[] args) {
 
-<p>  if (args.length != 1) {
-   System.out.println(&ldquo;usage: Ackermann &lt;number&gt;\n\twhere number is a positive integer&rdquo;);
+  if (args.length != 1) {
+   System.out.println("usage: Ackermann &lt;number&gt;\n\twhere number is a positive integer");
    System.exit(1);
-  }</p>
+  }
 
-<p>  long n = Long.valueOf(args[0]);</p>
+  long n = Long.valueOf(args[0]);
 
-<p>  count = 0;
+  count = 0;
   long retValue = ack(n);  
-  System.out.println(&ldquo;ack(&rdquo; + n + &ldquo;) = &rdquo; + retValue + &ldquo; [recursive calls = &rdquo;+ count +&ldquo;]&rdquo;);</p>
+  System.out.println("ack(" + n + ") = " + retValue + " [recursive calls = "+ count +"]");
 
-<p>  System.exit(0);
- }</p>
+  System.exit(0);
+ }
 
-<p>}</pre></p>
+}</pre>
+
 
 <p>Il meccanismo di calcolo della funzione è estremamente semplice quanto pesante dal punto di vista computazionale. Questi sono i risultati ottenuti:</p>
 
@@ -3390,9 +3384,9 @@ main()
   
   <entry>
     <title type="html"><![CDATA[XQuery Queries in Java]]></title>
-    <link href="http://fsferrara.github.io/xquery-queries-in-java/"/>
-    <updated>2009-10-29T00:55:37+00:00</updated>
-    <id>http://fsferrara.github.io/xquery-queries-in-java</id>
+    <link href="http://fsferrara.github.io/blog/2009/10/29/xquery-queries-in-java/"/>
+    <updated>2009-10-29T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2009/10/29/xquery-queries-in-java</id>
     <content type="html"><![CDATA[<p style="text-align: justify;">
   XQuery, una abbrevazione per XML Query Language, è un linguaggio di programmazione specificato dal W3C e destinato ad interrogare documenti e basi di dati XML. Questo perché XML si sta proponendo come la tecnologia per rimpiazzare i vecchi DBMS relazionali :-)
 </p>
@@ -3546,9 +3540,9 @@ public final class XQueryAPIExample {
   
   <entry>
     <title type="html"><![CDATA[Describing Media With XML and MPEG-7]]></title>
-    <link href="http://fsferrara.github.io/describing-media-with-xml-and-mpeg-7/"/>
-    <updated>2009-10-27T01:17:43+00:00</updated>
-    <id>http://fsferrara.github.io/describing-media-with-xml-and-mpeg-7</id>
+    <link href="http://fsferrara.github.io/blog/2009/10/27/describing-media-with-xml-and-mpeg-7/"/>
+    <updated>2009-10-27T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2009/10/27/describing-media-with-xml-and-mpeg-7</id>
     <content type="html"><![CDATA[<p class="western">
   La diffusione delle connessioni a banda larga ha agevolato la diffusione di audio e video via web: un esempio eclatante è YouTube! Ma riuscire a trovare un video particolare tra la grossa quantità di dati multimediali sul web è un compito arduo: il valore del dato multimediale dipende da quanto è agevole trovarlo, gestirlo, ed accedere.
 </p>
@@ -3930,9 +3924,9 @@ public final class XQueryAPIExample {
   
   <entry>
     <title type="html"><![CDATA[Very Brief Introduction to XML]]></title>
-    <link href="http://fsferrara.github.io/very-brief-introduction-to-xml/"/>
-    <updated>2009-10-26T01:15:26+00:00</updated>
-    <id>http://fsferrara.github.io/very-brief-introduction-to-xml</id>
+    <link href="http://fsferrara.github.io/blog/2009/10/26/very-brief-introduction-to-xml/"/>
+    <updated>2009-10-26T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2009/10/26/very-brief-introduction-to-xml</id>
     <content type="html"><![CDATA[<p>Il linguaggio XML è diventato uno degli elementi fondamentali per la realizzazione di sistemi informativi, indipendentemente dalla tecnologia usata.</p>
 
 <h2>Storia</h2>
@@ -4070,9 +4064,9 @@ public final class XQueryAPIExample {
   
   <entry>
     <title type="html"><![CDATA[Very Brief Introduction to Regular Expressions]]></title>
-    <link href="http://fsferrara.github.io/very-brief-introduction-to-regular-expressions/"/>
-    <updated>2009-10-25T01:13:16+00:00</updated>
-    <id>http://fsferrara.github.io/very-brief-introduction-to-regular-expressions</id>
+    <link href="http://fsferrara.github.io/blog/2009/10/25/very-brief-introduction-to-regular-expressions/"/>
+    <updated>2009-10-25T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2009/10/25/very-brief-introduction-to-regular-expressions</id>
     <content type="html"><![CDATA[<p>Le espressioni regolari sono utili per descrivere la validità di valori, come ad esempio valori di attributi, dati caratteri, e qualsiasi tipo di valore esprimibile con un certo alfabeto.</p>
 
 <p>Il concetto di espressione regolare è un formalismo importante utilizzato, in varie forme, in svariate applicazioni&#8230; ad esempio nei linguaggi di schema (come DTD di XML) per descrivere sequenze di elementi o caratteri. I linguaggi regolari sono utilizzati in molte altre aree dell&#8217;informatica oltre a XML, dall&#8217;elaborazione del testo e del linguaggio naturale alla verifica formale dei componenti hardware.</p>

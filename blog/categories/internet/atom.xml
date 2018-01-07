@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Internet | Saverio Ferrara]]></title>
   <link href="http://fsferrara.github.io/blog/categories/internet/atom.xml" rel="self"/>
   <link href="http://fsferrara.github.io/"/>
-  <updated>2018-01-07T01:45:01+01:00</updated>
+  <updated>2018-01-07T16:07:02+01:00</updated>
   <id>http://fsferrara.github.io/</id>
   <author>
     <name><![CDATA[Saverio Ferrara]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Disable Goku Script Spam Feature]]></title>
-    <link href="http://fsferrara.github.io/disable-goku-script-spam-feature/"/>
-    <updated>2009-07-28T17:39:01+00:00</updated>
-    <id>http://fsferrara.github.io/disable-goku-script-spam-feature</id>
+    <link href="http://fsferrara.github.io/blog/2009/07/28/disable-goku-script-spam-feature/"/>
+    <updated>2009-07-28T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2009/07/28/disable-goku-script-spam-feature</id>
     <content type="html"><![CDATA[<p>Eliminare lo spam dal goku script</p>
 
 <p>Il goku script è uno script per mIRC realizzato nell’anno 2001 e tutt’oggi è considerato uno degli script più completi in circolazione. Lo script è <a href="/portfolio/goku-script/">scaricabile a questo link</a>.</p>

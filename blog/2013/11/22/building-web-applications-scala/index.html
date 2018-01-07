@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Building Web Applications With Scala - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="Scala is general purpose programming language very popular for building web application. But why? At the moment I really don&#8217;t know why :) , I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/blog/2013/11/22/building-web-applications-scala/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Blog</a></li>
+  <li><a href="/story"><i class="fa fa-code-fork" aria-hidden="true"></i> Story</a></li>
+  <li><a href="/social"><i class="fa fa-hashtag" aria-hidden="true"></i> Social</a></li>
+  <li><a href="/about"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Building Web Applications With Scala</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-11-22T00:00:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>12:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Scala is general purpose programming language very popular for building web application. But why? At the moment I really don&#8217;t know why :) , I&#8217;m just reading about it and sharing my thoughts with you.</p>
+
+<p>Let&#8217;s start from Scala. It&#8217;s a programming language both object-oriented and functional: we can refer to this kind of programming language as &#8220;object-functional&#8221;. We say that is a programming language because there is a compiler for it, but also an interpreter is available.</p>
+
+<p>It is intended to be compiled to Java bytecode, so the resulting executable runs on the JVM, and Java libraries can be used directly in Scala code and vice-versa. Maybe this is the real strength of this language&#8230; it allows to write brand-new web application while reusing legacy java libraries. That&#8217;s awesome for a company with a bunch of old java code.</p>
+
+<!--more-->
+
+
+<h2>Scala-powered Web Framework</h2>
+
+<p>Of course there is the possibility to simply use scala with any java-enabled web framework, but let&#8217;s choose a specialized one from the several web frameworks that use scala as main language. At the moment the main frameworks are:</p>
+
+<ul>
+<li><a href="http://liftweb.net">Lift</a> seems the most mature. As the official website states, Lift is highly secure and has the best JSON handling library in Scala: this make lift a good choice to build a web service. Moreover lift is not a traditional MVC framework, but it has a View First approach: lift loads the view first and builds your page from the view. &#8220;Why?&#8221; Because complex HTML pages rarely contain a dominant piece of logic&#8230; a single controller&#8230; but contain many different components that can interact or not.</li>
+<li><a href="http://www.playframework.com">Play</a> seems to have a better documentation and videos, and looks more familiar (traditional MVC pattern). At a glance it has a better support for modern web and mobile application. It has a good support to templates, and allows writing code in Scala, Java, Javascript, Coffeescript, and others languages.</li>
+<li><a>Scalatra</a> is a simple, accessible and free web micro-framework. It combines the power of the JVM with the beauty and brevity of Scala. It seems very easy to set up, and it is designed exactly to create web services. As micro-framework Scalatra doesn&#8217;t offer much functionality.</li>
+</ul>
+
+
+<p>In my opinion Play is the best framework here for building medium-size applications: for large application I really like the &#8220;<a href="http://stackoverflow.com/questions/13290118/differences-between-mvc-and-view-first-approach-in-web-development">View First</a>&#8221; approach, so I choose lift for a first experiment.</p>
+
+<h2>SBT</h2>
+
+<p>At first I thought it meant &#8220;Scala Build Tool&#8221; but actually SBT stands for &#8220;Simple Build Tool&#8221; and, even if it is more popular for Scala projects, it can be also used for Java projects.</p>
+
+<p>SBT is the de facto build tool for the Scala community, used by both the Lift web framework and Play Framework.</p>
+
+<p>Similar to Java&#8217;s Maven, it has a native support for compiling Scala code and integrating with many Scala test frameworks (continuous compilation, testing, and deployment). Moreover it manages dependencies using Ivy (and library for apache Ant that is compatible with apache Maven repositories). Integrated with the Scala interpreter, it supports debugging and rapid programming iteration.</p>
+
+<p>The build file is entirely written in Scala. It is placed in the root directory of the project and the default name is &#8216;build.sbt&#8217;. This is an example:</p>
+
+<pre lang="scala">organization := "com.fsferrara"
+name := "myfirstlift"
+version := "0.1-SNAPSHOT"
+scalaVersion := "2.10.0"
+
+// xsbt-web-plugin configuration
+seq(webSettings :_*)
+
+libraryDependencies ++= {
+  val liftVersion = "2.5.1"
+  Seq(
+    "net.liftweb" %% "lift-webkit" % liftVersion % "compile",
+    "org.eclipse.jetty" % "jetty-webapp" % "8.1.7.v20120910"  %
+      "container,test",
+    "org.eclipse.jetty.orbit" % "javax.servlet" % "3.0.0.v201112011016" %
+      "container,compile" artifacts Artifact("javax.servlet", "jar", "jar")
+  )
+}</pre>
+
+
+<p>The object &#8216;webSettings&#8217; contains the standard web configuration used to launch the web container, that is, in this example, Jetty. &#8216;Seq&#8217;, with a capital S, is the interface of a Java List: it contains the list of all the dependencies to download.</p>
+
+<p>I took the above file from a lift webapp template I&#8217;m building. A Scala application has another SBT configuration file &#8216;project/plugins.sbt&#8217; that contains the list of plugins used by the application:</p>
+
+<pre lang="scala">addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "0.4.2")</pre>
+
+
+<p>The <a href="https://github.com/JamesEarlDouglas/xsbt-web-plugin">xsbt-web-plugin</a> plugin is used to build Scala web application.</p>
+
+<h2>My first Hello World lift application</h2>
+
+<p>To complete the classic &#8220;hello world&#8221; application, we need three more files. The first one is the well-known &#8216;src/main/webapp/WEB-INF/web.xml&#8217;:</p>
+
+<pre lang="html" escaped="true">&lt;!DOCTYPE web-app SYSTEM "http://java.sun.com/dtd/web-app_2_3.dtd"&gt;
+&lt;web-app&gt;
+  &lt;filter&gt;
+    &lt;filter-name&gt;LiftFilter&lt;/filter-name&gt;
+    &lt;display-name&gt;Lift Filter&lt;/display-name&gt;
+    &lt;description&gt;The Filter that intercepts Lift calls&lt;/description&gt;
+    &lt;filter-class&gt;net.liftweb.http.LiftFilter&lt;/filter-class&gt;
+  &lt;/filter&gt;
+  &lt;filter-mapping&gt;
+    &lt;filter-name&gt;LiftFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+  &lt;/filter-mapping&gt;
+&lt;/web-app&gt;</pre>
+
+
+<p>With this file a LiftFilter servlet is instantiated and all the HTTP requests are forwarded to it. This is the entry point of the Lift framework. The next file, the &#8220;View&#8221;, is &#8216;src/main/webapp/index.html&#8217;:</p>
+
+<pre lang="html" escaped="true">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Lift From Scratch&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+
+<p>The last one is our first &#8216;.scala&#8217; file, Finally! So we create &#8216;src/main/scala/bootstrap/Boot.scala&#8217;:</p>
+
+<pre lang="scala">package bootstrap.liftweb
+
+import net.liftweb.http.{Html5Properties, LiftRules, Req}
+import net.liftweb.sitemap.{Menu, SiteMap}
+
+class Boot {
+  def boot {
+    LiftRules.addToPackages("code")
+
+    // Build SiteMap
+    def sitemap(): SiteMap = SiteMap(
+      Menu.i("Home") / "index"
+    )
+
+    // Use HTML5 for rendering
+    LiftRules.htmlProperties.default.set((r: Req) =&gt;
+      new Html5Properties(r.userAgent))
+  }
+}</pre>
+
+
+<p>This file defines a &#8216;Boot&#8217; class containing only one method named &#8216;boot&#8217;. This class is instantiated early and run: it allows the application to modify lift&#8217;s environment. The first instruction of the &#8216;boot&#8217; method defines the package used to search for &#8220;Snippets&#8221; (a Snippet is the component that transforms the incoming HTML to the dynamically generated HTML).</p>
+
+<p>Next is the definition of the SiteMap: every page on the site needs a SiteMap entry.</p>
+
+<p>What? A class with a method? Where is the functional side of Scala?</p>
+
+<p>Scala is an object-functional programming language. In my initial opinion it seems that only the object-oriented side of Scala is used, while only few part of code are written completely functional. Maybe the most used &#8220;functional feature&#8221; is the immutability: I read it in <a href="http://blog.manub.net/2013/11/like-immutable-objects/">this interesting post</a>.</p>
+
+<h2>Starting our application</h2>
+
+<p>In order to start our application, open the shell and change directory to the root of our project and type in &#8216;sbt&#8217;. Obviously you should first in install the SBT tool.</p>
+
+<p>Now the console of SBT starts, it seems quite slow, and to download all the dependencies type the command &#8220;update&#8221;. Next to start tomcat, use the command &#8220;container:start&#8221;. By default a Jetty server will start, and we can see our first project at the address _<a href="http://localhost:8080_.">http://localhost:8080_.</a></p>
+
+<h3>Developing with a text editor</h3>
+
+<p>SBT has plugins available used to develop Scala application with IntelliJ Idea, Eclipse, and Netbeans. I like to develop my application with a fast text editor with few unused features. My favourite text editor now is Sublime Text, you surely know it!</p>
+
+<p>Also I like compile and refresh my application while developing: To do that we can use SBT with this instruction:</p>
+
+<pre lang="bash">~; container:start; container:reload /</pre>
+
+
+<p>An SBT command prefixed with ~ makes that command run when files change. The first semicolon introduces a sequence of commands, where if the first command succeeds, the second will run. The second semicolon means the reload command will run if the start command ran OK. The start command will recompile any Scala source files that have changed. Honestly I don&#8217;t know what the last character (/) means.</p>
+
+<h2>Our first Snippet</h2>
+
+<p>Like I said before Lift adopts a view-first approach, so the first thing that is loaded is the View (in this case the HTML) and then the snippets are applied to it.</p>
+
+<p>Our first snippet is &#8216;src/main/scala/code/snippet/HelloSnippet.scala&#8217;.</p>
+
+<pre lang="scala">package code.snippet
+
+import net.liftweb.util.Helpers._
+import net.liftweb.util.PassThru
+
+import scala.util.Random
+import xml.Text
+
+class HelloSnippet {
+  private def fiftyFifty = Random.nextBoolean
+
+  def render =
+    if (fiftyFifty) "*" #&gt; Text("Hello Saverio")
+    else PassThru
+}</pre>
+
+
+<p>For those of you who do not know, my name is Saverio. This snippet, with a probability of fifty percent, can change the text value of the HTML object linked to it. So the next step is to modify the view in this way:</p>
+
+<pre lang="html" escaped="true">...
+&lt;div data-lift="HelloSnippet"&gt;
+  Hello World
+&lt;/div&gt;
+...</pre>
+
+
+<p>Try it! The page can render now &#8220;Hello World&#8221; or &#8220;Hello Saverio&#8221;. All works because in the Boot class we defined the folder &#8216;code&#8217; as the place where to search for snippets (remember: <code>LiftRules.addToPackages("code")</code>)</p>
+
+<h2>A REST endpoint written with Lift</h2>
+
+<p>Lift makes providing REST web services very simple. REST (<a href="http://en.wikipedia.org/wiki/Representational_state_transfer">Representational State Transfer</a>) is an architectural style that abstracts the architectural elements within a distributed hypermedia system. REST ignores the details of component implementation and protocol syntax in order to focus on the roles of components: it has emerged as a predominant web API design model. For those of you who already know SOAP-based web services, the main <a href="http://stackoverflow.com/questions/2131965/main-differences-between-soap-and-restful-web-services-in-java">difference</a> between the two is that REST is almost always going to be faster, whilst SOAP is provides a mechanism for services to describe themselves to clients, and to advertise their existence. REST is much more lightweight and can be implemented using almost any tool, leading to lower bandwidth and shorter learning curve. However, the clients have to know what to send and what to expect. In general, When you&#8217;re publishing an API to the outside world that is either complex or likely to change, SOAP will be more useful. Other than that, REST is usually the better option.</p>
+
+<p>In an extremely small nutshell REST is the convention between two systems to communicate by exchanging JSON messages.</p>
+
+<p>Let&#8217;s write a really simple PingRest service: create the file &#8216;src/main/scala/code/lib/PingRest.scala&#8217;.</p>
+
+<pre lang="scala">package code.lib
+
+import net.liftweb._
+import net.liftweb.http._
+import net.liftweb.http.rest._
+import net.liftweb.json.JsonAST._
+import net.liftweb.json.JsonDSL._
+
+object PingRest extends RestHelper {
+
+  serve {
+    case JsonGet("api" :: "ping" :: "pong" :: Nil, req) =&gt; sayHello
+  }
+
+  val sayHello: JValue = {
+    (
+      ("ping" -&gt; "pong")
+    )
+  }
+}</pre>
+
+
+<p>The PingRest class extend RestHelper, a helper used to speed-up the build of web services. Anyway is possible to create a web service without using RestHelper.</p>
+
+<p>To enable this endpoint, we have to modify the Boot code. We must add, at the end of the &#8216;boot&#8217; method, this line: <code>LiftRules.dispatch.append(PingRest)</code>.</p>
+
+<p>Now each request to the url _<a href="http://localhost:8080/api/ping/pong.json_">http://localhost:8080/api/ping/pong.json_</a> produces this answer</p>
+
+<pre lang="json">{
+  "ping":"pong"
+}</pre>
+
+
+<p>The libraries &#8216;net.liftweb.json.JsonAST._&#8217; and &#8216;net.liftweb.json.JsonDSL._&#8217; are used to create a JSON response.</p>
+
+<h2>Conclusion</h2>
+
+<p>Scala is designed to concisely express solutions in an elegant, type-safe and lightweight (low ceremonial) manner. Scala has full support for functional programming, including currying, pattern matching, algebraic data types, lazy evaluation, tail recursion, immutability, and so on.</p>
+
+<p>Scala allows the reusing of legacy java libraries, that&#8217;s true, but I really don&#8217;t like the idea to have another language server-side. I think that adding additional languages, like Scala or Coffeescript, will only increase the complexity of our project and makes it difficult to find people who know how to work on the project.</p>
+
+<p>Furthermore many web frameworks for Scala assume that part of Scala source code should be translated into Javascript code to be executed in the user browser: this introduces another difficulty in debugging Scala application. Other web framework use instead Javascript as main language (for example <a href="http://expressjs.com">express</a> in the MEAN stack) and in that case the code you write is the same code you should debug. Additionally you write Javascript on both client side and server side.</p>
+
+<p>You can download all the source code in this <a href="https://github.com/fsferrara/learn-scala">collection of project</a> on github.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Saverio Ferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2013-11-22T00:00:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>12:00 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/blog/2013/11/22/building-web-applications-scala/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/blog/2013/11/22/building-web-applications-scala/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/11/15/git-branching-model-for-medium-size-companies/" title="Previous Post: A GIT branching model for medium-size companies">&laquo; A GIT branching model for medium-size companies</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/02/21/planning-cluster-hadoop-bigdata/" title="Next Post: Planning a Cluster for Hadoop BigData">Planning a Cluster for Hadoop BigData &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/12/10/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/06/16/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/12/18/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/03/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+>>&nbsp;<a href="/blog/archives"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;Blog&nbsp;Archives</a>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Some rights reserved</a> · 2018 · Saverio Ferrara ·
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/blog/2013/11/22/building-web-applications-scala/';
+        var disqus_url = 'http://fsferrara.github.io/blog/2013/11/22/building-web-applications-scala/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

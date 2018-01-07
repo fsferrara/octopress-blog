@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Saverio Ferrara]]></title>
   <link href="http://fsferrara.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://fsferrara.github.io/"/>
-  <updated>2018-01-07T01:45:01+01:00</updated>
+  <updated>2018-01-07T16:07:02+01:00</updated>
   <id>http://fsferrara.github.io/</id>
   <author>
     <name><![CDATA[Saverio Ferrara]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Blogging With Octopress and Jekyll]]></title>
     <link href="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/"/>
-    <updated>2018-01-05T23:01:08+01:00</updated>
+    <updated>2018-01-05T00:00:00+01:00</updated>
     <id>http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll</id>
     <content type="html"><![CDATA[<p>Nowadays, most blogs are powered by <em>Wordpress</em>. I am a Wordpress users too and I have to admit it is really a great for blogs.<br/>
 As others CMS, Wordpress requires a database and PHP in order to process the <strong>dynamic</strong> pages server-side.
@@ -182,9 +182,9 @@ This task will also watch for local changes and apply them immediately to the lo
   
   <entry>
     <title type="html"><![CDATA[Getting Started With GraphQL]]></title>
-    <link href="http://fsferrara.github.io/getting-started-with-graphql/"/>
-    <updated>2017-12-10T22:53:50+00:00</updated>
-    <id>http://fsferrara.github.io/getting-started-with-graphql</id>
+    <link href="http://fsferrara.github.io/blog/2017/12/10/getting-started-with-graphql/"/>
+    <updated>2017-12-10T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2017/12/10/getting-started-with-graphql</id>
     <content type="html"><![CDATA[<div>
   What is GraphQL? The <a href="http://facebook.github.io/graphql/October2016/">draft RFC specification</a> (October 2016), defines it as &#8220;a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for client‐server applications&#8221;. More simply, GraphQL is a language specification for API. It defines in which way the client should query the server, and in which way the server should execute those queries.
 </div>
@@ -192,15 +192,7 @@ This task will also watch for local changes and apply them immediately to the lo
 
 
 
-<div>
-  <!--more-->
-</div>
-
-
-
-
-<div>
-</div>
+<!--more-->
 
 
 
@@ -513,9 +505,9 @@ enum ReservationStatus {
   
   <entry>
     <title type="html"><![CDATA[Aspect Oriented Programming With Spring and AspectJ]]></title>
-    <link href="http://fsferrara.github.io/aspect-oriented-programming-with-spring-and-aspectj/"/>
-    <updated>2015-12-18T23:57:23+00:00</updated>
-    <id>http://fsferrara.github.io/aspect-oriented-programming-with-spring-and-aspectj</id>
+    <link href="http://fsferrara.github.io/blog/2015/12/18/aspect-oriented-programming-with-spring-and-aspectj/"/>
+    <updated>2015-12-18T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2015/12/18/aspect-oriented-programming-with-spring-and-aspectj</id>
     <content type="html"><![CDATA[<p><strong>Aspect-Oriented Programming</strong> (<em>AOP</em>) powerfully complements <strong>Object-Oriented Programming</strong> (<em>OOP</em>) by providing another way of thinking about program structure.</p>
 
 <p>Drawing a comparison between AOP and OOP we can say that the key unit of modularity in OOP is the class, whereas in AOP the unit of modularity is the aspect. With aspects, you can group application behaviour that was once spread throughout your applications into reusable modules. You can then declare exactly where and how this behaviour is applied. This reduces code duplication and lets your classes focus on their main functionality.</p>
@@ -819,9 +811,9 @@ public static void main(String[] args) {
   
   <entry>
     <title type="html"><![CDATA[Running Containers With Docker]]></title>
-    <link href="http://fsferrara.github.io/running-containers-with-docker/"/>
-    <updated>2015-04-03T17:03:29+00:00</updated>
-    <id>http://fsferrara.github.io/running-containers-with-docker</id>
+    <link href="http://fsferrara.github.io/blog/2015/04/03/running-containers-with-docker/"/>
+    <updated>2015-04-03T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2015/04/03/running-containers-with-docker</id>
     <content type="html"><![CDATA[<p><strong>Docker</strong> is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of <strong>Docker Engine</strong>, a portable, <em>lightweight runtime and packaging tool</em>, and <strong>Docker Hub</strong>, a <em>cloud service for sharing applications and automating workflows</em>, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
 
 <p>This post describes how to run Docker machines with the help of Boot2Docker.</p>
@@ -1048,9 +1040,9 @@ Username:
   
   <entry>
     <title type="html"><![CDATA[Building Web Applications With Scala]]></title>
-    <link href="http://fsferrara.github.io/building-web-applications-scala/"/>
-    <updated>2013-11-22T11:02:39+00:00</updated>
-    <id>http://fsferrara.github.io/building-web-applications-scala</id>
+    <link href="http://fsferrara.github.io/blog/2013/11/22/building-web-applications-scala/"/>
+    <updated>2013-11-22T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/11/22/building-web-applications-scala</id>
     <content type="html"><![CDATA[<p>Scala is general purpose programming language very popular for building web application. But why? At the moment I really don&#8217;t know why :) , I&#8217;m just reading about it and sharing my thoughts with you.</p>
 
 <p>Let&#8217;s start from Scala. It&#8217;s a programming language both object-oriented and functional: we can refer to this kind of programming language as &#8220;object-functional&#8221;. We say that is a programming language because there is a compiler for it, but also an interpreter is available.</p>

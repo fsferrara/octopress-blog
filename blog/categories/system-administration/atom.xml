@@ -4,7 +4,7 @@
   <title><![CDATA[Category: System Administration | Saverio Ferrara]]></title>
   <link href="http://fsferrara.github.io/blog/categories/system-administration/atom.xml" rel="self"/>
   <link href="http://fsferrara.github.io/"/>
-  <updated>2018-01-07T01:45:01+01:00</updated>
+  <updated>2018-01-07T16:07:02+01:00</updated>
   <id>http://fsferrara.github.io/</id>
   <author>
     <name><![CDATA[Saverio Ferrara]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Running Containers With Docker]]></title>
-    <link href="http://fsferrara.github.io/running-containers-with-docker/"/>
-    <updated>2015-04-03T17:03:29+00:00</updated>
-    <id>http://fsferrara.github.io/running-containers-with-docker</id>
+    <link href="http://fsferrara.github.io/blog/2015/04/03/running-containers-with-docker/"/>
+    <updated>2015-04-03T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2015/04/03/running-containers-with-docker</id>
     <content type="html"><![CDATA[<p><strong>Docker</strong> is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of <strong>Docker Engine</strong>, a portable, <em>lightweight runtime and packaging tool</em>, and <strong>Docker Hub</strong>, a <em>cloud service for sharing applications and automating workflows</em>, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.</p>
 
 <p>This post describes how to run Docker machines with the help of Boot2Docker.</p>
@@ -244,9 +244,9 @@ Username:
   
   <entry>
     <title type="html"><![CDATA[Planning a Cluster for Hadoop BigData]]></title>
-    <link href="http://fsferrara.github.io/planning-cluster-hadoop-bigdata/"/>
-    <updated>2014-02-21T19:39:20+00:00</updated>
-    <id>http://fsferrara.github.io/planning-cluster-hadoop-bigdata</id>
+    <link href="http://fsferrara.github.io/blog/2014/02/21/planning-cluster-hadoop-bigdata/"/>
+    <updated>2014-02-21T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2014/02/21/planning-cluster-hadoop-bigdata</id>
     <content type="html"><![CDATA[<p>This post is about how to plan, for the first time, a cluster for Apache Hadoop and HBase. Hadoop, together with its friends, enable us to elaborate a large amount of data in a cheaply way: by large I mean data large about 100 gigabytes and above.</p>
 
 <p>Hadoop implements the MapReduce framework, that is a way to take a query (or Job) over a dataset, divide it in several queries (or Tasks), and the run these queries in parallel over multiple node of a cluster. Nothing new until now, this looks like the divide-et-impera paradigm: the innovation lies in the fact that the cluster node that is in charge of executing a task has already the data on which process the query. So we are not moving data in order to elaborate them, but we&#8217;re assigning task on the right cluster node that already has the data!</p>
@@ -341,9 +341,9 @@ Username:
   
   <entry>
     <title type="html"><![CDATA[A GIT Branching Model for Medium-size Companies]]></title>
-    <link href="http://fsferrara.github.io/git-branching-model-for-medium-size-companies/"/>
-    <updated>2013-11-15T00:13:57+00:00</updated>
-    <id>http://fsferrara.github.io/git-branching-model-for-medium-size-companies</id>
+    <link href="http://fsferrara.github.io/blog/2013/11/15/git-branching-model-for-medium-size-companies/"/>
+    <updated>2013-11-15T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/11/15/git-branching-model-for-medium-size-companies</id>
     <content type="html"><![CDATA[<p>This article explains how a medium size company, which has several teams, can adopt GIT for the source code management. As a software configuration management, GIT serves two different functions. The first one is the management support for controlling changes to software products, and the second one is merely development support for coordinating file changes among product developers. In particular here I want to talk about the branching model.</p>
 
 <!--more-->
@@ -409,9 +409,9 @@ To https://github.com/fsferrara/lemon.git
  * [new branch]      develop -&gt; develop</pre>
 
 
-<p>Now we have these branches:<figure id="attachment_314" style="max-width: 250px" class="wp-caption aligncenter"></p>
+<p>Now we have these branches:</p>
 
-<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg"><img class="size-medium wp-image-314" src="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches-250x300.jpg" alt="Three Branches" width="250" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches-250x300.jpg 250w, http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg 409w" sizes="(max-width: 250px) 100vw, 250px" /></a><figcaption class="wp-caption-text">Three Branches</figcaption></figure></p>
+<p><img class="<a" src="href="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg">http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg</a>" title="&lsquo;Three Branches&rsquo;" ></p>
 
 <h2>The features</h2>
 
@@ -449,9 +449,9 @@ Current branch develop is up to date.
 Current branch develop is up to date.</pre>
 
 
-<p>The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.<figure id="attachment_315" style="max-width: 145px" class="wp-caption aligncenter"></p>
+<p>The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.</p>
 
-<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch.jpg"><img class="size-medium wp-image-315" src="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg" alt="Feature Branch" width="145" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg 145w, http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch.jpg 235w" sizes="(max-width: 145px) 100vw, 145px" /></a><figcaption class="wp-caption-text">Feature Branch</figcaption></figure></p>
+<p><img class="<a" src="href="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg">http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg</a>" title="&lsquo;Feature Branch&rsquo;" ></p>
 
 <p>At this point a &#8220;merge request&#8221; can be created also to manage the code review process. To finish a feature, perform these operations:</p>
 
@@ -491,9 +491,9 @@ To https://github.com/fsferrara/lemon.git
 
 <h2>Integration phase and release</h2>
 
-<p>At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:<figure id="attachment_316" style="max-width: 260px" class="wp-caption aligncenter"></p>
+<p>At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:</p>
 
-<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg"><img class="size-medium wp-image-316" src="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch-260x300.jpg" alt="Candidate Branch" width="260" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch-260x300.jpg 260w, http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg 412w" sizes="(max-width: 260px) 100vw, 260px" /></a><figcaption class="wp-caption-text">Candidate Branch</figcaption></figure></p>
+<p><img class="<a" src="href="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg">http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg</a>" title="&lsquo;Candidate Branch&rsquo;" ></p>
 
 <p>The integration starts with the <em>code chill</em> phase, that is the phase in which only small bugfixes are allowed. Personally I hate these bugfixes, and I prefer to perform all kind of tests directly on &#8216;devel&#8217; branch: for me the integration phase should be only the final check. Once the code is ready to be deployed in production, we have the reintegration with &#8216;master&#8217;. At this point the release engineer can create the tag directly on master. Optionally the tag to be created can point before to the head of &#8216;candidate&#8217; branch and then can be updated to point to &#8216;master&#8217;.</p>
 
@@ -519,9 +519,9 @@ cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
 
 <p>If for testing purpose you already created the tag 1.2.3 pointing the &#8216;candidate&#8217; branch, now you can move this tag by using the option &#8220;-f&#8221;.</p>
 
-<p>Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:<figure id="attachment_317" style="max-width: 190px" class="wp-caption aligncenter"></p>
+<p>Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:</p>
 
-<p><a href="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix.jpg"><img class="size-medium wp-image-317" src="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg" alt="Hotfix Branch" width="190" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg 190w, http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix.jpg 312w" sizes="(max-width: 190px) 100vw, 190px" /></a><figcaption class="wp-caption-text">Hotfix Branch</figcaption></figure></p>
+<p><img class="<a" src="href="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg">http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg</a>" title="&lsquo;Hotfix Branch&rsquo;" ></p>
 
 <h2>Useful configuration</h2>
 
@@ -564,9 +564,9 @@ cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
   
   <entry>
     <title type="html"><![CDATA[GIT Explained for Subversion Users]]></title>
-    <link href="http://fsferrara.github.io/git-explained-subversion-users/"/>
-    <updated>2013-11-03T23:31:45+00:00</updated>
-    <id>http://fsferrara.github.io/git-explained-subversion-users</id>
+    <link href="http://fsferrara.github.io/blog/2013/11/03/git-explained-subversion-users/"/>
+    <updated>2013-11-03T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/11/03/git-explained-subversion-users</id>
     <content type="html"><![CDATA[<p><code>This guide shows the most common procedures usually performed by SVN users, but using GIT.&lt;br /&gt;
 Why this guide should be better than the others already on-line? There isn't a particular reason ;) . I'm now a SVN user and I'm just migrating to GIT, so I'm going to find a way to perform with GIT all the operations that I usually do with Subversion: this will be useful for Subversion users who want to start using GIT quickly.</code></p>
 
@@ -1030,9 +1030,9 @@ To https://github.com/fsferrara/lemon.git
   
   <entry>
     <title type="html"><![CDATA[ISDN Technology]]></title>
-    <link href="http://fsferrara.github.io/isdn-technology/"/>
-    <updated>2010-01-09T01:28:47+00:00</updated>
-    <id>http://fsferrara.github.io/isdn-technology</id>
+    <link href="http://fsferrara.github.io/blog/2010/01/09/isdn-technology/"/>
+    <updated>2010-01-09T00:00:00+01:00</updated>
+    <id>http://fsferrara.github.io/blog/2010/01/09/isdn-technology</id>
     <content type="html"><![CDATA[<p>Integrated Services Digital Network, o ISDN, è una rete digitale che dà supporto a molti servizi di voce e dati. La definizione tecnica dell&#8217;ISDN, che investe diverse componenti delle reti, risale alle raccomandazioni ITU-T della serie I del 1984 e comprende numerose altre pubblicazioni dello stesso ITU-T e dell&#8217;ETSI (European Telecommunications Standard Institute) fatte negli anni successivi.</p>
 
 <!--more-->

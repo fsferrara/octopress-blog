@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Java Implementation of the Ackermann Function - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="Wilhelm Friedrich Ackermann (29/3/1896 – 24/12/1962) was a German mathematician best known for the Ackermann function, an important example in the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/blog/2009/11/29/java-implementation-of-the-ackermann-function/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Blog</a></li>
+  <li><a href="/story"><i class="fa fa-code-fork" aria-hidden="true"></i> Story</a></li>
+  <li><a href="/social"><i class="fa fa-hashtag" aria-hidden="true"></i> Social</a></li>
+  <li><a href="/about"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Java Implementation of the Ackermann Function</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-11-29T00:00:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Wilhelm Friedrich Ackermann (29/3/1896 – 24/12/1962) was a German mathematician best known for the Ackermann function, an important example in the theory of computation.</p>
+
+<p>La funzione di Ackermann è una funzione f(x,y,z) che ha come dominio l&#8217;insieme delle terne di numeri naturali e come codominio i numeri naturali.</p>
+
+<p>Essa è un esempio di funzione ricorsiva che non è primitiva ricorsiva poiché cresce più velocemente di qualsiasi funzione ricorsiva primitiva.</p>
+
+<!--more-->
+
+
+<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/10/ackermann-300x54.png" title="'Ackermann function description'" ></p>
+
+<p>Qui il codice java che implementa questa funzione:</p>
+
+<p><span style="text-decoration: underline;">Ackermann.java</span></p>
+
+<pre lang="java">public class Ackermann {
+
+ static long count = 0;
+
+ private static long h(long m, long n) {
+
+  count++;
+
+  if (m == 0) {
+   return n + 1;
+  }
+  if (n == 0) {
+   return h(m-1, 1);
+  }
+
+  return h(m-1, h(m,n-1) );
+ }
+
+ private static long ack(long n) {
+  return h(n, n);
+ }
+
+ public static void main(String[] args) {
+
+  if (args.length != 1) {
+   System.out.println("usage: Ackermann &lt;number&gt;\n\twhere number is a positive integer");
+   System.exit(1);
+  }
+
+  long n = Long.valueOf(args[0]);
+
+  count = 0;
+  long retValue = ack(n);  
+  System.out.println("ack(" + n + ") = " + retValue + " [recursive calls = "+ count +"]");
+
+  System.exit(0);
+ }
+
+}</pre>
+
+
+<p>Il meccanismo di calcolo della funzione è estremamente semplice quanto pesante dal punto di vista computazionale. Questi sono i risultati ottenuti:</p>
+
+<ul>
+<li>ack(0) = <strong>1</strong>  [recursive calls = <strong>1</strong>]</li>
+<li>ack(1) = <strong>3</strong>  [recursive calls = <strong>4</strong>]</li>
+<li>ack(2) = <strong>7</strong>  [recursive calls = <strong>27</strong>]</li>
+<li>ack(3) = <strong>61</strong> [recursive calls = <strong>2432</strong>]</li>
+</ul>
+
+
+<p>Non riesco a calcolare ack(4) causa stack overflow (Exception in thread &#8220;main&#8221; java.lang.StackOverflowError).</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Saverio Ferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-11-29T00:00:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:00 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/blog/2009/11/29/java-implementation-of-the-ackermann-function/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/blog/2009/11/29/java-implementation-of-the-ackermann-function/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/10/29/xquery-queries-in-java/" title="Previous Post: XQuery queries in Java">&laquo; XQuery queries in Java</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/01/09/isdn-technology/" title="Next Post: ISDN Technology">ISDN Technology &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/12/10/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/06/16/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/12/18/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/03/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+>>&nbsp;<a href="/blog/archives"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;Blog&nbsp;Archives</a>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Some rights reserved</a> · 2018 · Saverio Ferrara ·
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/blog/2009/11/29/java-implementation-of-the-ackermann-function/';
+        var disqus_url = 'http://fsferrara.github.io/blog/2009/11/29/java-implementation-of-the-ackermann-function/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

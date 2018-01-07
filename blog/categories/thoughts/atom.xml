@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Thoughts | Saverio Ferrara]]></title>
   <link href="http://fsferrara.github.io/blog/categories/thoughts/atom.xml" rel="self"/>
   <link href="http://fsferrara.github.io/"/>
-  <updated>2018-01-07T01:45:01+01:00</updated>
+  <updated>2018-01-07T16:07:02+01:00</updated>
   <id>http://fsferrara.github.io/</id>
   <author>
     <name><![CDATA[Saverio Ferrara]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Blogging With Octopress and Jekyll]]></title>
     <link href="http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll/"/>
-    <updated>2018-01-05T23:01:08+01:00</updated>
+    <updated>2018-01-05T00:00:00+01:00</updated>
     <id>http://fsferrara.github.io/blog/2018/01/05/blogging-with-octopress-and-jekyll</id>
     <content type="html"><![CDATA[<p>Nowadays, most blogs are powered by <em>Wordpress</em>. I am a Wordpress users too and I have to admit it is really a great for blogs.<br/>
 As others CMS, Wordpress requires a database and PHP in order to process the <strong>dynamic</strong> pages server-side.
@@ -182,9 +182,9 @@ This task will also watch for local changes and apply them immediately to the lo
   
   <entry>
     <title type="html"><![CDATA[My Eight Rules to Effectively Work in a Global Team]]></title>
-    <link href="http://fsferrara.github.io/my-eight-rules-to-effectively-work-in-a-global-team/"/>
-    <updated>2016-06-16T08:24:12+00:00</updated>
-    <id>http://fsferrara.github.io/my-eight-rules-to-effectively-work-in-a-global-team</id>
+    <link href="http://fsferrara.github.io/blog/2016/06/16/my-eight-rules-to-effectively-work-in-a-global-team/"/>
+    <updated>2016-06-16T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2016/06/16/my-eight-rules-to-effectively-work-in-a-global-team</id>
     <content type="html"><![CDATA[<p>I still remember when I joined Hotels.com technology team and how much excited I was to start such a new challenge. Since the very early days I realised that working in a global company is quite different from working in the same building. That is obvious, I know, but it wasn’t easy to get used to the new way of working.</p>
 
 <p>I missed getting in touch with new teammates, and sometimes felt isolated from others and had the feeling of being a remote worker. Actually working in a global team has a lot in common with the remote work, and in this article I will list all of the good practices that allowed me to collaborate effectively with colleagues scattered across the world.</p>
@@ -274,9 +274,9 @@ This task will also watch for local changes and apply them immediately to the lo
   
   <entry>
     <title type="html"><![CDATA[The Birth of Computer Science]]></title>
-    <link href="http://fsferrara.github.io/the-birth-of-computer-science/"/>
-    <updated>2013-10-20T01:33:41+00:00</updated>
-    <id>http://fsferrara.github.io/the-birth-of-computer-science</id>
+    <link href="http://fsferrara.github.io/blog/2013/10/20/the-birth-of-computer-science/"/>
+    <updated>2013-10-20T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/2013/10/20/the-birth-of-computer-science</id>
     <content type="html"><![CDATA[<p>La nascita dell&#8217;informatica.</p>
 
 <p>Il primo kernel Linux è stato pubblicato nel 1991, l’annuncio del primo sistema operativo della famiglia Windows risale al 1983, la nascita dell&#8217;informatica come disciplina scientifica risale al 1953, il primo calcolatore programmabile digitale al 1941 (Z3 di Zuse); in realtà tutto scaturisce da una storia molto più lunga che parte dagli studi di Leibniz quando non esistevano i calcolatori digitali, e coinvolge grandi studiosi come Frege, Gödel, e Turing.</p>
@@ -652,9 +652,9 @@ This task will also watch for local changes and apply them immediately to the lo
   
   <entry>
     <title type="html"><![CDATA[Hello Everyone!]]></title>
-    <link href="http://fsferrara.github.io/hello-all/"/>
-    <updated>1983-09-20T22:20:42+00:00</updated>
-    <id>http://fsferrara.github.io/hello-all</id>
+    <link href="http://fsferrara.github.io/blog/1983/09/20/hello-all/"/>
+    <updated>1983-09-20T00:00:00+02:00</updated>
+    <id>http://fsferrara.github.io/blog/1983/09/20/hello-all</id>
     <content type="html"><![CDATA[<p>I&#8217;m a software engineer and a passionate software developer living in Rome. Addicted to the Linux operating system, I love working with all the open source technologies.</p>
 
 <p>In my spare time, I like do mountain biking and some jogging.</p>

@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>C Implementation of Quicksort Algorithm - Saverio Ferrara</title>
+  <meta name="author" content="Saverio Ferrara">
+
+  
+  <meta name="description" content="Quicksort è un ottimo algoritmo di ordinamento ricorsivo in place che, come merge sort, si basa sul paradigma divide et impera. La base del suo &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://fsferrara.github.io/blog/2009/07/07/c-implementation-of-quicksort-algorithm/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Saverio Ferrara" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-45189328-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Saverio Ferrara</a></h1>
+  
+    <h2>...another Software Engineer blog!</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="fsferrara.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Blog</a></li>
+  <li><a href="/story"><i class="fa fa-code-fork" aria-hidden="true"></i> Story</a></li>
+  <li><a href="/social"><i class="fa fa-hashtag" aria-hidden="true"></i> Social</a></li>
+  <li><a href="/about"><i class="fa fa-id-badge" aria-hidden="true"></i> About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">C Implementation of Quicksort Algorithm</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-07-07T00:00:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Quicksort è un ottimo algoritmo di ordinamento ricorsivo in place che, come merge sort, si basa sul paradigma divide et impera. La base del suo funzionamento è l&#8217;utilizzo ricorsivo della procedura partition: preso un elemento da una struttura dati (es. array) si pongono gli elementi minori a sinistra rispetto a questo e gli elementi maggiori a destra.</p>
+
+<blockquote><p>Il Quicksort, termine che tradotto letteralmente in italiano indica ordinamento rapido, è l&#8217;algoritmo di ordinamento che ha, in generale, prestazioni migliori tra quelli basati su confronto; è stato sottoposto a un&#8217;analisi matematica approfondita ed estremamente precisa, tanto che le sue prestazioni sono state comprese a fondo e il suo comportamento è stato descritto in modo molto accurato.</p>
+
+<p><!--more--></p>
+
+<p>I risultati ottenuti in fase di analisi sono stati verificati sperimentalmente in modo esteso e l&#8217;algoritmo di base è stato migliorato al punto da diventare il metodo ideale per un gran numero di applicazioni pratiche.</p>
+
+<p>tratto da wikipedia</p></blockquote>
+
+<p>Per la sua estrema facilità è stato scelto in molte librerie di linguaggi, come il C, di implementare di base una funzione che effettui l&#8217;ordinamento del Quicksort&#8230; però il nostro professore di programmazione vuole vedere il codice sorgente :-)</p>
+
+<h2>Codice C Quicksort</h2>
+
+<p>Eccolo qua:</p>
+
+<pre lang="c">#include &lt;stdio.h&gt;
+#define MAX 20
+
+stampavettore(int *vettore,int n)
+{
+ int i;
+
+ for(i=0 ; i&lt;=n ; printf("%d ",vettore[i++]));
+}
+
+int riempivettore(int *vettore)
+{
+ int i;
+
+ i=0;
+ do {
+ printf("inserire l'elemento %d dell'array('-1' per terminare): ",i+1);
+ scanf("%d",vettore+i);
+ } while (vettore[i++] != -1);
+ return i-2;
+}
+
+void scambia(int *n1,int *n2)
+{
+ int temp;
+
+ temp = *n1;
+ *n1 = *n2;
+ *n2 = temp;
+}
+
+int partiziona(int *vettore, int p, int r)
+{
+ int x = vettore[p];
+ int i = p-1;
+ int j = r+1;
+ int itera = 1;
+
+ do {
+ for(; vettore[--j] &gt; x ;);
+ for(; vettore[++i] &lt; x ;);
+
+ if (i &lt; j)
+ {
+ scambia(&vettore[i],&vettore[j]);
+ }
+ else
+ {
+ itera = 0;
+ }
+ } while (itera);
+
+return j;
+}
+
+void quicksort(int *vettore, int p, int r)
+{
+ int q;
+
+ if (p &lt; r)
+ {
+ q = partiziona(vettore,p,r);
+ quicksort(vettore,p,q);
+ quicksort(vettore,q+1,r);
+ }
+}
+
+main()
+{
+ int vettore[MAX];
+ int n; /*numero di elementi*/
+
+ n=riempivettore(vettore);
+
+ quicksort(vettore,0,n);
+
+ stampavettore(vettore,n);
+}</pre>
+
+
+<h2>Caratteristiche del Quicksort</h2>
+
+<table border="0">
+  <tr>
+    <th>
+      Struttura dati
+    </th>
+
+    <td>
+      Variabile
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      Caso pessimo temporalmente
+    </th>
+
+    <td>
+      <span class="texhtml">Θ(<em>n</em><sup>2</sup>)</span>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      Caso ottimo temporalmente
+    </th>
+
+    <td>
+      <span class="texhtml">Θ(<em>n</em>log<em>n</em>)</span>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      Caso medio temporalmente
+    </th>
+
+    <td>
+      <span class="texhtml">Θ(<em>n</em>log<em>n</em>)</span> confronti
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      Caso pessimo spazialmente
+    </th>
+
+    <td>
+      Dipende dalle implementazioni
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      Ottimale
+    </th>
+
+    <td>
+      Spesso
+    </td>
+  </tr>
+</table>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Saverio Ferrara</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2009-07-07T00:00:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:00 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://fsferrara.github.io/blog/2009/07/07/c-implementation-of-quicksort-algorithm/" data-via="fsferrara" data-counturl="http://fsferrara.github.io/blog/2009/07/07/c-implementation-of-quicksort-algorithm/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/07/04/tuning-ubuntu-linux-9-04/" title="Previous Post: Tuning Ubuntu Linux 9.04">&laquo; Tuning Ubuntu Linux 9.04</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/07/28/disable-goku-script-spam-feature/" title="Next Post: Disable Goku Script spam feature">Disable Goku Script spam feature &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2018/01/05/blogging-with-octopress-and-jekyll/">Blogging With Octopress and Jekyll</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/12/10/getting-started-with-graphql/">Getting Started With GraphQL</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/06/16/my-eight-rules-to-effectively-work-in-a-global-team/">My Eight Rules to Effectively Work in a Global Team</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/12/18/aspect-oriented-programming-with-spring-and-aspectj/">Aspect Oriented Programming With Spring and AspectJ</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/04/03/running-containers-with-docker/">Running Containers With Docker</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+>>&nbsp;<a href="/blog/archives"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;Blog&nbsp;Archives</a>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fsferrara">@fsferrara</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fsferrara',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/+SaverioFerrara?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Some rights reserved</a> · 2018 · Saverio Ferrara ·
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'fsferrara';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://fsferrara.github.io/blog/2009/07/07/c-implementation-of-quicksort-algorithm/';
+        var disqus_url = 'http://fsferrara.github.io/blog/2009/07/07/c-implementation-of-quicksort-algorithm/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
