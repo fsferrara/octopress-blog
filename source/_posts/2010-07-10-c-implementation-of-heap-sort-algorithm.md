@@ -1,13 +1,9 @@
 ---
-comments: true
 title: C implementation of Heap sort algorithm
-date: 2010-07-10T00:40:54+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=101
-permalink: /c-implementation-of-heap-sort-algorithm/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
   - c
   - sort

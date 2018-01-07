@@ -31,6 +31,6 @@ October 2005 – May 2006
 
 _Naples Area_, Italy
 
-[<i class="icon-github"></i>&nbsp;https://github.com/fsferrara/mpv955](https://github.com/fsferrara/mpv955)
+[<i class="fa fa-github" aria-hidden="true"></i>&nbsp;https://github.com/fsferrara/mpv955](https://github.com/fsferrara/mpv955)
 
-[<i class="icon-download"></i>&nbsp;download thesis](/wp-content/downloads/bachelor_mpv955.pdf)
+[<i class="fa fa-download" aria-hidden="true"></i>&nbsp;download thesis](/downloads/bachelor_mpv955.pdf)

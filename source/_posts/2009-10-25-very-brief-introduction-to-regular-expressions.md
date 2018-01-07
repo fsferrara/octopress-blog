@@ -1,17 +1,13 @@
 ---
-comments: true
 title: Very brief introduction to Regular Expressions
-date: 2009-10-25T01:13:16+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=114
-permalink: /very-brief-introduction-to-regular-expressions/
+comments: true
 categories:
-  - Programming
-  - System Administration
+  - programming
+  - system administration
 tags:
   - regex
-  - regular expression
+  - regular-expression
 ---
 Le espressioni regolari sono utili per descrivere la validità di valori, come ad esempio valori di attributi, dati caratteri, e qualsiasi tipo di valore esprimibile con un certo alfabeto.
 

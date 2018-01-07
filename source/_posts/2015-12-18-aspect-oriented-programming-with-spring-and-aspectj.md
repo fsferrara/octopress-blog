@@ -1,13 +1,9 @@
 ---
-comments: true
 title: Aspect Oriented Programming with Spring and AspectJ
-date: 2015-12-18T23:57:23+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=397
-permalink: /aspect-oriented-programming-with-spring-and-aspectj/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
   - aop
   - aspect

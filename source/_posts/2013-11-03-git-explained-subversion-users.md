@@ -1,19 +1,15 @@
 ---
-comments: true
 title: GIT explained for Subversion users
-date: 2013-11-03T23:31:45+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=298
-permalink: /git-explained-subversion-users/
+comments: true
 categories:
-  - Programming
-  - System Administration
+  - programming
+  - system administration
 tags:
-  - GIT
-  - Subversion
-  - SVN
-  - Versioning
+  - git
+  - subversion
+  - svn
+  - versioning
 ---
 `This guide shows the most common procedures usually performed by SVN users, but using GIT.<br />
 Why this guide should be better than the others already on-line? There isn't a particular reason ;) . I'm now a SVN user and I'm just migrating to GIT, so I'm going to find a way to perform with GIT all the operations that I usually do with Subversion: this will be useful for Subversion users who want to start using GIT quickly.`

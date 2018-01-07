@@ -1,18 +1,14 @@
 ---
-comments: true
 title: Early development of Artificial Intelligence
-date: 2013-10-20T01:37:43+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=128
-permalink: /early-development-of-artificial-intelligence/
+comments: true
 categories:
-  - History
+  - history
 tags:
-  - AI
-  - Artificial Intelligence
-  - Computer Science
-  - Turing
+  - ai
+  - artificial-intelligence
+  - computer-science
+  - turing
 ---
 Primi sviluppi dell&#8217;Intelligenza Artificiale.
 

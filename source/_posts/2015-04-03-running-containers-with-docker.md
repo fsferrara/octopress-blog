@@ -1,18 +1,14 @@
 ---
-comments: true
 title: Running containers with Docker
-date: 2015-04-03T17:03:29+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=376
-permalink: /running-containers-with-docker/
+comments: true
 categories:
-  - Programming
-  - System Administration
+  - programming
+  - system administration
 tags:
-  - Boot2Docker
-  - DevOps
-  - Docker
+  - boot2docker
+  - devops
+  - docker
 ---
 **Docker** is an open platform for developers and sysadmins to build, ship, and run distributed applications. Consisting of **Docker Engine**, a portable, _lightweight runtime and packaging tool_, and **Docker Hub**, a _cloud service for sharing applications and automating workflows_, Docker enables apps to be quickly assembled from components and eliminates the friction between development, QA, and production environments. As a result, IT can ship faster and run the same app, unchanged, on laptops, data center VMs, and any cloud.
 

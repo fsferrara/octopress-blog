@@ -1,15 +1,11 @@
 ---
-comments: true
 title: Very brief introduction to XML
-date: 2009-10-26T01:15:26+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=117
-permalink: /very-brief-introduction-to-xml/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
-  - data structures
+  - data-structures
   - XML
 ---
 Il linguaggio XML è diventato uno degli elementi fondamentali per la realizzazione di sistemi informativi, indipendentemente dalla tecnologia usata.

@@ -1,13 +1,9 @@
 ---
-comments: true
 title: Multidimensional Arrays in C
-date: 2009-07-03T00:15:50+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=95
-permalink: /multidimensional-arrays-in-c/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
   - array
   - c

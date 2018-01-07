@@ -1,19 +1,15 @@
 ---
-comments: true
 title: Building web applications with Scala
-date: 2013-11-22T11:02:39+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=325
-permalink: /building-web-applications-scala/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
-  - Java
-  - Lift
-  - REST
-  - SBT
-  - Scala
+  - java
+  - lift
+  - rest
+  - sbt
+  - scala
 ---
 Scala is general purpose programming language very popular for building web application. But why? At the moment I really don&#8217;t know why :) , I&#8217;m just reading about it and sharing my thoughts with you.
 

@@ -1,17 +1,13 @@
 ---
-comments: true
 title: ISDN Technology
-date: 2010-01-09T01:28:47+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=124
-permalink: /isdn-technology/
+comments: true
 categories:
-  - System Administration
+  - system administration
 tags:
-  - Asterisk
-  - ISDN
-  - PBX
+  - asterisk
+  - isdn
+  - pbx
 ---
 Integrated Services Digital Network, o ISDN, è una rete digitale che dà supporto a molti servizi di voce e dati. La definizione tecnica dell&#8217;ISDN, che investe diverse componenti delle reti, risale alle raccomandazioni ITU-T della serie I del 1984 e comprende numerose altre pubblicazioni dello stesso ITU-T e dell&#8217;ETSI (European Telecommunications Standard Institute) fatte negli anni successivi.
 

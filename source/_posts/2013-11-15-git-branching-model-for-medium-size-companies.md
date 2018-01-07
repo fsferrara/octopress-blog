@@ -1,20 +1,16 @@
 ---
-comments: true
 title: A GIT branching model for medium-size companies
-date: 2013-11-15T00:13:57+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=311
-permalink: /git-branching-model-for-medium-size-companies/
+comments: true
 categories:
-  - Programming
-  - System Administration
+  - programming
+  - system administration
 tags:
-  - Branching Model
-  - Collaboration
-  - DevOps
-  - GIT
-  - Teams
+  - branching-model
+  - collaboration
+  - devops
+  - git
+  - teams
 ---
 This article explains how a medium size company, which has several teams, can adopt GIT for the source code management. As a software configuration management, GIT serves two different functions. The first one is the management support for controlling changes to software products, and the second one is merely development support for coordinating file changes among product developers. In particular here I want to talk about the branching model.
 

@@ -17,7 +17,7 @@ Addicted to the Linux operating system, I love learning new things and working w
 
 **Want to know more?**
 
-<i class="fa fa-file-text" aria-hidden="true"></i> [Résumé](http://www.fsferrara.com/wp-content/downloads/fsferrara-cv-it.pdf)  
+<i class="fa fa-file-text" aria-hidden="true"></i> [Résumé](/downloads/fsferrara-cv-it.pdf)  
 <i class="fa fa-envelope" aria-hidden="true"></i> me(at)fsferrara.com  
 <i class="fa fa-phone" aria-hidden="true"></i> (+39) 3405114184  
 <i class="fa fa-skype" aria-hidden="true"></i> fs.ferrara  

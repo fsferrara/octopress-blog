@@ -17,4 +17,4 @@ September 2000 – July 2001
 
 _Avellino Area_, Italy
 
-[<i class="icon-download"></i> download](/wp-content/downloads/goku4.zip)
+[<i class="fa fa-download" aria-hidden="true"></i> download](/downloads/goku4.zip)

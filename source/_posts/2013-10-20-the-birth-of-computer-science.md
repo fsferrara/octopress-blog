@@ -1,21 +1,17 @@
 ---
-comments: true
 title: The Birth of Computer Science
-date: 2013-10-20T01:33:41+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=126
-permalink: /the-birth-of-computer-science/
+comments: true
 categories:
-  - History
-  - Thoughts
+  - history
+  - thoughts
 tags:
-  - Computer Science
-  - Frege
-  - Gödel
-  - Hilbert
-  - Kant
-  - Turing
+  - computer-science
+  - frege
+  - gödel
+  - hilbert
+  - kant
+  - turing
 ---
 La nascita dell&#8217;informatica.
 

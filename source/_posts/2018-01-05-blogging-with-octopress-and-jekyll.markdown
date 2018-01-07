@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Blogging with Octopress and Jekyll"
-date: 2018-01-05 23:01:08 +0100
+layout: post
 comments: true
 categories:
-  - Thoughts
-  - Programming
+  - thoughts
+  - programming
 tags:
   - blog
   - ruby

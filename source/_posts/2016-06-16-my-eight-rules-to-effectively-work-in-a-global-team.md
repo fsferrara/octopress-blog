@@ -1,15 +1,11 @@
 ---
-comments: true
 title: My eight rules to effectively work in a global team
-date: 2016-06-16T08:24:12+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=413
-permalink: /my-eight-rules-to-effectively-work-in-a-global-team/
+comments: true
 categories:
-  - Thoughts
+  - thoughts
 tags:
-  - global worker
+  - global-worker
 ---
 I still remember when I joined Hotels.com technology team and how much excited I was to start such a new challenge. Since the very early days I realised that working in a global company is quite different from working in the same building. That is obvious, I know, but it wasn’t easy to get used to the new way of working.
 

@@ -1,13 +1,10 @@
 ---
-comments: true
 title: Introduction to debugging with GNU GDB
 date: 2009-06-05T20:41:55+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=56
-permalink: /introduction-to-debugging-with-gnu-gdb/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
   - c
   - debug

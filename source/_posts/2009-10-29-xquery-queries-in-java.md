@@ -1,18 +1,14 @@
 ---
-comments: true
 title: XQuery queries in Java
-date: 2009-10-29T00:55:37+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=107
-permalink: /xquery-queries-in-java/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
-  - BaseX
-  - Java
-  - XML
-  - XQuery
+  - basex
+  - java
+  - xml
+  - xquery
 ---
 <p style="text-align: justify;">
   XQuery, una abbrevazione per XML Query Language, è un linguaggio di programmazione specificato dal W3C e destinato ad interrogare documenti e basi di dati XML. Questo perché XML si sta proponendo come la tecnologia per rimpiazzare i vecchi DBMS relazionali :-)

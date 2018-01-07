@@ -25,6 +25,6 @@ April 2010 – February 2011
 
 _Naples Area_, Italy
 
-[<i class="icon-external-link"></i>&nbsp;www.sadasdb.com](http://www.sadasdb.com/)
+[<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;www.sadasdb.com](http://www.sadasdb.com/)
 
-[<i class="icon-download"></i>&nbsp;download thesis](/wp-content/downloads/master_query_rewrinting.pdf)
+[<i class="fa fa-download" aria-hidden="true"></i>&nbsp;download thesis](/downloads/master_query_rewrinting.pdf)

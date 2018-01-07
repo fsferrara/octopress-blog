@@ -1,16 +1,12 @@
 ---
-comments: true
 title: Describing media with XML and MPEG-7
-date: 2009-10-27T01:17:43+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=119
-permalink: /describing-media-with-xml-and-mpeg-7/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
-  - MPEG-7
-  - XML
+  - mpeg-7
+  - xml
 ---
 <p class="western">
   La diffusione delle connessioni a banda larga ha agevolato la diffusione di audio e video via web: un esempio eclatante è YouTube! Ma riuscire a trovare un video particolare tra la grossa quantità di dati multimediali sul web è un compito arduo: il valore del dato multimediale dipende da quanto è agevole trovarlo, gestirlo, ed accedere.

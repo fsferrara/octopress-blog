@@ -1,13 +1,9 @@
 ---
-comments: true
 title: Tuning Ubuntu Linux 9.04
-date: 2009-07-04T00:21:35+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=97
-permalink: /tuning-ubuntu-linux-9-04/
+comments: true
 categories:
-  - System Administration
+  - system administration
 tags:
   - linux
   - tuning

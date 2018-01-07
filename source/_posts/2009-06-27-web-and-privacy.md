@@ -1,13 +1,9 @@
 ---
-comments: true
 title: The Web and the problem of Privacy
-date: 2009-06-27T20:53:03+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=58
-permalink: /web-and-privacy/
+comments: true
 categories:
-  - Security and Privacy
+  - security and privacy
 tags:
   - p3p
   - privacy

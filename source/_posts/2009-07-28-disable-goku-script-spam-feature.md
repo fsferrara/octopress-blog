@@ -1,13 +1,9 @@
 ---
-comments: true
 title: Disable Goku Script spam feature
-date: 2009-07-28T17:39:01+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=81
-permalink: /disable-goku-script-spam-feature/
+comments: true
 categories:
-  - Internet
+  - internet
 tags:
   - chat
   - irc

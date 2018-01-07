@@ -1,13 +1,9 @@
 ---
-comments: true
 title: Matrix types and Storage methods
-date: 2009-09-02T01:01:43+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=109
-permalink: /matrix-types-and-storage-methods/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
   - array
   - data structures

@@ -1,13 +1,9 @@
 ---
-comments: true
 title: C implementation of Quicksort algorithm
-date: 2009-07-07T00:28:32+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=99
-permalink: /c-implementation-of-quicksort-algorithm/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
   - algorithm
   - c

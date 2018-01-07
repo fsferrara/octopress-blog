@@ -1,18 +1,14 @@
 ---
-comments: true
 title: Planning a Cluster for Hadoop BigData
-date: 2014-02-21T19:39:20+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=356
-permalink: /planning-cluster-hadoop-bigdata/
+comments: true
 categories:
-  - System Administration
+  - system administration
 tags:
-  - BigData
-  - Data
-  - Hadoop
-  - Warehouse
+  - big-data
+  - data
+  - hadoop
+  - warehouse
 ---
 This post is about how to plan, for the first time, a cluster for Apache Hadoop and HBase. Hadoop, together with its friends, enable us to elaborate a large amount of data in a cheaply way: by large I mean data large about 100 gigabytes and above.
 

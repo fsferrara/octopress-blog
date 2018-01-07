@@ -1,13 +1,9 @@
 ---
-comments: true
 title: Windows-Linux commands cheat-sheet
-date: 2009-07-01T20:58:49+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=60
-permalink: /windows-linux-commands-cheat-sheet/
+comments: true
 categories:
-  - System Administration
+  - system administration
 tags:
   - dos
   - linux

@@ -1,13 +1,10 @@
 ---
-comments: true
 title: Installation guide of Windows Server 2003
 date: 2009-06-20T01:08:47+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=112
-permalink: /installation-guide-of-windows-server-2003/
+comments: true
 categories:
-  - System Administration
+  - system administration
 tags:
   - tuning
   - windows server

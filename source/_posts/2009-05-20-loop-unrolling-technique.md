@@ -1,13 +1,10 @@
 ---
-comments: true
 title: Loop-Unrolling Technique
 date: 2009-05-20T00:50:32+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=105
-permalink: /loop-unrolling-technique/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
   - algorithm
 ---

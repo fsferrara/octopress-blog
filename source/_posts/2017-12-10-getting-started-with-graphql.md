@@ -1,17 +1,13 @@
 ---
 title: Getting Started With GraphQL
-date: 2017-12-10T22:53:50+00:00
-author: fsferrara
 layout: post
 comments: true
-guid: http://www.fsferrara.com/?p=425
-permalink: /getting-started-with-graphql/
 categories:
-  - Programming
+  - programming
 tags:
-  - API
+  - api
   - graphql
-  - REST
+  - rest
 ---
 <div>
   What is GraphQL? The <a href="http://facebook.github.io/graphql/October2016/">draft RFC specification</a> (October 2016), defines it as &#8220;a query language created by Facebook in 2012 for describing the capabilities and requirements of data models for client‐server applications&#8221;. More simply, GraphQL is a language specification for API. It defines in which way the client should query the server, and in which way the server should execute those queries.

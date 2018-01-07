@@ -1,13 +1,9 @@
 ---
-comments: true
 title: Recursive implementation of Heap sort algorithm
-date: 2010-07-11T00:46:14+00:00
-author: fsferrara
 layout: post
-guid: http://www.fsferrara.com/?p=103
-permalink: /c-recursive-implementation-of-heap-sort-algorithm/
+comments: true
 categories:
-  - Programming
+  - programming
 tags:
   - c
   - sort
