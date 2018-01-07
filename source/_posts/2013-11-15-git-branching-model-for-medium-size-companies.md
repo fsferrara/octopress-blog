@@ -73,7 +73,7 @@ To https://github.com/fsferrara/lemon.git
 
 Now we have these branches:
 
-{% img http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg 'Three Branches' %}
+{% img /images/posts/git-branching-model/00_three_branches.jpg 'Three Branches' %}
 
 ## The features
 
@@ -110,7 +110,7 @@ Current branch develop is up to date.</pre>
 
 The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.
 
-{% img http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg 'Feature Branch' %}
+{% img /images/posts/git-branching-model/01_feature_branch.jpg 'Feature Branch' %}
 
 At this point a &#8220;merge request&#8221; can be created also to manage the code review process. To finish a feature, perform these operations:
 
@@ -150,7 +150,7 @@ To https://github.com/fsferrara/lemon.git
 
 At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:
 
-{% img http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg 'Candidate Branch' %}
+{% img /images/posts/git-branching-model/02_candidate_branch.jpg 'Candidate Branch' %}
 
 The integration starts with the _code chill_ phase, that is the phase in which only small bugfixes are allowed. Personally I hate these bugfixes, and I prefer to perform all kind of tests directly on &#8216;devel&#8217; branch: for me the integration phase should be only the final check. Once the code is ready to be deployed in production, we have the reintegration with &#8216;master&#8217;. At this point the release engineer can create the tag directly on master. Optionally the tag to be created can point before to the head of &#8216;candidate&#8217; branch and then can be updated to point to &#8216;master&#8217;.
 
@@ -177,7 +177,7 @@ If for testing purpose you already created the tag 1.2.3 pointing the &#8216;can
 
 Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:
 
-{% img http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg 'Hotfix Branch' %}
+{% img /images/posts/git-branching-model/03_hotfix.jpg 'Hotfix Branch' %}
 
 ## Useful configuration
 
