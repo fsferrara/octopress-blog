@@ -71,9 +71,9 @@ Total 0 (delta 0), reused 0 (delta 0)
 To https://github.com/fsferrara/lemon.git
  * [new branch]      develop -&gt; develop</pre>
 
-Now we have these branches:<figure id="attachment_314" style="max-width: 250px" class="wp-caption aligncenter">
+Now we have these branches:
 
-[<img class="size-medium wp-image-314" src="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches-250x300.jpg" alt="Three Branches" width="250" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches-250x300.jpg 250w, http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg 409w" sizes="(max-width: 250px) 100vw, 250px" />](http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg)<figcaption class="wp-caption-text">Three Branches</figcaption></figure>
+{% img http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg 'Three Branches' %}
 
 ## The features
 
@@ -108,9 +108,9 @@ Current branch develop is up to date.
 [develop][~/git/lemon]$ git rebase origin/myteam/amazing_feature
 Current branch develop is up to date.</pre>
 
-The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.<figure id="attachment_315" style="max-width: 145px" class="wp-caption aligncenter">
+The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.
 
-[<img class="size-medium wp-image-315" src="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg" alt="Feature Branch" width="145" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg 145w, http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch.jpg 235w" sizes="(max-width: 145px) 100vw, 145px" />](http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch.jpg)<figcaption class="wp-caption-text">Feature Branch</figcaption></figure>
+{% img http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg 'Feature Branch' %}
 
 At this point a &#8220;merge request&#8221; can be created also to manage the code review process. To finish a feature, perform these operations:
 
@@ -148,9 +148,9 @@ To https://github.com/fsferrara/lemon.git
 
 ## Integration phase and release
 
-At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:<figure id="attachment_316" style="max-width: 260px" class="wp-caption aligncenter">
+At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:
 
-[<img class="size-medium wp-image-316" src="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch-260x300.jpg" alt="Candidate Branch" width="260" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch-260x300.jpg 260w, http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg 412w" sizes="(max-width: 260px) 100vw, 260px" />](http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg)<figcaption class="wp-caption-text">Candidate Branch</figcaption></figure>
+{% img http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg 'Candidate Branch' %}
 
 The integration starts with the _code chill_ phase, that is the phase in which only small bugfixes are allowed. Personally I hate these bugfixes, and I prefer to perform all kind of tests directly on &#8216;devel&#8217; branch: for me the integration phase should be only the final check. Once the code is ready to be deployed in production, we have the reintegration with &#8216;master&#8217;. At this point the release engineer can create the tag directly on master. Optionally the tag to be created can point before to the head of &#8216;candidate&#8217; branch and then can be updated to point to &#8216;master&#8217;.
 
@@ -175,9 +175,9 @@ cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
 
 If for testing purpose you already created the tag 1.2.3 pointing the &#8216;candidate&#8217; branch, now you can move this tag by using the option &#8220;-f&#8221;.
 
-Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:<figure id="attachment_317" style="max-width: 190px" class="wp-caption aligncenter">
+Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:
 
-[<img class="size-medium wp-image-317" src="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg" alt="Hotfix Branch" width="190" height="300" srcset="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg 190w, http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix.jpg 312w" sizes="(max-width: 190px) 100vw, 190px" />](http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix.jpg)<figcaption class="wp-caption-text">Hotfix Branch</figcaption></figure>
+{% img http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg 'Hotfix Branch' %}
 
 ## Useful configuration
 
