@@ -4,7 +4,7 @@
   <title><![CDATA[Saverio Ferrara]]></title>
   <link href="http://fsferrara.github.io/atom.xml" rel="self"/>
   <link href="http://fsferrara.github.io/"/>
-  <updated>2018-01-07T16:07:02+01:00</updated>
+  <updated>2018-01-07T16:14:47+01:00</updated>
   <id>http://fsferrara.github.io/</id>
   <author>
     <name><![CDATA[Saverio Ferrara]]></name>
@@ -1580,7 +1580,7 @@ To https://github.com/fsferrara/lemon.git
 
 <p>Now we have these branches:</p>
 
-<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/11/00_three_branches.jpg" title="'Three Branches'" ></p>
+<p><img src="http://fsferrara.github.io/images/posts/git-branching-model/00_three_branches.jpg" title="'Three Branches'" ></p>
 
 <h2>The features</h2>
 
@@ -1620,7 +1620,7 @@ Current branch develop is up to date.</pre>
 
 <p>The branch &#8216;myteam/amazing_feature&#8217; contains all the feature commits. These commit should not be done directly on the &#8216;develop&#8217; branch because anything committed to this branch can be delivered on-line without any notice. Once the feature is done, the feature branch is reintegrated in the &#8216;develop&#8217; branch.</p>
 
-<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/11/01_feature_branch-145x300.jpg" title="'Feature Branch'" ></p>
+<p><img src="http://fsferrara.github.io/images/posts/git-branching-model/01_feature_branch.jpg" title="'Feature Branch'" ></p>
 
 <p>At this point a &#8220;merge request&#8221; can be created also to manage the code review process. To finish a feature, perform these operations:</p>
 
@@ -1662,7 +1662,7 @@ To https://github.com/fsferrara/lemon.git
 
 <p>At any time the release engineer can merge the new content of &#8216;devel&#8217; and start an integration phase, as this picture show:</p>
 
-<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/11/02_candidate_branch.jpg" title="'Candidate Branch'" ></p>
+<p><img src="http://fsferrara.github.io/images/posts/git-branching-model/02_candidate_branch.jpg" title="'Candidate Branch'" ></p>
 
 <p>The integration starts with the <em>code chill</em> phase, that is the phase in which only small bugfixes are allowed. Personally I hate these bugfixes, and I prefer to perform all kind of tests directly on &#8216;devel&#8217; branch: for me the integration phase should be only the final check. Once the code is ready to be deployed in production, we have the reintegration with &#8216;master&#8217;. At this point the release engineer can create the tag directly on master. Optionally the tag to be created can point before to the head of &#8216;candidate&#8217; branch and then can be updated to point to &#8216;master&#8217;.</p>
 
@@ -1690,7 +1690,7 @@ cd84dc74b39607706e8f1b110411b4a508c6f3e8    refs/tags/1.2.3^{}</pre>
 
 <p>Also the emergency bug fixes (hotfix) are supported by this model, as shown in this picture:</p>
 
-<p><img src="http://www.fsferrara.com/wp-content/uploads/2013/11/03_hotfix-190x300.jpg" title="'Hotfix Branch'" ></p>
+<p><img src="http://fsferrara.github.io/images/posts/git-branching-model/03_hotfix.jpg" title="'Hotfix Branch'" ></p>
 
 <h2>Useful configuration</h2>
 
