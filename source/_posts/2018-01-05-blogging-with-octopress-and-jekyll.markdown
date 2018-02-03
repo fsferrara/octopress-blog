@@ -135,6 +135,7 @@ The steps are:
 > git clone https://github.com/fsferrara/fsferrara.github.io.git
 > cd fsferrara.github.io
 [git:master]> git checkout source
+[git:source]> git remote add octopress git://github.com/imathis/octopress.git
 [git:source]> git clone https://github.com/fsferrara/fsferrara.github.io.git _deploy
 [git:source]> bundle install
 [git:source]> bundle exec rake generate
