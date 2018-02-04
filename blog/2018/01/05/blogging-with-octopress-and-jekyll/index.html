@@ -247,9 +247,11 @@ The steps are:</p>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
+<span class='line-number'>8</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git
 </span><span class='line'>&gt; cd fsferrara.github.io
 </span><span class='line'>[git:master]&gt; git checkout source
+</span><span class='line'>[git:source]&gt; git remote add octopress git://github.com/imathis/octopress.git
 </span><span class='line'>[git:source]&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git _deploy
 </span><span class='line'>[git:source]&gt; bundle install
 </span><span class='line'>[git:source]&gt; bundle exec rake generate

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Thoughts | Saverio Ferrara]]></title>
   <link href="http://fsferrara.github.io/blog/categories/thoughts/atom.xml" rel="self"/>
   <link href="http://fsferrara.github.io/"/>
-  <updated>2018-02-03T04:46:40+01:00</updated>
+  <updated>2018-02-04T11:22:28+01:00</updated>
   <id>http://fsferrara.github.io/</id>
   <author>
     <name><![CDATA[Saverio Ferrara]]></name>
@@ -134,6 +134,7 @@ The steps are:</p>
 <pre><code>&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git
 &gt; cd fsferrara.github.io
 [git:master]&gt; git checkout source
+[git:source]&gt; git remote add octopress git://github.com/imathis/octopress.git
 [git:source]&gt; git clone https://github.com/fsferrara/fsferrara.github.io.git _deploy
 [git:source]&gt; bundle install
 [git:source]&gt; bundle exec rake generate
